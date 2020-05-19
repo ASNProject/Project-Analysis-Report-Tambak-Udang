@@ -7,7 +7,12 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.analysisreport.Adapter.MyAdapter;
+import com.example.analysisreport.Listener.IFirebaseLoad;
+import com.example.analysisreport.Model.Tambak;
+import com.example.analysisreport.Transformer.DepthPageTransformer;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,19 +26,25 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
 
-    private TextView Suhu, Doksigen, Salinitas, Kecerahan, pH, Catatan, Jumlah,
+    private TextView Kolam, Suhu, Doksigen, Salinitas, Kecerahan, pH, Catatan, Jumlah,
             TanggalPakan, Berat, Size, TanggalPanen, Perlakuan, TanggalPerlakuan,
             ABW, ADG, TanggalSampling;
 
-    private DatabaseReference getKualitasair;
-    private DatabaseReference getReference;
+
+    ViewPager viewPager;
+    MyAdapter adapter;
+
+    DatabaseReference tambaks;
+
+    IFirebaseLoad iFirebaseLoad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //Kualitas air
         Suhu = findViewById(R.id.nilaisuhu);
         Doksigen = findViewById(R.id.nilaido);
@@ -56,65 +67,49 @@ public class MainActivity extends AppCompatActivity {
         ADG = findViewById(R.id.nilaiadg);
         TanggalSampling = findViewById(R.id.tglsampling);
 
-        //Database getFirebase
-        getKualitasair = FirebaseDatabase.getInstance().getReference().child("Tambak1");
 
-        //Memanggil dataReport
-        dataReport();
+        //Init Firebase
+        tambaks = FirebaseDatabase.getInstance().getReference("Tambak1");
+
+        //Init Event
+        iFirebaseLoad = this;
+
+        loadData();
+
+        viewPager = (ViewPager)findViewById(R.id.view_pager);
+        viewPager.setPageTransformer(true, new DepthPageTransformer());
+
 
     }
 
-    private void dataReport(){
-        getKualitasair.addValueEventListener(new ValueEventListener() {
+    private void loadData() {
+        tambaks.addListenerForSingleValueEvent(new ValueEventListener() {
+            List<Tambak> tambakList = new ArrayList<>();
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
-                    //Kualitas Air
-                    String suhu = dataSnapshot.child("Kolam1").child("Air").child("nilaiSuhu").getValue().toString();
-                    String doksigen = dataSnapshot.child("Kolam1").child("Air").child("DOksigen").getValue().toString();
-                    String salinitas = dataSnapshot.child("Kolam1").child("Air").child("nilaiSalinitas").getValue().toString();
-                    String kecerahan = dataSnapshot.child("Kolam1").child("Air").child("nilaiKecerahan").getValue().toString();
-                    String ph = dataSnapshot.child("Kolam1").child("Air").child("PH").getValue().toString();
-                    Suhu.setText(suhu);
-                    Doksigen.setText(doksigen);
-                    Salinitas.setText(salinitas);
-                    Kecerahan.setText(kecerahan);
-                    pH.setText(ph);
-                    //Pakan
-                    String nilaicatatan = dataSnapshot.child("Kolam1").child("Pakan").child("nilaiCatatan").getValue().toString();
-                    String nilaijumlah = dataSnapshot.child("Kolam1").child("Pakan").child("nilaiJumlah").getValue().toString();
-                    String tglpakan = dataSnapshot.child("Kolam1").child("Pakan").child("tglPakan").getValue().toString();
-                    Catatan.setText(nilaicatatan);
-                    Jumlah.setText(nilaijumlah);
-                    TanggalPakan.setText(tglpakan);
-                    //Panen
-                    String nilaiberat = dataSnapshot.child("Kolam1").child("Panen").child("nilaiBerat").getValue().toString();
-                    String nilaisize = dataSnapshot.child("Kolam1").child("Panen").child("nilaiSize").getValue().toString();
-                    String tglpanen = dataSnapshot.child("Kolam1").child("Panen").child("tglPanen").getValue().toString();
-                    Berat.setText(nilaiberat);
-                    Size.setText(nilaisize);
-                    TanggalPanen.setText(tglpanen);
-                    //Sampling
-                    String abw = dataSnapshot.child("Kolam1").child("Sampling").child("ABW").getValue().toString();
-                    String adg = dataSnapshot.child("Kolam1").child("Sampling").child("ADG").getValue().toString();
-                    String tglsampling = dataSnapshot.child("Kolam1").child("Sampling").child("tglSampling").getValue().toString();
-                    ABW.setText(abw);
-                    ADG.setText(adg);
-                    TanggalSampling.setText(tglsampling);
-                    //Perlakuan
-                    String nilaiperlakuan = dataSnapshot.child("Kolam1").child("Perlakuan").child("nilaiPerlakuan").getValue().toString();
-                    String tglperlakuan = dataSnapshot.child("Kolam1").child("Perlakuan").child("tglPerlakuan").getValue().toString();
-                    Perlakuan.setText(nilaiperlakuan);
-                    TanggalPerlakuan.setText(tglperlakuan);
-                }
+                for(DataSnapshot tambakSnapshot:dataSnapshot.getChildren())
+                    tambakList.add((tambakSnapshot.getValue(Tambak.class)));
+                iFirebaseLoad.onFirebaseLoadSuccess(tambakList);
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+            iFirebaseLoad.onFirebaseLoadFailed(databaseError.getMessage());
             }
         });
-
     }
+
+    @Override
+    public void onFirebaseLoadSuccess(List<Tambak> tambakList) {
+        adapter = new MyAdapter(this,tambakList);
+        viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void onFirebaseLoadFailed(String message) {
+        Toast.makeText(this, ""+message,Toast.LENGTH_SHORT).show();
+    }
+
 
 }
 
