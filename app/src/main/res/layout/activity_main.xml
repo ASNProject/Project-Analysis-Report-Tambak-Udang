@@ -7,6 +7,11 @@
     android:id="@+id/view_pager"
     android:background="@color/colorBackgroung"
     tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/isi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+
 
 
 

@@ -1,7 +1,7 @@
 package com.example.analysisreport.Model;
 
 public class Tambak {
-    private  String Kolam  ;
+    private  String Kolam;
 
     public Tambak() {
     }

@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorSoftBlue</item>
     </style>
 
+    <style name="TambahTambak" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="colorAccent" type="">@color/colorDarkBlue</item>
+        <item name="android:textColorPrimary">@color/colorDarkBlue</item>
+        <item name="android:windowBackground">@color/colorBackgroung</item>
+    </style>
+
+
 </resources>

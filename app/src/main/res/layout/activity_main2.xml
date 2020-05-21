@@ -5,87 +5,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackgroung"
-    tools:context=".Register">
+    tools:context=".Main2Activity">
 
     <TextView
-        android:id="@+id/haderregister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="REGISTER"
-        android:textSize="30dp"
+        android:id="@+id/headerlogin"
+        android:layout_marginTop="100dp"
+        android:text="LOGIN"
         android:textColor="@color/colorGray"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="100dp"></TextView>
+        android:textSize="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"></TextView>
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/Username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/haderregister"
+        android:layout_below="@+id/headerlogin"
         android:layout_marginTop="50dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:hint="Username"
         android:textColorHint="@color/colorGray"
         android:textColor="@color/colorGray"
         ></EditText>
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/Password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/Username"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_below="@+id/username"
-        android:hint="Email"
-        android:textColorHint="@color/colorGray"
-        android:textColor="@color/colorGray"
-        ></EditText>
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_below="@+id/email"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:hint="Password"
         android:textColorHint="@color/colorGray"
         android:textColor="@color/colorGray"
         ></EditText>
-
     <Button
-        android:id="@+id/buttonregister"
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/backgroundbutton"
-        android:layout_below="@+id/password"
-        android:layout_marginTop="60dp"
-        android:layout_marginRight="40dp"
+        android:layout_below="@+id/Password"
         android:layout_marginLeft="40dp"
-        android:text="REGISTER"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/backgroundbutton"
+        android:text="Login"
         ></Button>
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonregister"
+        android:layout_below="@+id/btnLogin"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sudah punya akun?"
+            android:text="Tidak punya akun?"
             android:textColor="@color/colorGray"></TextView>
         <TextView
-            android:id="@+id/login"
+            android:id="@+id/daftar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="Daftar"
             android:textColor="@color/colorDarkBlue"
             android:layout_marginLeft="5dp"
             ></TextView>
     </LinearLayout>
+
+
 </RelativeLayout>

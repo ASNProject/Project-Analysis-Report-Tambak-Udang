@@ -8,23 +8,38 @@ public class SharePreference {
     SharedPreferences pref;
     SharedPreferences.Editor editor;
     Context context;
-    int private_Mode = 0;
-    private static final String PREF_NAME= "Database";
+    int private_mode = 0;
+    private static final String PREF_NAME= "TambakUdang";
 
-    public SharePreference (Context context){
+
+    public SharePreference(Context context){
         this.context = context;
-        pref = context.getSharedPreferences(PREF_NAME, private_Mode);
+        pref = context.getSharedPreferences(PREF_NAME, private_mode);
         editor = pref.edit();
     }
 
-    public void setKolam (String kolam){
-        editor.putString("kolam", kolam);
+    public void setDatas (String datas){
+        editor.putString("datas", datas);
         editor.commit();
     }
+    public String getDatas (){
+        return pref.getString("datas", null);
+    }
 
-    public String getKolam()
-    {
-        return pref.getString("kolam", null);
+    public void setEmail (String email){
+        editor.putString("email", email);
+        editor.commit();
+    }
+    public String getEmail (){
+        return pref.getString("email", null);
+    }
+
+    public void setPassword (String password){
+        editor.putString("password", password);
+        editor.commit();
+    }
+    public String getPassword (){
+        return pref.getString("password", null);
     }
 
 }

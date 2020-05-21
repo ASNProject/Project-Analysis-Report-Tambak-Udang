@@ -31,7 +31,7 @@
 
                 <TextView
                     android:id="@+id/search1"
-                    android:layout_width="match_parent"
+                    android:layout_width="283dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
@@ -39,44 +39,49 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="25dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_marginRight="53dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginRight="30dp"
                     android:layout_toStartOf="@+id/buttontambah"
                     android:layout_toLeftOf="@+id/buttontambah"
                     android:background="@drawable/background2"
                     android:drawableRight="@drawable/search"
                     android:elevation="10dp"
+                    android:hint="Cari Tambak"
                     android:padding="6dp"
-                    android:textColorHint="@color/colorDarkBlue"
-                    android:hint="Cari Tambak"></TextView>
+                    android:textColorHint="@color/colorDarkBlue"></TextView>
 
-                <TextView
+                <ImageView
                     android:id="@+id/buttontambah"
-                    android:layout_width="wrap_content"
-                    android:layout_height="52dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginEnd="45dp"
-                    android:layout_marginRight="45dp"
-                    android:text="+"
-                    android:textColor="@color/colorBackgroung"
-                    android:textSize="50dp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/buttontambah"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginRight="20dp"
-                    android:text="Tambah Tambak"
+                    android:background="@drawable/ic_person_black_24dp"
+                    android:textSize="50dp"></ImageView>
+
+                <TextView
+                    android:id="@+id/usernames"
+                    android:layout_width="34dp"
+                    android:layout_height="13dp"
+                    android:layout_below="@+id/buttontambah"
+                    android:layout_alignStart="@+id/buttontambah"
+                    android:layout_alignLeft="@+id/buttontambah"
+                    android:layout_alignEnd="@+id/buttontambah"
+                    android:layout_alignRight="@+id/buttontambah"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:text="Username"
                     android:textColor="@color/colorBackgroung"
-                    android:textSize="10dp"></TextView>
+                    android:textSize="10dp"
+                    android:gravity="center_horizontal"></TextView>
 
                 <TextView
                     android:id="@+id/namatambak"
@@ -113,8 +118,8 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="10dp"
-                    android:layout_marginEnd="17dp"
-                    android:layout_marginRight="17dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
                     android:drawableRight="@drawable/daftar"
                     android:text="DAFTAR KOLAM"
                     android:textColor="@color/colorBackgroung"

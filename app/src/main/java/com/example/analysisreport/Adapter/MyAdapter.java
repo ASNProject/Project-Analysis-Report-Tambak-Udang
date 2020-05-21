@@ -19,6 +19,8 @@ import com.example.analysisreport.SharePreference.SharePreference;
 
 import android.content.SharedPreferences;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,6 +33,11 @@ public class MyAdapter extends PagerAdapter {
 
     private DatabaseReference getData;
     private DatabaseReference getReference;
+    private String KEY_NAME = "username";
+    private String username;
+    private FirebaseAuth mAuth;
+
+
 
     Context context;
     List<Tambak> tambakList;
@@ -68,6 +75,7 @@ public class MyAdapter extends PagerAdapter {
         final TextView namakolam = (TextView)view.findViewById(R.id.namakolam);
         //Set Data
         namakolam.setText(tambakList.get(position).getKolam());
+        String datas = namakolam.getText().toString();
 
 
         //Kualitas air
@@ -92,9 +100,15 @@ public class MyAdapter extends PagerAdapter {
         final TextView ADG = (TextView)view.findViewById(R.id.nilaiadg);
         final TextView TanggalSampling = (TextView)view.findViewById(R.id.tglsampling);
 
-        //Database getFirebase
-        getData = FirebaseDatabase.getInstance().getReference().child("Tambak1");
-        getData.addValueEventListener(new ValueEventListener() {
+
+
+
+
+       //Database getFirebase
+       // getData = FirebaseDatabase.getInstance().getReference().child("Data User");
+
+
+  /*      getData.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
@@ -143,10 +157,10 @@ public class MyAdapter extends PagerAdapter {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        }); */
 
         container.addView(view);
         return  view;
     }
-
+    
 }

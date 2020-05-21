@@ -3,10 +3,12 @@ package com.example.analysisreport;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.analysisreport.Model.Request;
@@ -27,6 +29,7 @@ public class Register extends AppCompatActivity {
     private EditText etUsername, etEmail, etPassowrd;
     private DatabaseReference database;
     private String sPid, sPnama, sPemail, sPdesk;
+    private TextView login;
 
 
     @Override
@@ -37,6 +40,7 @@ public class Register extends AppCompatActivity {
         etEmail = findViewById(R.id.email);
         etPassowrd = findViewById(R.id.password);
         etUsername = findViewById(R.id.username);
+        login = findViewById(R.id.login);
 
         sPnama = getIntent().getStringExtra("title");
         sPemail = getIntent().getStringExtra("email");
@@ -78,8 +82,6 @@ public class Register extends AppCompatActivity {
                                if (task.isSuccessful()){
                                    FirebaseUser user = mAuth.getCurrentUser();
 
-                                   Toast.makeText(Register.this, "Register Successfully",
-                                           Toast.LENGTH_SHORT).show();
                                    if (user !=null){
                                        UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
                                                .setDisplayName(username)
@@ -90,7 +92,10 @@ public class Register extends AppCompatActivity {
                                                    @Override
                                                    public void onComplete(@NonNull Task<Void> task) {
                                                        if (task.isSuccessful()){
-                                                           Toast.makeText(Register.this, "Profile Updated", Toast.LENGTH_SHORT).show();
+                                                           Toast.makeText(Register.this, "Register is Successfully", Toast.LENGTH_SHORT).show();
+                                                           Intent login = new Intent(Register.this, Main2Activity.class);
+                                                           startActivity(login);
+                                                           finish();
                                                        }
                                                    }
                                                });
@@ -107,19 +112,25 @@ public class Register extends AppCompatActivity {
                                }
                                 }
                             });
-                    sumbmitUser(new Request(
+                    submitUser(new Request(
                             username.toLowerCase(),
                             email.toLowerCase(),
                             passwprd.toLowerCase()));
                 }
+            }
+        });
 
-
-
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent login = new Intent(Register.this, Main2Activity.class);
+                startActivity(login);
+                finish();
             }
         });
     }
 
-    private void sumbmitUser(Request request){
+    private void submitUser(Request request){
         String username = etUsername.getText().toString();
         database.child("Data User")
                 .child(username)
@@ -130,12 +141,7 @@ public class Register extends AppCompatActivity {
                         etUsername.setText("");
                         etEmail.setText("");
                         etPassowrd.setText("");
-
-                        Toast.makeText(Register.this,
-                                "Data Berhasil ditambahkan",
-                                Toast.LENGTH_SHORT).show();
                     }
                 });
-
     }
 }

@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.example.analysisreport.Adapter.MyAdapter;
 import com.example.analysisreport.Listener.IFirebaseLoad;
 import com.example.analysisreport.Model.Tambak;
+import com.example.analysisreport.SharePreference.SharePreference;
 import com.example.analysisreport.Transformer.DepthPageTransformer;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
@@ -31,6 +33,12 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
     private TextView Kolam, Suhu, Doksigen, Salinitas, Kecerahan, pH, Catatan, Jumlah,
             TanggalPakan, Berat, Size, TanggalPanen, Perlakuan, TanggalPerlakuan,
             ABW, ADG, TanggalSampling;
+    private FirebaseAuth mAuth;
+    private TextView isianusername;
+
+    SharePreference sessions;
+    private String KEY_NAME = "TambakUdang";
+
 
 
     ViewPager viewPager;
@@ -44,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAuth = FirebaseAuth.getInstance();
 
         //Kualitas air
         Suhu = findViewById(R.id.nilaisuhu);
@@ -66,20 +75,64 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
         ABW = findViewById(R.id.nilaiabw);
         ADG = findViewById(R.id.nilaiadg);
         TanggalSampling = findViewById(R.id.tglsampling);
+        isianusername = findViewById(R.id.isi);
 
-
-        //Init Firebase
-        tambaks = FirebaseDatabase.getInstance().getReference("Tambak1");
+     //
+     //Init Firebase
+        //tambaks = FirebaseDatabase.getInstance().getReference("arief").child("arief").child("arief");
 
         //Init Event
-        iFirebaseLoad = this;
+        //iFirebaseLoad = this;
+        //login();
+        //loadData();
+        bukadata();
 
-        loadData();
-
-        viewPager = (ViewPager)findViewById(R.id.view_pager);
-        viewPager.setPageTransformer(true, new DepthPageTransformer());
+      //  viewPager = (ViewPager)findViewById(R.id.view_pager);
+       // viewPager.setPageTransformer(true, new DepthPageTransformer());
 
 
+    }
+
+    private void login(){
+        final FirebaseUser user = mAuth.getCurrentUser();
+        if(user != null){
+            if (user.getDisplayName() !=null){
+               //isianusername.setText(user.getDisplayName());
+               //final String data = isianusername.getText().toString();
+
+                tambaks = FirebaseDatabase.getInstance().getReference(user.getDisplayName());
+
+                //Init Event
+                iFirebaseLoad = this;
+
+                loadData();
+
+                viewPager = (ViewPager)findViewById(R.id.view_pager);
+                viewPager.setPageTransformer(true, new DepthPageTransformer());
+            }
+        }
+    }
+
+    private void bukadata(){
+        sessions = new SharePreference(MainActivity.this.getApplicationContext());
+        isianusername = findViewById(R.id.isi);
+        String nama = sessions.getDatas();
+        isianusername.setText(nama);
+         String tisiannama = isianusername.getText().toString();
+
+        Toast.makeText(this, "Membuka data dari "+tisiannama,Toast.LENGTH_SHORT).show();
+        if (isianusername.getText().toString().length()==0){
+           Intent i = new Intent(MainActivity.this, ListTambak.class);
+           startActivity(i);
+          finish();
+       }
+        else {
+            tambaks = FirebaseDatabase.getInstance().getReference(tisiannama);
+            iFirebaseLoad =this;
+            loadData();
+            viewPager = (ViewPager)findViewById(R.id.view_pager);
+            viewPager.setPageTransformer(true, new DepthPageTransformer());
+        }
     }
 
     private void loadData() {
