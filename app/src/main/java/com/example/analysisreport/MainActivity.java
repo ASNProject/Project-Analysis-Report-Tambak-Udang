@@ -1,12 +1,13 @@
 package com.example.analysisreport;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,9 +17,7 @@ import com.example.analysisreport.Model.Tambak;
 import com.example.analysisreport.SharePreference.SharePreference;
 import com.example.analysisreport.Transformer.DepthPageTransformer;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,10 +34,12 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
             ABW, ADG, TanggalSampling;
     private FirebaseAuth mAuth;
     private TextView isianusername;
+    private Button btnTambah;
 
     SharePreference sessions;
     private String KEY_NAME = "TambakUdang";
 
+    private View tambah;
 
 
     ViewPager viewPager;
@@ -76,6 +77,8 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
         ADG = findViewById(R.id.nilaiadg);
         TanggalSampling = findViewById(R.id.tglsampling);
         isianusername = findViewById(R.id.isi);
+        btnTambah = findViewById(R.id.buttontambah);
+
 
      //
      //Init Firebase
@@ -86,12 +89,12 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
         //login();
         //loadData();
         bukadata();
+        tambah();
 
       //  viewPager = (ViewPager)findViewById(R.id.view_pager);
-       // viewPager.setPageTransformer(true, new DepthPageTransformer());
-
-
+       // viewPager.setPageTransformer(true, new DepthPageTransformer())
     }
+
 
     private void login(){
         final FirebaseUser user = mAuth.getCurrentUser();
@@ -128,10 +131,11 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
        }
         else {
             tambaks = FirebaseDatabase.getInstance().getReference(tisiannama);
-            iFirebaseLoad =this;
-            loadData();
-            viewPager = (ViewPager)findViewById(R.id.view_pager);
-            viewPager.setPageTransformer(true, new DepthPageTransformer());
+                iFirebaseLoad =this;
+                loadData();
+                viewPager = (ViewPager)findViewById(R.id.view_pager);
+                viewPager.setPageTransformer(true, new DepthPageTransformer());
+
         }
     }
 
@@ -156,6 +160,7 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
     public void onFirebaseLoadSuccess(List<Tambak> tambakList) {
         adapter = new MyAdapter(this,tambakList);
         viewPager.setAdapter(adapter);
+
     }
 
     @Override
@@ -163,7 +168,10 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
         Toast.makeText(this, ""+message,Toast.LENGTH_SHORT).show();
     }
 
+    private void tambah(){
 
+
+    }
 }
 
 

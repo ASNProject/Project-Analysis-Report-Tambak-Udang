@@ -1,11 +1,15 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorBackgroung</item>
         <item name="colorPrimaryDark">@color/colorDarkBlue</item>
         <item name="colorAccent">@color/colorSoftBlue</item>
+        <item name="android:windowBackground">@color/colorBackgroung</item>
+        <item name="android:itemBackground">@color/colorBackgroung</item>
+        <item name="android:textColorPrimary">@color/colorGray</item>
+
     </style>
 
     <style name="TambahTambak" parent="Theme.AppCompat.Dialog.Alert">
@@ -14,5 +18,12 @@
         <item name="android:windowBackground">@color/colorBackgroung</item>
     </style>
 
+    <style name="AppBaseTheme" parent="AppTheme">
+
+    </style>
+
+    <style name="AppThemes" parent="AppBaseTheme">
+
+    </style>
 
 </resources>

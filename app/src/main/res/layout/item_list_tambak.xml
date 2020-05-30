@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="20dp"
     android:elevation="10dp"
     app:cardCornerRadius="10dp">
 
@@ -33,6 +33,7 @@
         android:layout_marginEnd="40dp"
         android:layout_centerVertical="true"
         android:layout_marginRight="40dp"
+        android:textColor="@color/colorBackgroung"
         android:background="@drawable/backgroundbutton"
         android:text="Pilih"></Button>
 

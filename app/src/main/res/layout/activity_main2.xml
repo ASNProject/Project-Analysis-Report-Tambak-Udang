@@ -52,6 +52,7 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/backgroundbutton"
         android:text="Login"
+        android:textColor="@color/colorBackgroung"
         ></Button>
     <LinearLayout
         android:layout_width="wrap_content"

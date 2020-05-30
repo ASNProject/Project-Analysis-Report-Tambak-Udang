@@ -256,7 +256,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Lokasi"
+                        android:hint="tanggalpakan"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -268,7 +268,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Jumlah Udang"
+                        android:hint="Catatan"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -473,6 +473,20 @@
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/simpan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SIMPAN"
+                android:textColor="@color/colorBackgroung"
+                android:background="@drawable/backgroundbutton"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_below="@id/cardview6"
+                ></Button>
         </RelativeLayout>
 
     </ScrollView>

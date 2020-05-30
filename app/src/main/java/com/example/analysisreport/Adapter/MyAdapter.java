@@ -1,26 +1,43 @@
 package com.example.analysisreport.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.analysisreport.InputData;
+import com.example.analysisreport.ListTambak;
 import com.example.analysisreport.MainActivity;
+import com.example.analysisreport.Model.RequestDataAir;
+import com.example.analysisreport.Model.RequestUpdateAir;
+import com.example.analysisreport.Model.RequestUpdatePakan;
+import com.example.analysisreport.Model.RequestUpdatePanen;
+import com.example.analysisreport.Model.RequestUpdatePerlakuan;
+import com.example.analysisreport.Model.RequestUpdateSampling;
 import com.example.analysisreport.Model.Tambak;
 import com.example.analysisreport.R;
 import com.example.analysisreport.SharePreference.SharePreference;
 
 import android.content.SharedPreferences;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,11 +48,19 @@ import java.util.List;
 
 public class MyAdapter extends PagerAdapter {
 
-    private DatabaseReference getData;
-    private DatabaseReference getReference;
+    private static final String TAG = "Custom";
     private String KEY_NAME = "username";
     private String username;
-    private FirebaseAuth mAuth;
+    private Button btnTambah;
+    AlertDialog.Builder dialog;
+    View dialogView;
+    SharePreference sessions;
+    private TextView namatambak, namakolam, getsuhu, getsalinitas, getkecerahan, getph, getdoksigen;
+    private String GetUserID;
+    private FirebaseAuth auth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseDatabase getDatabase;
+    private DatabaseReference getRefenence;
 
 
 
@@ -49,6 +74,7 @@ public class MyAdapter extends PagerAdapter {
         inflater = LayoutInflater.from(context);
 
     }
+
 
     @Override
     public int getCount() {
@@ -67,12 +93,13 @@ public class MyAdapter extends PagerAdapter {
 
     @NonNull
     @Override
-    public Object instantiateItem(@NonNull ViewGroup container, int position) {
+    public Object instantiateItem(@NonNull final ViewGroup container, int position) {
         //Inflate view
-        View view = inflater.inflate(R.layout.view_pager_layout,container,false);
+        final View view = inflater.inflate(R.layout.view_pager_layout,container,false);
 
         //View
-        final TextView namakolam = (TextView)view.findViewById(R.id.namakolam);
+         final TextView namakolam = (TextView)view.findViewById(R.id.namakolam);
+        final TextView namatambak = (TextView)view.findViewById(R.id.namatambak);
         //Set Data
         namakolam.setText(tambakList.get(position).getKolam());
         String datas = namakolam.getText().toString();
@@ -99,68 +126,72 @@ public class MyAdapter extends PagerAdapter {
         final TextView ABW = (TextView)view.findViewById(R.id.nilaiabw);
         final TextView ADG = (TextView)view.findViewById(R.id.nilaiadg);
         final TextView TanggalSampling = (TextView)view.findViewById(R.id.tglsampling);
+        final TextView tambahkolam = (TextView)view.findViewById(R.id.tamabahkolam);
+        final Button btnTambah = (Button)view.findViewById(R.id.buttontambah);
 
+        tambahkolam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context.getApplicationContext(), InputData.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+            }
+        });
 
+        btnTambah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context.getApplicationContext(), ListTambak.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+            }
+        });
 
-
-
+        sessions = new SharePreference(context.getApplicationContext());
+        String nama = sessions.getDatas();
+        namatambak.setText(nama);
+        getDatabase = FirebaseDatabase.getInstance();
+        getRefenence = getDatabase.getReference().child(nama);
+        String kolamnama = namakolam.getText().toString();
        //Database getFirebase
-       // getData = FirebaseDatabase.getInstance().getReference().child("Data User");
-
-
-  /*      getData.addValueEventListener(new ValueEventListener() {
+        getRefenence = FirebaseDatabase.getInstance().getReference().child(nama);
+        getRefenence.child(kolamnama).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
-                    String kolamnama = namakolam.getText().toString();
-                    //Kualitas Air
-                    String suhu = dataSnapshot.child(kolamnama).child("Air").child("nilaiSuhu").getValue().toString();
-                    String doksigen = dataSnapshot.child(kolamnama).child("Air").child("DOksigen").getValue().toString();
-                    String salinitas = dataSnapshot.child(kolamnama).child("Air").child("nilaiSalinitas").getValue().toString();
-                    String kecerahan = dataSnapshot.child(kolamnama).child("Air").child("nilaiKecerahan").getValue().toString();
-                    String ph = dataSnapshot.child(kolamnama).child("Air").child("PH").getValue().toString();
-                    Suhu.setText(suhu);
-                    Doksigen.setText(doksigen);
-                    Salinitas.setText(salinitas);
-                    Kecerahan.setText(kecerahan);
-                    pH.setText(ph);
-                    //Pakan
-                    String nilaicatatan = dataSnapshot.child(kolamnama).child("Pakan").child("nilaiCatatan").getValue().toString();
-                    String nilaijumlah = dataSnapshot.child(kolamnama).child("Pakan").child("nilaiJumlah").getValue().toString();
-                    String tglpakan = dataSnapshot.child(kolamnama).child("Pakan").child("tglPakan").getValue().toString();
-                    Catatan.setText(nilaicatatan);
-                    Jumlah.setText(nilaijumlah);
-                    TanggalPakan.setText(tglpakan);
-                    //Panen
-                    String nilaiberat = dataSnapshot.child(kolamnama).child("Panen").child("nilaiBerat").getValue().toString();
-                    String nilaisize = dataSnapshot.child(kolamnama).child("Panen").child("nilaiSize").getValue().toString();
-                    String tglpanen = dataSnapshot.child(kolamnama).child("Panen").child("tglPanen").getValue().toString();
-                    Berat.setText(nilaiberat);
-                    Size.setText(nilaisize);
-                    TanggalPanen.setText(tglpanen);
-                    //Sampling
-                    String abw = dataSnapshot.child(kolamnama).child("Sampling").child("ABW").getValue().toString();
-                    String adg = dataSnapshot.child(kolamnama).child("Sampling").child("ADG").getValue().toString();
-                    String tglsampling = dataSnapshot.child(kolamnama).child("Sampling").child("tglSampling").getValue().toString();
-                    ABW.setText(abw);
-                    ADG.setText(adg);
-                    TanggalSampling.setText(tglsampling);
-                    //Perlakuan
-                    String nilaiperlakuan = dataSnapshot.child(kolamnama).child("Perlakuan").child("nilaiPerlakuan").getValue().toString();
-                    String tglperlakuan = dataSnapshot.child(kolamnama).child("Perlakuan").child("tglPerlakuan").getValue().toString();
-                    Perlakuan.setText(nilaiperlakuan);
-                    TanggalPerlakuan.setText(tglperlakuan);
-                }
+                RequestUpdateAir requestUpdateAir = dataSnapshot.child("Airupdate").getValue(RequestUpdateAir.class);
+                Suhu.setText(requestUpdateAir.getNsuhu());
+                Doksigen.setText(requestUpdateAir.getNdoksigen());
+                Salinitas.setText(requestUpdateAir.getNsalinitas());
+                Kecerahan.setText(requestUpdateAir.getNkecerahan());
+                pH.setText(requestUpdateAir.getNph());
+
+                RequestUpdatePakan requestUpdatePakan = dataSnapshot.child("Pakanupdate").getValue(RequestUpdatePakan.class);
+                Catatan.setText(requestUpdatePakan.getNcatatan());
+                Jumlah.setText(requestUpdatePakan.getNjumlah());
+                TanggalPakan.setText(requestUpdatePakan.getNtanggappakan());
+
+                RequestUpdatePanen requestUpdatePanen = dataSnapshot.child("Panenupdate").getValue(RequestUpdatePanen.class);
+                Berat.setText(requestUpdatePanen.getNberat());
+                Size.setText(requestUpdatePanen.getNsize());
+                TanggalPanen.setText(requestUpdatePanen.getNtanggalpenen());
+
+                RequestUpdateSampling requestUpdateSampling = dataSnapshot.child("Samplingupdate").getValue(RequestUpdateSampling.class);
+                ABW.setText(requestUpdateSampling.getNabw());
+                ADG.setText(requestUpdateSampling.getNadg());
+                TanggalSampling.setText(requestUpdateSampling.getNtanggalsampling());
+
+                RequestUpdatePerlakuan requestUpdatePerlakuan = dataSnapshot.child("Perlakuanupdate").getValue(RequestUpdatePerlakuan.class);
+                Perlakuan.setText(requestUpdatePerlakuan.getNperlakuan());
+                TanggalPerlakuan.setText(requestUpdatePerlakuan.getNtanggalperlakuan());
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        }); */
+        });
 
         container.addView(view);
         return  view;
     }
-    
 }

@@ -66,6 +66,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:text="REGISTER"
+        android:textColor="@color/colorBackgroung"
         ></Button>
 
     <LinearLayout

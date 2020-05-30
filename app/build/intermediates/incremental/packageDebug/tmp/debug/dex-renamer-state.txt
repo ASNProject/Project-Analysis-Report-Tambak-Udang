@@ -1,0 +1,4 @@
+#Sat May 30 15:41:18 ICT 2020
+base.0=D\:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\dex\\debug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

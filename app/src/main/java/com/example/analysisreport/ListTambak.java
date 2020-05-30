@@ -28,9 +28,12 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class ListTambak extends AppCompatActivity {
 
@@ -39,13 +42,13 @@ public class ListTambak extends AppCompatActivity {
     private FirebaseRecyclerAdapter<LISTTambak, tambakHolder> mAdapter;
     private RecyclerView mRecycler;
     private LinearLayoutManager mManager;
-    private TextView lis, isi;
+    private TextView lis, isi, setuser, setemail;
     Toolbar toolbar;
     AlertDialog.Builder dialog;
     LayoutInflater inflater;
     View dialogView;
     EditText txtNamaTambak, txtLokasi;
-    ImageView tbhTambak;
+    ImageView tbhTambak, logout;
     SharePreference sessions;
     private String KEY_NAME ="TambahTambak";
 
@@ -56,6 +59,7 @@ public class ListTambak extends AppCompatActivity {
         setContentView(R.layout.activity_list_tambak);
 
         tbhTambak = findViewById(R.id.tambahtambak);
+        logout = findViewById(R.id.loguot);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -69,7 +73,10 @@ public class ListTambak extends AppCompatActivity {
         mManager.setReverseLayout(true);
         mRecycler.setLayoutManager(mManager);
 
-        hkh();
+        //Panggil Program
+        showdata();
+        logout();
+        datauser();
 
         tbhTambak.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,11 +118,17 @@ public class ListTambak extends AppCompatActivity {
                     txtLokasi.setError("Masukkan Lokasi");
                     return;
                 }
-                submitTambak(new RequestTambahTambak(
-                        nama.toLowerCase(),
-                        lokasi.toLowerCase()));
+                else {
+                    submitTambak(new RequestTambahTambak(
+                            nama.toLowerCase(),
+                            lokasi.toLowerCase()));
 
-                dialog.dismiss();
+                     Intent tambah = new Intent(ListTambak.this, InputData.class);
+                     startActivity(tambah);
+                     dialog.dismiss();
+                     finish();
+                }
+
             }
         });
 
@@ -152,6 +165,13 @@ public class ListTambak extends AppCompatActivity {
                         txtLokasi.setText("");
                     }
                 });
+        isi = findViewById(R.id.isi);
+        lis = findViewById(R.id.list);
+        String nis = lis.getText().toString();
+//        String isin = isi.getText().toString();
+        String hah = String.valueOf(nis+"-"+nama);
+        sessions = new SharePreference(ListTambak.this.getApplicationContext());
+        sessions.setDatas(hah);
     }
 
     @Override
@@ -176,7 +196,7 @@ public class ListTambak extends AppCompatActivity {
         return query;
     }
 
-    private void hkh(){
+    private void showdata(){
         final FirebaseUser user = mAuth.getCurrentUser();
         lis = findViewById(R.id.list);
         if(user !=null){
@@ -224,4 +244,31 @@ public class ListTambak extends AppCompatActivity {
         }
     }
 
+    private void logout(){
+    logout.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            sessions = new SharePreference(ListTambak.this.getApplicationContext());
+            sessions.setEmail("");
+            sessions.setPassword("");
+            sessions.setDatas("");
+            Intent i = new Intent(ListTambak.this, Main2Activity.class);
+            startActivity(i);
+            finish();
+        }
+    });
+    }
+
+    private void datauser(){
+        final FirebaseUser user = mAuth.getCurrentUser();
+        setuser = findViewById(R.id.user);
+        setemail = findViewById(R.id.email);
+        if(user !=null) {
+            if (user.getDisplayName() != null) {
+                setuser.setText(user.getDisplayName());
+            }
+            if (user.getEmail() !=null){
+                setemail.setText(user.getEmail());
+            }
+        }}
 }

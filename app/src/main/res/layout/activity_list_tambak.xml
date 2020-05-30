@@ -1,47 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackgroung"
     android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/colorDarkBlue">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DAFTAR TAMBAK"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:textColor="@color/colorBackgroung"
-            android:layout_marginTop="40dp"
-            android:layout_centerHorizontal="true"
-            ></TextView>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/tambahtambak"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/tambah"></ImageView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@color/colorDarkBlue">
 
+
+                <TextView
+                    android:id="@+id/user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/profile"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_toEndOf="@+id/profile"
+                    android:layout_toRightOf="@+id/profile"
+                    android:text="Username"
+                    android:textSize="20dp"></TextView>
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/user"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_toEndOf="@+id/profile"
+                    android:layout_toRightOf="@+id/profile"
+                    android:text="Email"
+                    android:textSize="15dp"></TextView>
+
+                <ImageView
+                    android:id="@+id/profile"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/ic_person_black_24dp"></ImageView>
+
+                <ImageView
+                    android:id="@+id/logocalendar"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_below="@id/profile"
+                    android:layout_alignStart="@+id/profile"
+                    android:layout_alignLeft="@+id/profile"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/ic_date_range_black_24dp"></ImageView>
+
+                <ImageView
+                    android:id="@+id/loguot"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginRight="40dp"
+                    android:background="@drawable/ic_exit_to_app_black_24dp"></ImageView>
+
+                <TextView
+                    android:layout_width="37dp"
+                    android:layout_height="18dp"
+                    android:layout_below="@id/loguot"
+                    android:layout_alignStart="@+id/loguot"
+                    android:layout_alignLeft="@+id/loguot"
+                    android:layout_alignEnd="@+id/loguot"
+                    android:layout_alignRight="@+id/loguot"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="Logout"
+                    android:textSize="11dp"></TextView>
+
+                <TextView
+                    android:id="@+id/calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/logocalendar"
+                    android:layout_alignBottom="@+id/logocalendar"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center_vertical"
+                    android:layout_toEndOf="@+id/logocalendar"
+                    android:layout_toRightOf="@+id/logocalendar"
+                    android:text="Calendar"
+                    android:textSize="20dp"></TextView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/kja"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:text="DAFTAR TAMBAK"
+                android:textColor="@color/colorGray"
+                android:layout_gravity="center"
+                android:textSize="25dp"
+                android:textStyle="bold"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_tambak"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorBackgroung"
+                />
+            <TextView
+                android:id="@+id/list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" "
+                ></TextView>
+
+        </LinearLayout>
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_tambak"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorBackgroung"
-        />
-    <TextView
-        android:id="@+id/list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" "
-        ></TextView>
-</LinearLayout>
+    <ImageView
+        android:id="@+id/tambahtambak"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/back"
+        android:src="@drawable/ic_add_circle_black_24dp"></ImageView>
+
+
+
+</RelativeLayout>
