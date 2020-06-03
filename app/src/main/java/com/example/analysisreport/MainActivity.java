@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
-
+/*
         //Kualitas air
         Suhu = findViewById(R.id.nilaisuhu);
         Doksigen = findViewById(R.id.nilaido);
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
         //Sampling
         ABW = findViewById(R.id.nilaiabw);
         ADG = findViewById(R.id.nilaiadg);
-        TanggalSampling = findViewById(R.id.tglsampling);
+        TanggalSampling = findViewById(R.id.tglsampling);*/
         isianusername = findViewById(R.id.isi);
         btnTambah = findViewById(R.id.buttontambah);
 
@@ -91,10 +91,7 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
         bukadata();
         tambah();
 
-      //  viewPager = (ViewPager)findViewById(R.id.view_pager);
-       // viewPager.setPageTransformer(true, new DepthPageTransformer())
     }
-
 
     private void login(){
         final FirebaseUser user = mAuth.getCurrentUser();
@@ -167,10 +164,7 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
     public void onFirebaseLoadFailed(String message) {
         Toast.makeText(this, ""+message,Toast.LENGTH_SHORT).show();
     }
-
     private void tambah(){
-
-
     }
 }
 

@@ -4,47 +4,117 @@ import java.io.Serializable;
 
 public class RequestDataPakan implements Serializable {
 
-    private String jumlah, tanggappakan, catatan;
+    private String tanggalpakan, kodepakan, jam6, jam10, jam14, jam18, jam22, keteranganpakan, jumlahharian, jumlahtotal;
 
     public RequestDataPakan() {
     }
 
-    public RequestDataPakan(String jumlah, String tanggappakan, String catatan) {
-        this.jumlah = jumlah;
-        this.tanggappakan = tanggappakan;
-        this.catatan = catatan;
+    public RequestDataPakan(String tanggalpakan, String kodepakan, String jam6, String jam10, String jam14, String jam18, String jam22, String keteranganpakan, String jumlahharian, String jumlahtotal) {
+        this.tanggalpakan = tanggalpakan;
+        this.kodepakan = kodepakan;
+        this.jam6 = jam6;
+        this.jam10 = jam10;
+        this.jam14 = jam14;
+        this.jam18 = jam18;
+        this.jam22 = jam22;
+        this.keteranganpakan = keteranganpakan;
+        this.jumlahharian = jumlahharian;
+        this.jumlahtotal = jumlahtotal;
     }
 
-    public String getJumlah() {
-        return jumlah;
+    public String getTanggalpakan() {
+        return tanggalpakan;
     }
 
-    public void setJumlah(String jumlah) {
-        this.jumlah = jumlah;
+    public void setTanggalpakan(String tanggalpakan) {
+        this.tanggalpakan = tanggalpakan;
     }
 
-    public String getTanggappakan() {
-        return tanggappakan;
+    public String getKodepakan() {
+        return kodepakan;
     }
 
-    public void setTanggappakan(String tanggappakan) {
-        this.tanggappakan = tanggappakan;
+    public void setKodepakan(String kodepakan) {
+        this.kodepakan = kodepakan;
     }
 
-    public String getCatatan() {
-        return catatan;
+    public String getJam6() {
+        return jam6;
     }
 
-    public void setCatatan(String catatan) {
-        this.catatan = catatan;
+    public void setJam6(String jam6) {
+        this.jam6 = jam6;
+    }
+
+    public String getJam10() {
+        return jam10;
+    }
+
+    public void setJam10(String jam10) {
+        this.jam10 = jam10;
+    }
+
+    public String getJam14() {
+        return jam14;
+    }
+
+    public void setJam14(String jam14) {
+        this.jam14 = jam14;
+    }
+
+    public String getJam18() {
+        return jam18;
+    }
+
+    public void setJam18(String jam18) {
+        this.jam18 = jam18;
+    }
+
+    public String getJam22() {
+        return jam22;
+    }
+
+    public void setJam22(String jam22) {
+        this.jam22 = jam22;
+    }
+
+    public String getKeteranganpakan() {
+        return keteranganpakan;
+    }
+
+    public void setKeteranganpakan(String keteranganpakan) {
+        this.keteranganpakan = keteranganpakan;
+    }
+
+    public String getJumlahharian() {
+        return jumlahharian;
+    }
+
+    public void setJumlahharian(String jumlahharian) {
+        this.jumlahharian = jumlahharian;
+    }
+
+    public String getJumlahtotal() {
+        return jumlahtotal;
+    }
+
+    public void setJumlahtotal(String jumlahtotal) {
+        this.jumlahtotal = jumlahtotal;
     }
 
     @Override
     public String toString() {
         return "RequestDataPakan{" +
-                "jumlah='" + jumlah + '\'' +
-                ", tanggappakan='" + tanggappakan + '\'' +
-                ", catatan='" + catatan + '\'' +
+                "tanggalpakan='" + tanggalpakan + '\'' +
+                ", kodepakan='" + kodepakan + '\'' +
+                ", jam6='" + jam6 + '\'' +
+                ", jam10='" + jam10 + '\'' +
+                ", jam14='" + jam14 + '\'' +
+                ", jam18='" + jam18 + '\'' +
+                ", jam22='" + jam22 + '\'' +
+                ", keteranganpakan='" + keteranganpakan + '\'' +
+                ", jumlahharian='" + jumlahharian + '\'' +
+                ", jumlahtotal='" + jumlahtotal + '\'' +
                 '}';
     }
 }

@@ -29,24 +29,32 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
+            <TextView
+                android:id="@+id/awaa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data kolam wajib diisi"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/colorAccent"
+                ></TextView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview1"
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
+                android:layout_height="420dp"
+                android:layout_below="@id/awaa"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
                 app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="@color/colorBackgroung"
-                >
+                app:cardBackgroundColor="@color/colorBackgroung">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -72,34 +80,23 @@
                         android:textColor="@color/colorGray"
                     ></EditText>
                     <EditText
-                        android:id="@+id/lokasi"
+                        android:id="@+id/namapetani"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/kolamnama"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Lokasi"
+                        android:hint="Nama Petani"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
-                    <EditText
-                        android:id="@+id/jumlah"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/lokasi"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:hint="Jumlah Udang"
-                        android:textColorHint="@color/colorGray"
-                        android:textColor="@color/colorGray"
-                        ></EditText>
+
                     <EditText
                         android:id="@+id/area"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/jumlah"
+                        android:layout_below="@+id/namapetani"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
@@ -107,22 +104,116 @@
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/aa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal Tebar :"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/area"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <EditText
+                        android:id="@+id/ntangaltebar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/area"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@id/aa"
+                        android:layout_toRightOf="@id/aa"
+                        android:textColor="@color/colorGray"
+                        android:textStyle="bold"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/jumlah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ntangaltebar"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Jumlah Tebar Bruto (Ekor)"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/jumlahtebarsamplinglapangan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/jumlah"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Jumlah Tebar Sampling Lapangan"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <TextView
+                        android:id="@+id/jumlahtebarrata2ekor"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/keterangankolam"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Jumlah Tebar Rata-Rata (Ekor)"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/kepadatanperm2"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/jumlahtebarrata2ekor"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Jumlah Kepadatan (m2)"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></TextView>
+                    <EditText
+                        android:id="@+id/keterangankolam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/jumlahtebarsamplinglapangan"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Keterangan"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/adas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardview1"
+                android:text="Data dapat dilewati"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/colorAccent"
+                ></TextView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview2"
                 android:layout_width="match_parent"
-                android:layout_height="315dp"
-                android:layout_below="@+id/cardview1"
+                android:layout_height="810dp"
+                android:layout_below="@+id/adas"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
@@ -141,27 +232,87 @@
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/colorDarkBlue"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/ab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal :"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/dataair"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
                     <EditText
-                        android:id="@+id/DO"
+                        android:id="@+id/tanggalair"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/dataair"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="DOksigen"
+                        android:layout_toEndOf="@+id/ab"
+                        android:layout_toRightOf="@id/ab"
+                        android:textColor="@color/colorGray"
+                        android:textStyle="bold"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/ntinggiair"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tanggalair"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Tinggi air"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
                     <EditText
-                        android:id="@+id/ph"
+                        android:id="@+id/DOpagi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/DO"
+                        android:layout_below="@+id/ntinggiair"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="PH"
+                        android:hint="do pagi"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/DOmalam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/DOpagi"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="do malam"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/phpagi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/DOmalam"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="PH Pagi"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/phmalam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/phpagi"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="PH Malam"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -169,7 +320,7 @@
                         android:id="@+id/kecerahan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/ph"
+                        android:layout_below="@+id/phmalam"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
@@ -185,7 +336,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Salinitas"
+                        android:hint="Alkalinitas"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -201,8 +352,66 @@
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
-
-
+                    <EditText
+                        android:id="@+id/nca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/suhu"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Ca"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/nmg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nca"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Mg"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/nno2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nmg"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="NO2"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/nno3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nno2"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="NO3"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/nnh3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nno3"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="NH3"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -210,7 +419,7 @@
                 android:id="@+id/cardview3"
                 android:layout_below="@+id/cardview2"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="480dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentEnd="true"
@@ -236,42 +445,200 @@
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/colorDarkBlue"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/ac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal :"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/datapakan"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
                     <EditText
-                        android:id="@+id/isijumlah"
+                        android:id="@+id/tanggalpakan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/datapakan"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Jumlah Pakan"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/ac"
+                        android:layout_toRightOf="@id/ac"
                         android:textColor="@color/colorGray"
+                        android:textStyle="bold"
                         ></EditText>
                     <EditText
-                        android:id="@+id/tanggalpakan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/isijumlah"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:hint="tanggalpakan"
-                        android:textColorHint="@color/colorGray"
-                        android:textColor="@color/colorGray"
-                        ></EditText>
-                    <EditText
-                        android:id="@+id/isicatatan"
+                        android:id="@+id/nkodepakan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tanggalpakan"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Catatan"
+                        android:hint="Kode Pakan"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/asa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jam 06.00 :"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/nkodepakan"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <EditText
+                        android:id="@+id/njam6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nkodepakan"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/asa"
+                        android:layout_toRightOf="@id/asa"
+                        android:text="0"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <TextView
+                        android:id="@+id/asb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jam 10.00 :"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/njam6"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <EditText
+                        android:id="@+id/njam10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/njam6"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/asb"
+                        android:layout_toRightOf="@id/asb"
+                        android:text="0"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <TextView
+                        android:id="@+id/asc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jam 14.00 :"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/njam10"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <EditText
+                        android:id="@+id/njam14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/njam10"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/asc"
+                        android:layout_toRightOf="@id/asc"
+                        android:text="0"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <TextView
+                        android:id="@+id/asd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jam 18.00 :"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/njam14"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <EditText
+                        android:id="@+id/njam18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/njam14"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/asd"
+                        android:layout_toRightOf="@id/asd"
+                        android:text="0"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <TextView
+                        android:id="@+id/ase"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jam 22.00 :"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/njam18"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <EditText
+                        android:id="@+id/njam22"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/njam18"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/ase"
+                        android:layout_toRightOf="@id/ase"
+                        android:text="0"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+
+                    <EditText
+                        android:id="@+id/isicatatan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/njam22"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Keterangan"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <TextView
+                        android:id="@+id/jumlahharian"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/isicatatan"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Jumlah Harian (Kg)"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></TextView>
+
+                    <TextView
+                        android:id="@+id/isijumlahtotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/jumlahharian"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Jumlah Pakan Total (Kg)"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></TextView>
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -350,7 +717,7 @@
                 android:id="@+id/cardview5"
                 android:layout_below="@+id/cardview4"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="430dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentEnd="true"
@@ -377,41 +744,149 @@
                         android:textColor="@color/colorDarkBlue"
                         ></TextView>
                     <EditText
-                        android:id="@+id/isiabw"
+                        android:id="@+id/ntanggaltebarsampling"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/datasamplings"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="ABW"
+                        android:hint="Tanggal Tebar : Format dd-mm-yyyy"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
                     <EditText
-                        android:id="@+id/isiadg"
+                        android:id="@+id/ntangalsampling"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/isiabw"
+                        android:layout_below="@+id/ntanggaltebarsampling"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="ADG"
+                        android:hint="Tanggal Sampling : Format dd-mm-yyyy"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
                     <EditText
-                        android:id="@+id/tanggalsampling"
+                        android:id="@+id/njumlahtebarrataratasampling"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/isiadg"
+                        android:layout_below="@+id/ntangalsampling"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Tanggal Sampling"
+                        android:hint="Jumlah Tebar"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <EditText
+                        android:id="@+id/nmbwsampling"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/njumlahtebarrataratasampling"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="MBW Sampling (gr)"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/npakanperharisampling"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nmbwsampling"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Pakan Perhari"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/ntotalpakansampling"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/npakanperharisampling"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Pakan Total"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <EditText
+                        android:id="@+id/nfr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ntotalpakansampling"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="FR (%)"
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorGray"
+                        ></EditText>
+                    <TextView
+                        android:id="@+id/npopulasi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nfr"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Populasi"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/nadgmingguan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/npopulasi"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Adg Mingguan"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/nbiomass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nadgmingguan"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Biomass"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/nsp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nbiomass"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="SP%"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/nkonsumsifeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nsp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Konsumsi Feed"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/nfcr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nkonsumsifeed"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="FCR"
+                        ></TextView>
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -458,6 +933,18 @@
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/ag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal :"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/nperlakuan"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+
                     <EditText
                         android:id="@+id/tanggalperlakuan"
                         android:layout_width="match_parent"
@@ -466,9 +953,10 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Tanggal Perlakuan"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/ag"
+                        android:layout_toRightOf="@id/ag"
                         android:textColor="@color/colorGray"
+                        android:textStyle="bold"
                         ></EditText>
 
                 </RelativeLayout>

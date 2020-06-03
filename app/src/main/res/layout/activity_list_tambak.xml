@@ -102,12 +102,11 @@
                     android:layout_alignBottom="@+id/logocalendar"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginBottom="0dp"
                     android:gravity="center_vertical"
                     android:layout_toEndOf="@+id/logocalendar"
                     android:layout_toRightOf="@+id/logocalendar"
-                    android:text="Calendar"
                     android:textSize="20dp"></TextView>
 
             </RelativeLayout>

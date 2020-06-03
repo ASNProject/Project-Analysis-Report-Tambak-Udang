@@ -27,6 +27,8 @@ public class Main3Activity extends AppCompatActivity {
         lahd = findViewById(R.id.editText);
         af = findViewById(R.id.button);
         iai = findViewById(R.id.textView);
+        String Liui = session.getDatas();
+        iai.setText(Liui);
 
 
         af.setOnClickListener(new View.OnClickListener() {

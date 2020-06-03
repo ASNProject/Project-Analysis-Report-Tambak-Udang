@@ -6,17 +6,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
-import android.app.DownloadManager;
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.example.analysisreport.Adapter.tambakHolder;
@@ -28,12 +29,14 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class ListTambak extends AppCompatActivity {
 
@@ -42,7 +45,8 @@ public class ListTambak extends AppCompatActivity {
     private FirebaseRecyclerAdapter<LISTTambak, tambakHolder> mAdapter;
     private RecyclerView mRecycler;
     private LinearLayoutManager mManager;
-    private TextView lis, isi, setuser, setemail;
+    private TextView lis, isi, setuser, setemail, setcalendar;
+    private DatePickerDialog.OnDateSetListener onDateSetListener;
     Toolbar toolbar;
     AlertDialog.Builder dialog;
     LayoutInflater inflater;
@@ -73,8 +77,14 @@ public class ListTambak extends AppCompatActivity {
         mManager.setReverseLayout(true);
         mRecycler.setLayoutManager(mManager);
 
+        String date_n = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(new Date());
+        setcalendar = findViewById(R.id.calendar);
+        setcalendar.setText(date_n);
+
+
         //Panggil Program
-        showdata();
+       // showdata();
+        showtambak();
         logout();
         datauser();
 
@@ -84,6 +94,8 @@ public class ListTambak extends AppCompatActivity {
                 DialogForm();
             }
         });
+
+
 
 
     }
@@ -105,8 +117,8 @@ public class ListTambak extends AppCompatActivity {
         dialog.setPositiveButton("SUBMIT", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String nama = txtNamaTambak.getText().toString();
-                String lokasi = txtLokasi.getText().toString();
+                String nama = txtNamaTambak.getText().toString().toLowerCase();
+                String lokasi = txtLokasi.getText().toString().toLowerCase();
 
                 //Masukkan program databse firebase
                 if (nama.equals("")){
@@ -150,7 +162,7 @@ public class ListTambak extends AppCompatActivity {
     }
 
     private void submitTambak(RequestTambahTambak requestTambahTambak) {
-        final String nama = txtNamaTambak.getText().toString();
+        final String nama = txtNamaTambak.getText().toString().toLowerCase();
         String lokasi = txtLokasi.getText().toString();
         String data = lis.getText().toString();
         mDatabase.child("Data User")
@@ -166,10 +178,10 @@ public class ListTambak extends AppCompatActivity {
                     }
                 });
         isi = findViewById(R.id.isi);
-        lis = findViewById(R.id.list);
+        lis = findViewById(R.id.list);//nama
         String nis = lis.getText().toString();
 //        String isin = isi.getText().toString();
-        String hah = String.valueOf(nis+"-"+nama);
+        String hah = String.valueOf(nis+"-"+nama);//nama =namatambak
         sessions = new SharePreference(ListTambak.this.getApplicationContext());
         sessions.setDatas(hah);
     }
@@ -190,58 +202,56 @@ public class ListTambak extends AppCompatActivity {
         }
     }
 
+   private void showtambak(){
+       final FirebaseUser user = mAuth.getCurrentUser();
+       lis = findViewById(R.id.list);
+       if(user !=null) {
+           if (user.getDisplayName() != null) {
+               lis.setText(user.getDisplayName());
+               final String data = lis.getText().toString();
+
+               Query query = getQuery(mDatabase);
+               FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<LISTTambak>()
+                       .setQuery(query, LISTTambak.class)
+                       .build();
+
+               mAdapter = new FirebaseRecyclerAdapter<LISTTambak, tambakHolder>(options) {
+                   @Override
+                   protected void onBindViewHolder(@NonNull tambakHolder tambakHolder, int i, @NonNull final LISTTambak listTambak) {
+                       tambakHolder.bindoToTambak(listTambak, new View.OnClickListener() {
+                           @Override
+                           public void onClick(View v) {
+                               isi = findViewById(R.id.isi);//namatambak
+                               lis = findViewById(R.id.list);
+                               String nis = lis.getText().toString();
+                               String isin = isi.getText().toString();
+                               String hah = String.valueOf(nis + isin);
+                               sessions = new SharePreference(ListTambak.this.getApplicationContext());
+                               sessions.setDatas(nis+"-"+listTambak.nama);
+                               Intent in = new Intent(ListTambak.this, MainActivity.class);
+                               startActivity(in);
+                               finish();
+                           }
+                       });
+                   }
+
+                   @NonNull
+                   @Override
+                   public tambakHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                       LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+                       return new tambakHolder(inflater.inflate(R.layout.item_list_tambak, parent, false));
+                   }
+               };
+
+               mAdapter.notifyDataSetChanged();
+               mRecycler.setAdapter(mAdapter);
+           }
+       }}
+
     private Query getQuery(DatabaseReference mDatabase) {
         String data = lis.getText().toString();
-        Query query = mDatabase.child("Data User").child(data).child("Daftar Tambak");
-        return query;
-    }
-
-    private void showdata(){
-        final FirebaseUser user = mAuth.getCurrentUser();
-        lis = findViewById(R.id.list);
-        if(user !=null){
-            if (user.getDisplayName() !=null){
-                lis.setText(user.getDisplayName());
-                final String data = lis.getText().toString();
-
-                Query query = getQuery(mDatabase);
-                FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<LISTTambak>()
-                        .setQuery(query, LISTTambak.class)
-                        .build();
-
-                mAdapter = new FirebaseRecyclerAdapter<LISTTambak, tambakHolder>(options) {
-                    @Override
-                    protected void onBindViewHolder(@NonNull tambakHolder tambakHolder, int i, @NonNull LISTTambak listTambak) {
-                        tambakHolder.LTAMBAK(listTambak, new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                isi = findViewById(R.id.isi);
-                                lis = findViewById(R.id.list);
-                                String nis = lis.getText().toString();
-                                String isin = isi.getText().toString();
-                                String hah = String.valueOf(nis+isin);
-                                sessions = new SharePreference(ListTambak.this.getApplicationContext());
-                                sessions.setDatas(hah);
-                                //Toast.makeText(this, "datanya adalah"+hah, Toast.LENGTH_SHORT).show();
-                                Intent in = new Intent(ListTambak.this, MainActivity.class);
-                                startActivity(in);
-                                finish();
-                            }
-                        });
-                    }
-
-                    @NonNull
-                    @Override
-                    public tambakHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-                        return new tambakHolder(inflater.inflate(R.layout.item_list_tambak,parent, false));
-                    }
-                };
-
-                mAdapter.notifyDataSetChanged();
-                mRecycler.setAdapter(mAdapter);
-            }
-        }
+       Query query = mDatabase.child("Data User").child(data).child("Daftar Tambak");
+       return query;
     }
 
     private void logout(){
@@ -270,5 +280,9 @@ public class ListTambak extends AppCompatActivity {
             if (user.getEmail() !=null){
                 setemail.setText(user.getEmail());
             }
-        }}
+        }
+    }
+
+
+
 }

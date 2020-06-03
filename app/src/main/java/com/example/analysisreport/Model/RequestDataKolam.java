@@ -3,19 +3,22 @@ import com.google.firebase.database.IgnoreExtraProperties;
 import java.io.Serializable;
 
 public class RequestDataKolam implements Serializable {
-    private String kolam;
-        private String lokasi;
-        private String jumlah;
-        private String area;
+    private String kolam, namapetani, jumlah, area, tanggaltebar, jumlahtebarsampling, jumlahtebarratarata,
+                    kepadatankolam, keterangankolams;
 
     public RequestDataKolam() {
     }
 
-    public RequestDataKolam(String kolam, String lokasi, String jumlah, String area) {
+    public RequestDataKolam(String kolam, String namapetani, String jumlah, String area, String tanggaltebar, String jumlahtebarsampling, String jumlahtebarratarata, String kepadatankolam, String keterangankolams) {
         this.kolam = kolam;
-        this.lokasi = lokasi;
+        this.namapetani = namapetani;
         this.jumlah = jumlah;
         this.area = area;
+        this.tanggaltebar = tanggaltebar;
+        this.jumlahtebarsampling = jumlahtebarsampling;
+        this.jumlahtebarratarata = jumlahtebarratarata;
+        this.kepadatankolam = kepadatankolam;
+        this.keterangankolams = keterangankolams;
     }
 
     public String getKolam() {
@@ -26,12 +29,12 @@ public class RequestDataKolam implements Serializable {
         this.kolam = kolam;
     }
 
-    public String getLokasi() {
-        return lokasi;
+    public String getNamapetani() {
+        return namapetani;
     }
 
-    public void setLokasi(String lokasi) {
-        this.lokasi = lokasi;
+    public void setNamapetani(String namapetani) {
+        this.namapetani = namapetani;
     }
 
     public String getJumlah() {
@@ -50,13 +53,58 @@ public class RequestDataKolam implements Serializable {
         this.area = area;
     }
 
+    public String getTanggaltebar() {
+        return tanggaltebar;
+    }
+
+    public void setTanggaltebar(String tanggaltebar) {
+        this.tanggaltebar = tanggaltebar;
+    }
+
+    public String getJumlahtebarsampling() {
+        return jumlahtebarsampling;
+    }
+
+    public void setJumlahtebarsampling(String jumlahtebarsampling) {
+        this.jumlahtebarsampling = jumlahtebarsampling;
+    }
+
+    public String getJumlahtebarratarata() {
+        return jumlahtebarratarata;
+    }
+
+    public void setJumlahtebarratarata(String jumlahtebarratarata) {
+        this.jumlahtebarratarata = jumlahtebarratarata;
+    }
+
+    public String getKepadatankolam() {
+        return kepadatankolam;
+    }
+
+    public void setKepadatankolam(String kepadatankolam) {
+        this.kepadatankolam = kepadatankolam;
+    }
+
+    public String getKeterangankolams() {
+        return keterangankolams;
+    }
+
+    public void setKeterangankolams(String keterangankolams) {
+        this.keterangankolams = keterangankolams;
+    }
+
     @Override
     public String toString() {
         return "RequestDataKolam{" +
                 "kolam='" + kolam + '\'' +
-                ", lokasi='" + lokasi + '\'' +
+                ", namapetani='" + namapetani + '\'' +
                 ", jumlah='" + jumlah + '\'' +
                 ", area='" + area + '\'' +
+                ", tanggaltebar='" + tanggaltebar + '\'' +
+                ", jumlahtebarsampling='" + jumlahtebarsampling + '\'' +
+                ", jumlahtebarratarata='" + jumlahtebarratarata + '\'' +
+                ", kepadatankolam='" + kepadatankolam + '\'' +
+                ", keterangankolams='" + keterangankolams + '\'' +
                 '}';
     }
 }

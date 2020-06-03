@@ -21,7 +21,7 @@ public class tambakHolder extends RecyclerView.ViewHolder {
         tvTambak = itemView.findViewById(R.id.isi);
         btnTambak = itemView.findViewById(R.id.pilih);
     }
-    public void LTAMBAK(LISTTambak ltambak, View.OnClickListener onClickListener){
+    public void bindoToTambak(LISTTambak ltambak, View.OnClickListener onClickListener){
         tvTambak.setText(ltambak.nama);
         btnTambak.setOnClickListener(onClickListener);
     }

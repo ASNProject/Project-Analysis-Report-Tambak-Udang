@@ -23,6 +23,7 @@ import com.example.analysisreport.InputData;
 import com.example.analysisreport.ListTambak;
 import com.example.analysisreport.MainActivity;
 import com.example.analysisreport.Model.RequestDataAir;
+import com.example.analysisreport.Model.RequestDataKolam;
 import com.example.analysisreport.Model.RequestUpdateAir;
 import com.example.analysisreport.Model.RequestUpdatePakan;
 import com.example.analysisreport.Model.RequestUpdatePanen;
@@ -44,7 +45,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class MyAdapter extends PagerAdapter {
 
@@ -55,7 +62,8 @@ public class MyAdapter extends PagerAdapter {
     AlertDialog.Builder dialog;
     View dialogView;
     SharePreference sessions;
-    private TextView namatambak, namakolam, getsuhu, getsalinitas, getkecerahan, getph, getdoksigen;
+    private TextView namatambak, namakolam, getsuhu, getsalinitas,
+            getkecerahan, getph, getdoksigen;
     private String GetUserID;
     private FirebaseAuth auth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -104,28 +112,65 @@ public class MyAdapter extends PagerAdapter {
         namakolam.setText(tambakList.get(position).getKolam());
         String datas = namakolam.getText().toString();
 
+        final TextView jumlahudang = (TextView)view.findViewById(R.id.jumlahudang);
+        final TextView hariudang = (TextView)view.findViewById(R.id.hariudang);
+        final TextView namapetani = (TextView)view.findViewById(R.id.mnamapetani);
+        final TextView area = (TextView)view.findViewById(R.id.marea);
+        final TextView tanggalkolam = (TextView)view.findViewById(R.id.mtanggalkolam);
 
-        //Kualitas air
-        final TextView Suhu = (TextView)view.findViewById(R.id.nilaisuhu);
-        final TextView Doksigen = (TextView)view.findViewById(R.id.nilaido);
-        final TextView Salinitas = (TextView)view.findViewById(R.id.nilaisalinitas);
-        final TextView Kecerahan = (TextView)view.findViewById(R.id.nilaikecerahan);
-        final TextView pH = (TextView)view.findViewById(R.id.nilaiph);
-        //Pakan
-        final TextView Catatan = (TextView)view.findViewById(R.id.catatanpakan);
-        final TextView Jumlah = (TextView)view.findViewById(R.id.nilaijumlahpakan);
-        final TextView TanggalPakan = (TextView)view.findViewById(R.id.tglpakan);
-        //Panen
+        //Data Air
+        final TextView Tanggalair = (TextView)view.findViewById(R.id.ttanggalair);
+        final TextView Tinggiair = (TextView)view.findViewById(R.id.ttinggiair);
+        final TextView DOpagi = (TextView)view.findViewById(R.id.tdopagi);
+        final TextView DOmalam = (TextView)view.findViewById(R.id.tdomalam);
+        final TextView PHpagi = (TextView)view.findViewById(R.id.tphpagi);
+        final TextView PHmalam = (TextView)view.findViewById(R.id.tphmalam);
+        final TextView Kecerahan = (TextView)view.findViewById(R.id.tkecerahan);
+        final TextView Alkalinitas = (TextView)view.findViewById(R.id.talkalinitas);
+        final TextView Suhu = (TextView)view.findViewById(R.id.tsuhu);
+        final TextView Ca = (TextView)view.findViewById(R.id.tca);
+        final TextView Mg = (TextView)view.findViewById(R.id.Mg);
+        final TextView NO2 = (TextView)view.findViewById(R.id.tno2);
+        final TextView NO3 = (TextView)view.findViewById(R.id.tno3);
+        final TextView NH3 = (TextView)view.findViewById(R.id.tnh3);
+
+        //Data Pakan
+        final TextView Tangalpakan = (TextView)view.findViewById(R.id.ttanggalpakan);
+        final TextView Kodepakan = (TextView)view.findViewById(R.id.tkodepakan);
+        final TextView Jam6 = (TextView)view.findViewById(R.id.tjam6);
+        final TextView Jam10 = (TextView)view.findViewById(R.id.jam10);
+        final TextView Jam14 = (TextView)view.findViewById(R.id.tjam14);
+        final TextView Jam18 = (TextView)view.findViewById(R.id.tjam18);
+        final TextView Jam22 = (TextView)view.findViewById(R.id.tjam22);
+        final TextView Jumlahharian = (TextView)view.findViewById(R.id.tjumlahharian);
+        final TextView Jumlahtotal = (TextView)view.findViewById(R.id.tjumlahtotal);
+        final TextView Keterangan = (TextView)view.findViewById(R.id.tketeranganpakan);
+
+        //Data Sampling
+        final TextView TanggalSampling = (TextView)view.findViewById(R.id.ttanggalsampling);
+        final TextView TanggalTebar = (TextView)view.findViewById(R.id.ttanggaltebar);
+        final TextView Jumlahtebarratarata = (TextView)view.findViewById(R.id.tjumlahtebarratarata);
+        final TextView Mbw = (TextView)view.findViewById(R.id.tmbw);
+        final TextView Pakanperharisampling = (TextView)view.findViewById(R.id.tpakanperharisampling);
+        final TextView Jumlahpakantotal = (TextView)view.findViewById(R.id.tjumlahpakantotal);
+        final TextView FR = (TextView)view.findViewById(R.id.fr);
+        final TextView Populasi = (TextView)view.findViewById(R.id.tpopulasi);
+        final TextView Adgmingguan = (TextView)view.findViewById(R.id.tadgmingguan);
+        final TextView Biomass = (TextView)view.findViewById(R.id.tbiomass);
+        final TextView Sp = (TextView)view.findViewById(R.id.tsp);
+        final TextView Konsumsifeed = (TextView)view.findViewById(R.id.tkonsumsifeed);
+        final TextView Fcr = (TextView)view.findViewById(R.id.tfcr);
+
+        //Data Panen
+        final TextView Tanggalpanen = (TextView)view.findViewById(R.id.tanggalpanen);
         final TextView Berat = (TextView)view.findViewById(R.id.beratpanen);
         final TextView Size = (TextView)view.findViewById(R.id.sizepanen);
-        final TextView TanggalPanen = (TextView)view.findViewById(R.id.tglpanen);
+
         //Perlakuan
+        final TextView Tanggalperlakuan = (TextView)view.findViewById(R.id.tglperlakuan);
         final TextView Perlakuan = (TextView)view.findViewById(R.id.nilaiperlakuan);
-        final TextView TanggalPerlakuan = (TextView)view.findViewById(R.id.tglperlakuan);
-        //Sampling
-        final TextView ABW = (TextView)view.findViewById(R.id.nilaiabw);
-        final TextView ADG = (TextView)view.findViewById(R.id.nilaiadg);
-        final TextView TanggalSampling = (TextView)view.findViewById(R.id.tglsampling);
+
+
         final TextView tambahkolam = (TextView)view.findViewById(R.id.tamabahkolam);
         final Button btnTambah = (Button)view.findViewById(R.id.buttontambah);
 
@@ -159,30 +204,76 @@ public class MyAdapter extends PagerAdapter {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 RequestUpdateAir requestUpdateAir = dataSnapshot.child("Airupdate").getValue(RequestUpdateAir.class);
-                Suhu.setText(requestUpdateAir.getNsuhu());
-                Doksigen.setText(requestUpdateAir.getNdoksigen());
-                Salinitas.setText(requestUpdateAir.getNsalinitas());
-                Kecerahan.setText(requestUpdateAir.getNkecerahan());
-                pH.setText(requestUpdateAir.getNph());
+                Tanggalair.setText(requestUpdateAir.getTanggalairs());
+                Tinggiair.setText(requestUpdateAir.getTinggiairs());
+                DOpagi.setText(requestUpdateAir.getDopagi());
+                DOmalam.setText(requestUpdateAir.getDomalam());
+                PHpagi.setText(requestUpdateAir.getPhpagis());
+                PHmalam.setText(requestUpdateAir.getPhmalams());
+                Kecerahan.setText(requestUpdateAir.getKecerahans());
+                Alkalinitas.setText(requestUpdateAir.getAlkalinitass());
+                Suhu.setText(requestUpdateAir.getSuhus());
+                Ca.setText(requestUpdateAir.getCas());
+                Mg.setText(requestUpdateAir.getMgs());
+                NO2.setText(requestUpdateAir.getNo2s());
+                NO3.setText(requestUpdateAir.getNo3s());
+                NH3.setText(requestUpdateAir.getNh3s());
 
                 RequestUpdatePakan requestUpdatePakan = dataSnapshot.child("Pakanupdate").getValue(RequestUpdatePakan.class);
-                Catatan.setText(requestUpdatePakan.getNcatatan());
-                Jumlah.setText(requestUpdatePakan.getNjumlah());
-                TanggalPakan.setText(requestUpdatePakan.getNtanggappakan());
+                Tangalpakan.setText(requestUpdatePakan.getTanggalpakan());
+                Kodepakan.setText(requestUpdatePakan.getKodepakan());
+                Jam6.setText(requestUpdatePakan.getJam6());
+                Jam10.setText(requestUpdatePakan.getJam10());
+                Jam14.setText(requestUpdatePakan.getJam14());
+                Jam18.setText(requestUpdatePakan.getJam18());
+                Jam22.setText(requestUpdatePakan.getJam22());
+                Jumlahharian.setText(requestUpdatePakan.getJumlahharian());
+                Jumlahtotal.setText(requestUpdatePakan.getJumlahtotal());
+                Keterangan.setText(requestUpdatePakan.getKeteranganpakan());
 
                 RequestUpdatePanen requestUpdatePanen = dataSnapshot.child("Panenupdate").getValue(RequestUpdatePanen.class);
                 Berat.setText(requestUpdatePanen.getNberat());
                 Size.setText(requestUpdatePanen.getNsize());
-                TanggalPanen.setText(requestUpdatePanen.getNtanggalpenen());
+//                Tanggalpanen.setText(requestUpdatePanen.getNtanggalpenen());
 
                 RequestUpdateSampling requestUpdateSampling = dataSnapshot.child("Samplingupdate").getValue(RequestUpdateSampling.class);
-                ABW.setText(requestUpdateSampling.getNabw());
-                ADG.setText(requestUpdateSampling.getNadg());
-                TanggalSampling.setText(requestUpdateSampling.getNtanggalsampling());
+                TanggalSampling.setText(requestUpdateSampling.getTanggalsampling());
+                TanggalTebar.setText(requestUpdateSampling.getTanggaltebarsampling());
+                Jumlahtebarratarata.setText(requestUpdateSampling.getJumlahtebarsamplings());
+                Mbw.setText(requestUpdateSampling.getMbw());
+                Pakanperharisampling.setText(requestUpdateSampling.getPakanseharisampling());
+                Jumlahpakantotal.setText(requestUpdateSampling.getTotalpakansampling());
+//                FR.setText(requestUpdateSampling.getFr());
+                Populasi.setText(requestUpdateSampling.getPopulasi());
+                Adgmingguan.setText(requestUpdateSampling.getAdgmingguan());
+                Biomass.setText(requestUpdateSampling.getBiomass());
+                Sp.setText(requestUpdateSampling.getSp());
+                Konsumsifeed.setText(requestUpdateSampling.getKonsumsifeed());
+                Fcr.setText(requestUpdateSampling.getFcr());
 
                 RequestUpdatePerlakuan requestUpdatePerlakuan = dataSnapshot.child("Perlakuanupdate").getValue(RequestUpdatePerlakuan.class);
-                Perlakuan.setText(requestUpdatePerlakuan.getNperlakuan());
-                TanggalPerlakuan.setText(requestUpdatePerlakuan.getNtanggalperlakuan());
+//                Perlakuan.setText(requestUpdatePerlakuan.getNperlakuan());
+//                Tanggalperlakuan.setText(requestUpdatePerlakuan.getNtanggalperlakuan());
+
+                RequestDataKolam requestDataKolam = dataSnapshot.getValue(RequestDataKolam.class);
+                jumlahudang.setText(requestDataKolam.getJumlah());
+                namapetani.setText(requestDataKolam.getNamapetani());
+                area.setText(requestDataKolam.getArea());
+                tanggalkolam.setText(requestDataKolam.getTanggaltebar());
+                String tanggal = requestDataKolam.getTanggaltebar();
+                String date_n = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+                DateFormat date = new SimpleDateFormat("dd-MM-yyyy");
+                try {
+                    Date tglawal = (Date) date.parse(date_n);
+                    Date tglakhir = (Date) date.parse(tanggal);
+
+                    long bedaHari = Math.abs(tglawal.getTime() - tglakhir.getTime());
+                    hariudang.setText(TimeUnit.MILLISECONDS.toDays(bedaHari) +"");
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+
             }
 
             @Override

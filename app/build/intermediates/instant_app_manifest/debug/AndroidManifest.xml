@@ -25,6 +25,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppThemes" >
+        <activity android:name="com.example.analysisreport.DetailSampling" />
+        <activity android:name="com.example.analysisreport.DetailPakan" />
+        <activity android:name="com.example.analysisreport.DetailAir" />
         <activity android:name="com.example.analysisreport.InputData" />
         <activity android:name="com.example.analysisreport.Main3Activity" />
         <activity android:name="com.example.analysisreport.ListTambak" />
