@@ -24,19 +24,19 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppThemes" >
-        <activity android:name="com.example.analysisreport.UpdateIsiAir" />
-        <activity android:name="com.example.analysisreport.InputDataSampling" />
-        <activity android:name="com.example.analysisreport.InputDataPakan" />
-        <activity android:name="com.example.analysisreport.InputDataAir" />
-        <activity android:name="com.example.analysisreport.DetailSampling" />
-        <activity android:name="com.example.analysisreport.DetailPakan" />
-        <activity android:name="com.example.analysisreport.DetailAir" />
-        <activity android:name="com.example.analysisreport.InputData" />
-        <activity android:name="com.example.analysisreport.Main3Activity" />
-        <activity android:name="com.example.analysisreport.ListTambak" />
-        <activity android:name="com.example.analysisreport.MainActivity" />
-        <activity android:name="com.example.analysisreport.Register" />
-        <activity android:name="com.example.analysisreport.Main2Activity" >
+        <activity android:name="com.example.analysisreport.Activity.UpdateIsiAir" />
+        <activity android:name="com.example.analysisreport.Activity.InputDataSampling" />
+        <activity android:name="com.example.analysisreport.Activity.InputDataPakan" />
+        <activity android:name="com.example.analysisreport.Activity.InputDataAir" />
+        <activity android:name="com.example.analysisreport.Activity.DetailSampling" />
+        <activity android:name="com.example.analysisreport.Activity.DetailPakan" />
+        <activity android:name="com.example.analysisreport.Activity.DetailAir" />
+        <activity android:name="com.example.analysisreport.Activity.InputData" />
+        <activity android:name="com.example.analysisreport.Activity.Main3Activity" />
+        <activity android:name="com.example.analysisreport.Activity.ListTambak" />
+        <activity android:name="com.example.analysisreport.Activity.MainActivity" />
+        <activity android:name="com.example.analysisreport.Activity.Register" />
+        <activity android:name="com.example.analysisreport.Activity.Main2Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

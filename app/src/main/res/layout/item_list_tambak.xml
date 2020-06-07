@@ -7,6 +7,7 @@
     android:layout_marginRight="20dp"
     android:layout_marginTop="20dp"
     android:elevation="10dp"
+    android:id="@+id/card"
     app:cardCornerRadius="10dp">
 
 <RelativeLayout
@@ -28,14 +29,29 @@
         android:id="@+id/pilih"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="6dp"
+        android:layout_toStartOf="@+id/deletelist"
+        android:layout_toLeftOf="@+id/deletelist"
+        android:background="@drawable/backgroundbutton"
+        android:text="Pilih"
+        android:textColor="@color/colorBackgroung"></Button>
+
+    <ImageView
+        android:id="@+id/deletelist"
+        android:layout_width="62dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="40dp"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="40dp"
-        android:textColor="@color/colorBackgroung"
-        android:background="@drawable/backgroundbutton"
-        android:text="Pilih"></Button>
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@drawable/ic_delete_black"></ImageView>
 
 </RelativeLayout>
 

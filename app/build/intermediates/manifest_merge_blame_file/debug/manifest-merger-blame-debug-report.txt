@@ -42,45 +42,45 @@
 25        android:testOnly="true"
 26        android:theme="@style/AppThemes" >
 26-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:17:9-41
-27        <activity android:name="com.example.analysisreport.UpdateIsiAir" />
-27-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:9-59
-27-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:19-47
-28        <activity android:name="com.example.analysisreport.InputDataSampling" />
-28-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:19:9-55
-28-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:19:19-52
-29        <activity android:name="com.example.analysisreport.InputDataPakan" />
-29-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:20:9-52
-29-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:20:19-49
-30        <activity android:name="com.example.analysisreport.InputDataAir" />
-30-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:21:9-50
-30-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:21:19-47
-31        <activity android:name="com.example.analysisreport.DetailSampling" />
-31-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:22:9-52
-31-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:22:19-49
-32        <activity android:name="com.example.analysisreport.DetailPakan" />
-32-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:23:9-49
-32-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:23:19-46
-33        <activity android:name="com.example.analysisreport.DetailAir" />
-33-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:24:9-47
-33-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:24:19-44
-34        <activity android:name="com.example.analysisreport.InputData" />
-34-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:25:9-47
-34-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:25:19-44
-35        <activity android:name="com.example.analysisreport.Main3Activity" />
-35-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:26:9-51
-35-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:26:19-48
-36        <activity android:name="com.example.analysisreport.ListTambak" />
-36-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:27:9-48
-36-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:27:19-45
-37        <activity android:name="com.example.analysisreport.MainActivity" />
-37-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:28:9-50
-37-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:28:19-47
-38        <activity android:name="com.example.analysisreport.Register" />
-38-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:29:9-46
-38-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:29:19-43
-39        <activity android:name="com.example.analysisreport.Main2Activity" >
+27        <activity android:name="com.example.analysisreport.Activity.UpdateIsiAir" />
+27-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:9-68
+27-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:19-56
+28        <activity android:name="com.example.analysisreport.Activity.InputDataSampling" />
+28-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:19:9-64
+28-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:19:19-61
+29        <activity android:name="com.example.analysisreport.Activity.InputDataPakan" />
+29-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:20:9-61
+29-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:20:19-58
+30        <activity android:name="com.example.analysisreport.Activity.InputDataAir" />
+30-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:21:9-59
+30-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:21:19-56
+31        <activity android:name="com.example.analysisreport.Activity.DetailSampling" />
+31-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:22:9-61
+31-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:22:19-58
+32        <activity android:name="com.example.analysisreport.Activity.DetailPakan" />
+32-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:23:9-58
+32-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:23:19-55
+33        <activity android:name="com.example.analysisreport.Activity.DetailAir" />
+33-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:24:9-56
+33-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:24:19-53
+34        <activity android:name="com.example.analysisreport.Activity.InputData" />
+34-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:25:9-56
+34-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:25:19-53
+35        <activity android:name="com.example.analysisreport.Activity.Main3Activity" />
+35-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:26:9-60
+35-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:26:19-57
+36        <activity android:name="com.example.analysisreport.Activity.ListTambak" />
+36-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:27:9-57
+36-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:27:19-54
+37        <activity android:name="com.example.analysisreport.Activity.MainActivity" />
+37-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:28:9-59
+37-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:28:19-56
+38        <activity android:name="com.example.analysisreport.Activity.Register" />
+38-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:29:9-55
+38-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:29:19-52
+39        <activity android:name="com.example.analysisreport.Activity.Main2Activity" >
 39-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:30:9-36:20
-39-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:30:19-48
+39-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:30:19-57
 40            <intent-filter>
 40-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:31:13-35:29
 41                <action android:name="android.intent.action.MAIN" />

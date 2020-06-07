@@ -126,58 +126,58 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ar
 		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme
 		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:17:9-41
-activity#com.example.analysisreport.UpdateIsiAir
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:9-59
+activity#com.example.analysisreport.Activity.UpdateIsiAir
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:9-68
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:19-47
-activity#com.example.analysisreport.InputDataSampling
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:19:9-55
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:19-56
+activity#com.example.analysisreport.Activity.InputDataSampling
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:19:9-64
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:19:19-52
-activity#com.example.analysisreport.InputDataPakan
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:20:9-52
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:19:19-61
+activity#com.example.analysisreport.Activity.InputDataPakan
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:20:9-61
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:20:19-49
-activity#com.example.analysisreport.InputDataAir
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:21:9-50
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:20:19-58
+activity#com.example.analysisreport.Activity.InputDataAir
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:21:9-59
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:21:19-47
-activity#com.example.analysisreport.DetailSampling
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:22:9-52
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:21:19-56
+activity#com.example.analysisreport.Activity.DetailSampling
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:22:9-61
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:22:19-49
-activity#com.example.analysisreport.DetailPakan
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:23:9-49
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:22:19-58
+activity#com.example.analysisreport.Activity.DetailPakan
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:23:9-58
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:23:19-46
-activity#com.example.analysisreport.DetailAir
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:24:9-47
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:23:19-55
+activity#com.example.analysisreport.Activity.DetailAir
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:24:9-56
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:24:19-44
-activity#com.example.analysisreport.InputData
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:25:9-47
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:24:19-53
+activity#com.example.analysisreport.Activity.InputData
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:25:9-56
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:25:19-44
-activity#com.example.analysisreport.Main3Activity
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:26:9-51
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:25:19-53
+activity#com.example.analysisreport.Activity.Main3Activity
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:26:9-60
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:26:19-48
-activity#com.example.analysisreport.ListTambak
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:27:9-48
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:26:19-57
+activity#com.example.analysisreport.Activity.ListTambak
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:27:9-57
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:27:19-45
-activity#com.example.analysisreport.MainActivity
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:28:9-50
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:27:19-54
+activity#com.example.analysisreport.Activity.MainActivity
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:28:9-59
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:28:19-47
-activity#com.example.analysisreport.Register
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:29:9-46
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:28:19-56
+activity#com.example.analysisreport.Activity.Register
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:29:9-55
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:29:19-43
-activity#com.example.analysisreport.Main2Activity
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:29:19-52
+activity#com.example.analysisreport.Activity.Main2Activity
 ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:30:9-36:20
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:30:19-48
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:30:19-57
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:31:13-35:29
 action#android.intent.action.MAIN

@@ -101,6 +101,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="Luas Area"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -137,6 +138,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="Jumlah Tebar Bruto (Ekor)"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -148,6 +150,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
+                        android:inputType="number"
                         android:hint="Jumlah Tebar Sampling Lapangan"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
@@ -265,6 +268,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="Tinggi air"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -277,6 +281,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="do pagi"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -289,6 +294,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="do malam"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -301,6 +307,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="PH Pagi"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -313,6 +320,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="PH Malam"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -337,6 +345,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="Alkalinitas"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -349,6 +358,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="Suhu"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -361,6 +371,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="Ca"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -373,6 +384,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="Mg"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -385,6 +397,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="NO2"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -397,6 +410,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="NO3"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -409,6 +423,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="NH3"
+                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -490,6 +505,7 @@
                         android:layout_below="@id/nkodepakan"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
+                        android:inputType="number"
                         android:textSize="18dp"
                         ></TextView>
                     <EditText
@@ -503,6 +519,7 @@
                         android:layout_toEndOf="@+id/asa"
                         android:layout_toRightOf="@id/asa"
                         android:text="0"
+                        android:inputType="number"
                         android:textColor="@color/colorGray"
                         ></EditText>
                     <TextView
@@ -525,6 +542,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_toEndOf="@+id/asb"
+                        android:inputType="number"
                         android:layout_toRightOf="@id/asb"
                         android:text="0"
                         android:textColor="@color/colorGray"
@@ -548,6 +566,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
+                        android:inputType="number"
                         android:layout_toEndOf="@+id/asc"
                         android:layout_toRightOf="@id/asc"
                         android:text="0"
@@ -572,6 +591,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
+                        android:inputType="number"
                         android:layout_toEndOf="@+id/asd"
                         android:layout_toRightOf="@id/asd"
                         android:text="0"
@@ -599,6 +619,7 @@
                         android:layout_toEndOf="@+id/ase"
                         android:layout_toRightOf="@id/ase"
                         android:text="0"
+                        android:inputType="number"
                         android:textColor="@color/colorGray"
                         ></EditText>
 
@@ -622,6 +643,7 @@
                         android:layout_marginTop="40dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
+                        android:inputType="number"
                         android:hint="Jumlah Harian (Kg)"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"

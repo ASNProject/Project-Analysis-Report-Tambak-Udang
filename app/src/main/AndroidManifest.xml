@@ -15,19 +15,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemes">
-        <activity android:name=".UpdateIsiAir"></activity>
-        <activity android:name=".InputDataSampling" />
-        <activity android:name=".InputDataPakan" />
-        <activity android:name=".InputDataAir" />
-        <activity android:name=".DetailSampling" />
-        <activity android:name=".DetailPakan" />
-        <activity android:name=".DetailAir" />
-        <activity android:name=".InputData" />
-        <activity android:name=".Main3Activity" />
-        <activity android:name=".ListTambak" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Register" />
-        <activity android:name=".Main2Activity">
+        <activity android:name=".Activity.UpdateIsiAir"></activity>
+        <activity android:name=".Activity.InputDataSampling" />
+        <activity android:name=".Activity.InputDataPakan" />
+        <activity android:name=".Activity.InputDataAir" />
+        <activity android:name=".Activity.DetailSampling" />
+        <activity android:name=".Activity.DetailPakan" />
+        <activity android:name=".Activity.DetailAir" />
+        <activity android:name=".Activity.InputData" />
+        <activity android:name=".Activity.Main3Activity" />
+        <activity android:name=".Activity.ListTambak" />
+        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.Register" />
+        <activity android:name=".Activity.Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

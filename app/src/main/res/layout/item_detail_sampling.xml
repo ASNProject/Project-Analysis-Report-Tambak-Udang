@@ -30,14 +30,27 @@
             android:id="@+id/editsampling"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toStartOf="@+id/deletesampling"
+            android:layout_toLeftOf="@+id/deletesampling"
+            android:drawableLeft="@drawable/ic_edit_black_24dp"
+            android:text="Edit"
+            android:textColor="@color/colorDarkBlue"></TextView>
+
+        <TextView
+            android:id="@+id/deletesampling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="Edit"
-            android:drawableLeft="@drawable/ic_edit_black_24dp"
+            android:drawableLeft="@drawable/ic_delete_black_24dp"
+            android:text="Delete"
             android:textColor="@color/colorDarkBlue"></TextView>
         <HorizontalScrollView
             android:id="@+id/horizontalview"
