@@ -119,7 +119,7 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
                                 <TextView
-                                    android:layout_width="40dp"
+                                    android:layout_width="45dp"
                                     android:layout_height="match_parent"
                                     android:text="Petani"></TextView>
                                 <TextView
@@ -144,7 +144,7 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
                                 <TextView
-                                    android:layout_width="40dp"
+                                    android:layout_width="45dp"
                                     android:layout_height="match_parent"
                                     android:text="Area"></TextView>
                                 <TextView
@@ -169,7 +169,7 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
                                 <TextView
-                                    android:layout_width="40dp"
+                                    android:layout_width="45dp"
                                     android:layout_height="match_parent"
                                     android:text="Tebar"></TextView>
                                 <TextView

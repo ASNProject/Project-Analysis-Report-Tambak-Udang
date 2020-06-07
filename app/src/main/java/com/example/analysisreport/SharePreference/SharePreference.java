@@ -26,6 +26,21 @@ public class SharePreference {
         return pref.getString("datas", null);
     }
 
+    public void setDetailkolam (String detailair){
+        editor.putString("detailair", detailair);
+        editor.commit();
+    }
+    public String getDetailkolam (){
+        return pref.getString("detailair", null);
+    }
+    public void setDetailpakan (String detailpakan){
+        editor.putString("detailpakan", detailpakan);
+        editor.commit();
+    }
+    public String getDetailpakan (){
+        return pref.getString("detailpakan", null);
+    }
+
     public void setEmail (String email){
         editor.putString("email", email);
         editor.commit();

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-35:12
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-39:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\6c5a1a33c151bf1b1b969a4997bc8337\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\eea79921d0082cd3162f25540a57b311\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.firebaseui:firebase-ui-database:4.0.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\c69ba923268112d401075c8bd2f1072b\jetified-firebase-ui-database-4.0.0\AndroidManifest.xml:2:1-13:12
@@ -12,6 +12,7 @@ MERGED from [com.google.firebase:firebase-auth:19.3.1] C:\Users\arief\.gradle\ca
 MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\40bbc984b9c1517e02de0b86fae8070b\recyclerview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\2ac5bf76e1165869d2bd5a42806625d1\jetified-MPAndroidChart-v3.1.0\AndroidManifest.xml:2:1-20:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\923cd97b32caebf2e6b5629d421a10e9\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.orhanobut:dialogplus:1.11] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\a8de00cf40fbc526edd839c48c2ca28d\jetified-dialogplus-1.11\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\68dd590321da53844fc859861b272820\jetified-firebase-auth-interop-19.0.0\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:15:1-39:12
 MERGED from [com.google.firebase:firebase-database-collection:17.0.1] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\fa3d7eac296077651560ac3933490b85\jetified-firebase-database-collection-17.0.1\AndroidManifest.xml:2:1-9:12
@@ -50,20 +51,20 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\arief\.gradle\caches\transform
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\744e890fd9c2229fd55f0f204e895827\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\72cbc39fa25a246d7e646058ccbab8e7\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\a19056003d7a5f2bc9cc665fd561b346\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-39:12
 	package
 		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml
 		INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-35:12
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-39:12
 		INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-35:12
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:1-39:12
 		INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:2:11-69
@@ -90,7 +91,7 @@ ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:9:5-86
 	android:name
 		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:9:29-83
 application
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:11:5-33:19
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:11:5-37:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\eea79921d0082cd3162f25540a57b311\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\eea79921d0082cd3162f25540a57b311\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:28:5-36:19
@@ -125,52 +126,68 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ar
 		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme
 		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:17:9-41
+activity#com.example.analysisreport.UpdateIsiAir
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:9-59
+	android:name
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:19-47
+activity#com.example.analysisreport.InputDataSampling
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:19:9-55
+	android:name
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:19:19-52
+activity#com.example.analysisreport.InputDataPakan
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:20:9-52
+	android:name
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:20:19-49
+activity#com.example.analysisreport.InputDataAir
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:21:9-50
+	android:name
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:21:19-47
 activity#com.example.analysisreport.DetailSampling
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:9-61
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:22:9-52
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:19-49
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:22:19-49
 activity#com.example.analysisreport.DetailPakan
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:19:9-49
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:23:9-49
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:19:19-46
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:23:19-46
 activity#com.example.analysisreport.DetailAir
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:20:9-47
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:24:9-47
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:20:19-44
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:24:19-44
 activity#com.example.analysisreport.InputData
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:21:9-47
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:25:9-47
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:21:19-44
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:25:19-44
 activity#com.example.analysisreport.Main3Activity
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:22:9-51
-	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:22:19-48
-activity#com.example.analysisreport.ListTambak
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:23:9-48
-	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:23:19-45
-activity#com.example.analysisreport.MainActivity
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:24:9-50
-	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:24:19-47
-activity#com.example.analysisreport.Register
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:25:9-46
-	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:25:19-43
-activity#com.example.analysisreport.Main2Activity
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:26:9-32:20
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:26:9-51
 	android:name
 		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:26:19-48
+activity#com.example.analysisreport.ListTambak
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:27:9-48
+	android:name
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:27:19-45
+activity#com.example.analysisreport.MainActivity
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:28:9-50
+	android:name
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:28:19-47
+activity#com.example.analysisreport.Register
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:29:9-46
+	android:name
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:29:19-43
+activity#com.example.analysisreport.Main2Activity
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:30:9-36:20
+	android:name
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:30:19-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:27:13-31:29
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:31:13-35:29
 action#android.intent.action.MAIN
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:28:17-69
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:32:17-69
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:28:25-66
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:32:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:30:17-77
+ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:30:27-74
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:34:27-74
 uses-sdk
 INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml
@@ -191,6 +208,8 @@ MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\arief\.gradle\ca
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\2ac5bf76e1165869d2bd5a42806625d1\jetified-MPAndroidChart-v3.1.0\AndroidManifest.xml:16:5-18:41
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\923cd97b32caebf2e6b5629d421a10e9\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\923cd97b32caebf2e6b5629d421a10e9\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.orhanobut:dialogplus:1.11] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\a8de00cf40fbc526edd839c48c2ca28d\jetified-dialogplus-1.11\AndroidManifest.xml:6:5-8:41
+MERGED from [com.orhanobut:dialogplus:1.11] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\a8de00cf40fbc526edd839c48c2ca28d\jetified-dialogplus-1.11\AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\68dd590321da53844fc859861b272820\jetified-firebase-auth-interop-19.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\68dd590321da53844fc859861b272820\jetified-firebase-auth-interop-19.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\arief\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:20:5-22:41

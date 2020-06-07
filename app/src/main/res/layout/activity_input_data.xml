@@ -78,7 +78,7 @@
                         android:hint="Nama Kolam"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
-                    ></EditText>
+                        ></EditText>
                     <EditText
                         android:id="@+id/namapetani"
                         android:layout_width="match_parent"

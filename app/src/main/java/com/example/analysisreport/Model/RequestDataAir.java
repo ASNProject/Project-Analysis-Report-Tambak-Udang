@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class RequestDataAir implements Serializable {
     private String tanggalairs, tinggiairs, dopagi, domalam, phpagis, phmalams, kecerahans, alkalinitass,
                     suhus, cas, mgs, no2s, no3s, nh3s;
+    private String key;
 
     public RequestDataAir() {
     }
@@ -156,5 +157,13 @@ public class RequestDataAir implements Serializable {
                 ", no3s='" + no3s + '\'' +
                 ", nh3s='" + nh3s + '\'' +
                 '}';
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

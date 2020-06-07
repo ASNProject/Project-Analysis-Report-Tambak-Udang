@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -19,7 +20,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.analysisreport.DetailAir;
+import com.example.analysisreport.DetailPakan;
+import com.example.analysisreport.DetailSampling;
 import com.example.analysisreport.InputData;
+import com.example.analysisreport.InputDataAir;
+import com.example.analysisreport.InputDataPakan;
+import com.example.analysisreport.InputDataSampling;
 import com.example.analysisreport.ListTambak;
 import com.example.analysisreport.MainActivity;
 import com.example.analysisreport.Model.RequestDataAir;
@@ -173,6 +180,13 @@ public class MyAdapter extends PagerAdapter {
 
         final TextView tambahkolam = (TextView)view.findViewById(R.id.tamabahkolam);
         final Button btnTambah = (Button)view.findViewById(R.id.buttontambah);
+        final Button btnDetailAir = (Button)view.findViewById(R.id.tdetailair);
+        final Button btnDetaiPakan = (Button)view.findViewById(R.id.tdetailpakan);
+        final Button btnDetailSampling = (Button)view.findViewById(R.id.tdetailsampling);
+        final Button btnInputDataAir = (Button)view.findViewById(R.id.tinputdataair);
+        final Button btnInputDataPakan = (Button)view.findViewById(R.id.tinputdatapakan);
+        final Button btnInputDataSampling = (Button)view.findViewById(R.id.tinputdatasampling);
+
 
         tambahkolam.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,6 +203,78 @@ public class MyAdapter extends PagerAdapter {
                 Intent i = new Intent(context.getApplicationContext(), ListTambak.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
+            }
+        });
+
+        btnDetailAir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kolamnama = namakolam.getText().toString();
+                sessions = new SharePreference(context.getApplicationContext());
+                sessions.setDetailkolam(kolamnama);
+                Intent d = new Intent(context.getApplicationContext(), DetailAir.class);
+                d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(d);
+            }
+        });
+
+        btnDetaiPakan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kolamnama = namakolam.getText().toString();
+                sessions = new SharePreference(context.getApplicationContext());
+                sessions.setDetailkolam(kolamnama);
+                Intent d = new Intent(context.getApplicationContext(), DetailPakan.class);
+                d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(d);
+            }
+        });
+
+        btnDetailSampling.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kolamnama = namakolam.getText().toString();
+                sessions = new SharePreference(context.getApplicationContext());
+                sessions.setDetailkolam(kolamnama);
+                Intent d = new Intent(context.getApplicationContext(), DetailSampling.class);
+                d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(d);
+            }
+        });
+
+        btnInputDataAir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kolamnama = namakolam.getText().toString();
+                sessions = new SharePreference(context.getApplicationContext());
+                sessions.setDetailkolam(kolamnama);
+                Intent d = new Intent(context.getApplicationContext(), InputDataAir.class);
+                d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(d);
+            }
+        });
+
+        btnInputDataPakan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kolamnama = namakolam.getText().toString();
+                sessions = new SharePreference(context.getApplicationContext());
+                sessions.setDetailkolam(kolamnama);
+                Intent d = new Intent(context.getApplicationContext(), InputDataPakan.class);
+                d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(d);
+            }
+        });
+
+        btnInputDataSampling.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kolamnama = namakolam.getText().toString();
+                sessions = new SharePreference(context.getApplicationContext());
+                sessions.setDetailkolam(kolamnama);
+                Intent d = new Intent(context.getApplicationContext(), InputDataSampling.class);
+                d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(d);
             }
         });
 
