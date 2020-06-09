@@ -179,6 +179,16 @@
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/pakanfeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/kepadatanperm2"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="0"
+                        ></TextView>
                     <EditText
                         android:id="@+id/keterangankolam"
                         android:layout_width="match_parent"
@@ -268,7 +278,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="Tinggi air"
-                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -281,7 +290,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="do pagi"
-                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -294,7 +302,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="do malam"
-                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -307,7 +314,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="PH Pagi"
-                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -320,7 +326,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="PH Malam"
-                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -345,7 +350,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="Alkalinitas"
-                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -358,7 +362,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="Suhu"
-                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -371,7 +374,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="Ca"
-                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -384,7 +386,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="Mg"
-                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -397,7 +398,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="NO2"
-                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -410,7 +410,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="NO3"
-                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -423,7 +422,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:hint="NH3"
-                        android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -505,7 +503,6 @@
                         android:layout_below="@id/nkodepakan"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
-                        android:inputType="number"
                         android:textSize="18dp"
                         ></TextView>
                     <EditText
@@ -519,7 +516,6 @@
                         android:layout_toEndOf="@+id/asa"
                         android:layout_toRightOf="@id/asa"
                         android:text="0"
-                        android:inputType="number"
                         android:textColor="@color/colorGray"
                         ></EditText>
                     <TextView
@@ -542,7 +538,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_toEndOf="@+id/asb"
-                        android:inputType="number"
                         android:layout_toRightOf="@id/asb"
                         android:text="0"
                         android:textColor="@color/colorGray"
@@ -566,7 +561,6 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:inputType="number"
                         android:layout_toEndOf="@+id/asc"
                         android:layout_toRightOf="@id/asc"
                         android:text="0"
@@ -619,7 +613,6 @@
                         android:layout_toEndOf="@+id/ase"
                         android:layout_toRightOf="@id/ase"
                         android:text="0"
-                        android:inputType="number"
                         android:textColor="@color/colorGray"
                         ></EditText>
 
@@ -765,6 +758,30 @@
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/colorDarkBlue"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/aqw"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal Tebar"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/datasamplings"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/aqr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/datasamplings"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/aqw"
+                        android:layout_toRightOf="@id/aqw"
+                        android:textSize="18dp"
+                        ></TextView>
                     <EditText
                         android:id="@+id/ntanggaltebarsampling"
                         android:layout_width="match_parent"
@@ -773,10 +790,36 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Tanggal Tebar : Format dd-mm-yyyy"
+                        android:hint="Format dd-mm-yyyy"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
+                        android:layout_toEndOf="@id/aqr"
+                        android:layout_toRightOf="@id/aqr"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/aqe"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal Sampling"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/ntanggaltebarsampling"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/aqt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/ntanggaltebarsampling"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/aqe"
+                        android:layout_toRightOf="@id/aqe"
+                        android:textSize="18dp"
+                        ></TextView>
                     <EditText
                         android:id="@+id/ntangalsampling"
                         android:layout_width="match_parent"
@@ -785,10 +828,36 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Tanggal Sampling : Format dd-mm-yyyy"
+                        android:hint="Format dd-mm-yyyy"
+                        android:layout_toEndOf="@id/aqt"
+                        android:layout_toRightOf="@id/aqt"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/aqy"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Jumlah Tebar (Kg)"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/ntangalsampling"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/aqu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/ntangalsampling"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        android:layout_toEndOf="@id/aqy"
+                        android:layout_toRightOf="@id/aqy"
+                        ></TextView>
                     <EditText
                         android:id="@+id/njumlahtebarrataratasampling"
                         android:layout_width="match_parent"
@@ -797,10 +866,35 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Jumlah Tebar"
-                        android:textColorHint="@color/colorGray"
+                       android:text="0"
                         android:textColor="@color/colorGray"
+                        android:layout_toEndOf="@id/aqu"
+                        android:layout_toRightOf="@id/aqu"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/aqi"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="MBW (gr)"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/njumlahtebarrataratasampling"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/aqo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/njumlahtebarrataratasampling"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/aqi"
+                        android:layout_toRightOf="@id/aqi"
+                        android:textSize="18dp"
+                        ></TextView>
                     <EditText
                         android:id="@+id/nmbwsampling"
                         android:layout_width="match_parent"
@@ -809,10 +903,35 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="MBW Sampling (gr)"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/aqo"
+                        android:layout_toRightOf="@id/aqo"
+                        android:text="0"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/aqp"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Pakan Perhari"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/nmbwsampling"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/aqa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/nmbwsampling"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/aqp"
+                        android:layout_toRightOf="@id/aqp"
+                        android:textSize="18dp"
+                        ></TextView>
                     <EditText
                         android:id="@+id/npakanperharisampling"
                         android:layout_width="match_parent"
@@ -821,10 +940,35 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Pakan Perhari"
-                        android:textColorHint="@color/colorGray"
+                        android:text="0"
                         android:textColor="@color/colorGray"
+                        android:layout_toEndOf="@id/aqa"
+                        android:layout_toRightOf="@id/aqa"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/aqs"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Total Pakan"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/npakanperharisampling"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/aqd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/npakanperharisampling"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/aqs"
+                        android:layout_toRightOf="@id/aqs"
+                        android:textSize="18dp"
+                        ></TextView>
                     <EditText
                         android:id="@+id/ntotalpakansampling"
                         android:layout_width="match_parent"
@@ -833,10 +977,35 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Pakan Total"
-                        android:textColorHint="@color/colorGray"
+                        android:text="0"
                         android:textColor="@color/colorGray"
+                        android:layout_toEndOf="@id/aqd"
+                        android:layout_toRightOf="@id/aqd"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/aqf"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="FR %"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/ntotalpakansampling"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/aqg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/ntotalpakansampling"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/aqf"
+                        android:layout_toRightOf="@id/aqf"
+                        android:textSize="18dp"
+                        ></TextView>
                     <EditText
                         android:id="@+id/nfr"
                         android:layout_width="match_parent"
@@ -845,9 +1014,10 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="FR (%)"
-                        android:textColorHint="@color/colorGray"
+                        android:text="0"
                         android:textColor="@color/colorGray"
+                        android:layout_toEndOf="@id/aqg"
+                        android:layout_toRightOf="@id/aqg"
                         ></EditText>
                     <TextView
                         android:id="@+id/npopulasi"

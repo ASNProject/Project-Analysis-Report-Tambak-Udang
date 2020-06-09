@@ -1,6 +1,8 @@
 package com.example.analysisreport.Adapter.DataDetailPakan;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.analysisreport.Activity.MainActivity;
 import com.example.analysisreport.Model.RequestDataPakan;
 import com.example.analysisreport.R;
 import com.example.analysisreport.SharePreference.SharePreference;
@@ -30,13 +35,17 @@ public class PostAdapterPakan extends FirebaseRecyclerAdapter<RequestDataPakan, 
 
     private Context context;
     SharePreference sessions;
+    Toolbar toolbar;
+    AlertDialog.Builder dialog;
+    LayoutInflater inflater;
+    TextView a1,a2,a3,a4,a5;
     public PostAdapterPakan(@NonNull FirebaseRecyclerOptions<RequestDataPakan> options, Context context) {
         super(options);
         this.context = context;
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull PostViewHolder postViewHolder, final int i, @NonNull final RequestDataPakan requestDataPakan) {
+    protected void onBindViewHolder(@NonNull final PostViewHolder postViewHolder, final int i, @NonNull final RequestDataPakan requestDataPakan) {
         postViewHolder.stanggalpakan.setText(requestDataPakan.getTanggalpakan());
         postViewHolder.skodepakan.setText(requestDataPakan.getKodepakan());
         postViewHolder.sjam6.setText(requestDataPakan.getJam6());
@@ -66,7 +75,7 @@ public class PostAdapterPakan extends FirebaseRecyclerAdapter<RequestDataPakan, 
                 final EditText sisicatatan = postViewBolder.findViewById(R.id.uisicatatan);
                 final TextView stotalharianpakan = postViewBolder.findViewById(R.id.ujumlahharian);
                 final TextView stotalpakansemua = postViewBolder.findViewById(R.id.utotal);
-                Button Simpan = postViewBolder.findViewById(R.id.ubutoonsimpanpakan);
+                final Button Simpan = postViewBolder.findViewById(R.id.ubutoonsimpanpakan);
                 stanggalpakan.setText(requestDataPakan.getTanggalpakan());
                 skodepakan.setText(requestDataPakan.getKodepakan());
                 sjam6.setText(requestDataPakan.getJam6());
@@ -74,20 +83,15 @@ public class PostAdapterPakan extends FirebaseRecyclerAdapter<RequestDataPakan, 
                 sjam14.setText(requestDataPakan.getJam14());
                 sjam18.setText(requestDataPakan.getJam18());
                 sjam22.setText(requestDataPakan.getJam22());
-                final int jam6 = Integer.parseInt(sjam6.getText().toString());
-                final int jam10 = Integer.parseInt(sjam10.getText().toString());
-                final int jam14 = Integer.parseInt(sjam14.getText().toString());
-                final int jam18 = Integer.parseInt(sjam18.getText().toString());
-                final int jam22 = Integer.parseInt(sjam22.getText().toString());
-
-                //stotalharianpakan.setText(requestDataPakan.getJumlahharian());
-                stotalpakansemua.setText(requestDataPakan.getJumlahtotal());
+                stotalharianpakan.setText(requestDataPakan.getJumlahharian());
                 sisicatatan.setText(requestDataPakan.getKeteranganpakan());
                 Simpan.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        int jumlahharian = jam6+jam10+jam14+jam18+jam22;
-                        stotalharianpakan.setText(String.valueOf(jumlahharian));
+                        LayoutInflater inflater;
+                        sessions = new SharePreference(context.getApplicationContext());
+                       // double hitung = jam6+jam10+jam14+jam18+jam22;
+                       // stotalharianpakan.setText(String.valueOf(hitung));
                         Map<String, Object> map = new HashMap<>();
                         map.put("tanggalpakan", stanggalpakan.getText().toString());
                         map.put("kodepakan", skodepakan.getText().toString());
@@ -99,16 +103,15 @@ public class PostAdapterPakan extends FirebaseRecyclerAdapter<RequestDataPakan, 
                         map.put("keteranganpakan", sisicatatan.getText().toString());
                         map.put("jumlahharian", stotalharianpakan.getText().toString());
                         map.put("jumlahtotal", stotalpakansemua.getText().toString());
-                        sessions = new SharePreference(context.getApplicationContext());
-                        String nama = sessions.getDatas();
-                        String kolam = sessions.getDetailkolam();
+                        final String nama = sessions.getDatas();
+                        final String kolam = sessions.getDetailkolam();
                         FirebaseDatabase.getInstance().getReference().child(nama)
                                 .child(kolam).child("Pakan").child(getRef(i).getKey())
                                 .updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
-                                     dialogPlus.dismiss();
+                                        dialogPlus.dismiss();
                                     }
                                 });
                         FirebaseDatabase.getInstance().getReference()
@@ -120,6 +123,61 @@ public class PostAdapterPakan extends FirebaseRecyclerAdapter<RequestDataPakan, 
 
                                     }
                                 });
+                        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+                        alertDialogBuilder.setTitle("Notice!");
+                        alertDialogBuilder.setMessage("Yakin untuk merubah data?")
+                                .setCancelable(false)
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        sjam6.getText().toString();
+                                        sjam10.getText().toString();
+                                        sjam14.getText().toString();
+                                        sjam18.getText().toString();
+                                        sjam22.getText().toString();
+                                        stotalharianpakan.getText().toString();
+                                         final double jam6 = Double.parseDouble(sjam6.getText().toString());
+                                        final double jam10 = Double.parseDouble(sjam10.getText().toString());
+                                        final double jam14 = Double.parseDouble(sjam14.getText().toString());
+                                        final double jam18 = Double.parseDouble(sjam18.getText().toString());
+                                        final double jam22 = Double.parseDouble(sjam22.getText().toString());
+                                        final double totalharian = Double.parseDouble(stotalharianpakan.getText().toString());
+                                        double hitung = jam6+jam10+jam14+jam18+jam22;
+                                        String value = String.valueOf(hitung);
+                                        String valuesebelumnya = sessions.getPakanfeed();
+                                        double svalue = Double.parseDouble(valuesebelumnya);
+                                        double hasiltotal = (hitung-totalharian)+svalue;
+                                        String valuetotal = String.valueOf(hasiltotal);
+                                        Map<String, Object> map = new HashMap<>();
+                                        map.put("jumlahharian", value);
+                                        map.put("jumlahtotal", valuetotal);
+                                        FirebaseDatabase.getInstance().getReference().child(nama)
+                                                .child(kolam).child("Pakan").child(getRef(i).getKey())
+                                                .updateChildren(map)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                        dialogPlus.dismiss();
+                                                    }
+                                                });
+                                        FirebaseDatabase.getInstance().getReference()
+                                                .child(nama).child(kolam).child("Pakanupdate")
+                                                .updateChildren(map)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+
+                                                    }
+                                                });
+                                        Intent i = new Intent(context.getApplicationContext(), MainActivity.class);
+                                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        context.startActivity(i);
+
+                                    }
+                                });
+                        AlertDialog alertDialog=alertDialogBuilder.create();
+                        alertDialog.show();
+                        //dialog.cancel();
                     }
                 });
 
@@ -165,6 +223,10 @@ public class PostAdapterPakan extends FirebaseRecyclerAdapter<RequestDataPakan, 
             stotalpakansemua = itemView.findViewById(R.id.totalpakansemua);
             sketeranganpakan = itemView.findViewById(R.id.keteranganpakan);
             sbuttongambar = itemView.findViewById(R.id.buttongambar);
+
         }
+    }
+    private void showDialog(){
+
     }
 }

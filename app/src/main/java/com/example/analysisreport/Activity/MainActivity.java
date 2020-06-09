@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
                 viewPager = (ViewPager)findViewById(R.id.view_pager);
                 viewPager.setPageTransformer(true, new DepthPageTransformer());
 
+
         }
     }
 
@@ -118,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
                 for(DataSnapshot tambakSnapshot:dataSnapshot.getChildren())
                     tambakList.add((tambakSnapshot.getValue(Tambak.class)));
                 iFirebaseLoad.onFirebaseLoadSuccess(tambakList);
+
             }
 
             @Override
@@ -136,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoad {
 
     @Override
     public void onFirebaseLoadFailed(String message) {
-        Toast.makeText(this, ""+message,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Data Kosong"+message,Toast.LENGTH_SHORT).show();
     }
     private void tambah(){
     }

@@ -146,7 +146,7 @@ public class MyAdapter extends PagerAdapter {
         final TextView Mbw = (TextView)view.findViewById(R.id.tmbw);
         final TextView Pakanperharisampling = (TextView)view.findViewById(R.id.tpakanperharisampling);
         final TextView Jumlahpakantotal = (TextView)view.findViewById(R.id.tjumlahpakantotal);
-        final TextView FR = (TextView)view.findViewById(R.id.fr);
+        final TextView FR = (TextView)view.findViewById(R.id.tfr);
         final TextView Populasi = (TextView)view.findViewById(R.id.tpopulasi);
         final TextView Adgmingguan = (TextView)view.findViewById(R.id.tadgmingguan);
         final TextView Biomass = (TextView)view.findViewById(R.id.tbiomass);
@@ -210,6 +210,8 @@ public class MyAdapter extends PagerAdapter {
                 String kolamnama = namakolam.getText().toString();
                 sessions = new SharePreference(context.getApplicationContext());
                 sessions.setDetailkolam(kolamnama);
+                String pakanfeeds = Jumlahtotal.getText().toString();
+                sessions.setPakanfeed(pakanfeeds);
                 Intent d = new Intent(context.getApplicationContext(), DetailPakan.class);
                 d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(d);
@@ -244,8 +246,10 @@ public class MyAdapter extends PagerAdapter {
             @Override
             public void onClick(View v) {
                 String kolamnama = namakolam.getText().toString();
+                String pakanfeeds = Jumlahtotal.getText().toString();
                 sessions = new SharePreference(context.getApplicationContext());
                 sessions.setDetailkolam(kolamnama);
+                sessions.setPakanfeed(pakanfeeds);
                 Intent d = new Intent(context.getApplicationContext(), InputDataPakan.class);
                 d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(d);
@@ -315,7 +319,7 @@ public class MyAdapter extends PagerAdapter {
                 Mbw.setText(requestUpdateSampling.getMbw());
                 Pakanperharisampling.setText(requestUpdateSampling.getPakanseharisampling());
                 Jumlahpakantotal.setText(requestUpdateSampling.getTotalpakansampling());
-//                FR.setText(requestUpdateSampling.getFr());
+                FR.setText(requestUpdateSampling.getFr());
                 Populasi.setText(requestUpdateSampling.getPopulasi());
                 Adgmingguan.setText(requestUpdateSampling.getAdgmingguan());
                 Biomass.setText(requestUpdateSampling.getBiomass());

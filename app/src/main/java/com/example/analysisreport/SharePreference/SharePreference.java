@@ -41,6 +41,14 @@ public class SharePreference {
         return pref.getString("detailpakan", null);
     }
 
+    public void setPakanfeed(String pakanfeed){
+        editor.putString("pakanfeed", pakanfeed);
+        editor.commit();
+    }
+    public String getPakanfeed() {
+        return pref.getString("pakanfeed", null);
+    }
+
     public void setEmail (String email){
         editor.putString("email", email);
         editor.commit();
@@ -57,4 +65,11 @@ public class SharePreference {
         return pref.getString("password", null);
     }
 
+    public void setPakanharian (String pakanharian){
+        editor.putString("pakanharian", pakanharian);
+        editor.commit();
+    }
+    public String getPakanharian (){
+        return pref.getString("pakanharian", null);
+    }
 }

@@ -55,11 +55,16 @@ public class InputDataSampling extends AppCompatActivity {
                 String pakanseharisampling = ppakanseharisampling.getText().toString();
                 String totalpakansampling = ptotalpakansampling.getText().toString();
                 String fr = pfr.getText().toString();
-                String populasi = ppopulasi.getText().toString();
                 String adgmingguan = padgmingguan.getText().toString();
+                hitungbiomass(Double.parseDouble(pakanseharisampling), Double.parseDouble(fr));
                 String biomass = pbiomass.getText().toString();
+                hitungpopulasi(Double.parseDouble(mbw), Double.parseDouble(biomass));
+                String populasi = ppopulasi.getText().toString();
+                hitungsp(Double.parseDouble(populasi), Double.parseDouble(jumlahtebarsamplings));
                 String sp = psp.getText().toString();
+                hitungkonsumsifeed(Double.parseDouble(mbw), Double.parseDouble(fr), Double.parseDouble(jumlahtebarsamplings));
                 String konsumsifeed = pkonsumsifeed.getText().toString();
+                hitungfcr(Double.parseDouble(totalpakansampling), Double.parseDouble(biomass));
                 String fcr = pfcr.getText().toString();
 
                 datasampling(new RequestDataSampling(tanggaltebarsampling.toLowerCase(), tanggalsampling.toLowerCase(), jumlahtebarsamplings.toLowerCase(),
@@ -76,7 +81,27 @@ public class InputDataSampling extends AppCompatActivity {
         });
 
     }
-    //Hitung
+    private void hitungbiomass(double pakanperharisampling, double fr){
+        double jumlahbiomas= pakanperharisampling/(fr/100);
+        pbiomass.setText(String.format("%.3f", jumlahbiomas));
+    }
+    private void hitungpopulasi(double mbw, double biomass){
+        double hasilpopulasi = (1000/mbw)*biomass;
+        ppopulasi.setText(String.format("%.3f", hasilpopulasi));
+    }
+    private void hitungsp(double hasilpopulasi, double jumlahtebarsampling){
+        double jumlahsp = (hasilpopulasi/jumlahtebarsampling)*100;
+        psp.setText(String.format("%.3f", jumlahsp));
+    }
+    private void hitungkonsumsifeed(double mbw, double fr, double jumlahtebarsamplings){
+        double jumlahkonsumsifeed = (mbw * fr * jumlahtebarsamplings)/100000;
+        pkonsumsifeed.setText(String.format("%.3f", jumlahkonsumsifeed));
+    }
+    private void hitungfcr(double totalpakansampling, double biomass){
+        double hitungfcr = totalpakansampling/biomass;
+        pfcr.setText(String.format("%.3f", hitungfcr));
+    }
+
 
 
 

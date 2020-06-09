@@ -1,6 +1,9 @@
 package com.example.analysisreport.Adapter.DataDetailSampling;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +16,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.analysisreport.Activity.MainActivity;
 import com.example.analysisreport.Model.RequestDataSampling;
 import com.example.analysisreport.R;
 import com.example.analysisreport.SharePreference.SharePreference;
@@ -89,6 +93,7 @@ public class PostAdapterSampling extends FirebaseRecyclerAdapter<RequestDataSamp
                 Simpan.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        sessions = new SharePreference(context.getApplicationContext());
                         Map<String, Object> map = new HashMap<>();
                         map.put("tanggalsampling", stanggalsampling.getText().toString());
                         map.put("tanggaltebarsampling", stanggalterbarsampling.getText().toString());
@@ -103,8 +108,8 @@ public class PostAdapterSampling extends FirebaseRecyclerAdapter<RequestDataSamp
                         map.put("konsumsifeed", skonsumsifeed.getText().toString());
                         map.put("fcr", sfcr.getText().toString());
                         sessions = new SharePreference(context.getApplicationContext());
-                        String nama = sessions.getDatas();
-                        String kolam = sessions.getDetailkolam();
+                        final String nama = sessions.getDatas();
+                        final String kolam = sessions.getDetailkolam();
                         FirebaseDatabase.getInstance().getReference().child(nama)
                                 .child(kolam).child("Sampling").child(getRef(i).getKey())
                                 .updateChildren(map)
@@ -123,6 +128,62 @@ public class PostAdapterSampling extends FirebaseRecyclerAdapter<RequestDataSamp
 
                                     }
                                 });
+                        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+                        alertDialogBuilder.setTitle("Notice!");
+                        alertDialogBuilder.setMessage("Yakin untuk merubah data?")
+                                .setCancelable(false)
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(final DialogInterface dialog, int which) {
+                                        spakanperhari.getText().toString();
+                                        sfr.getText().toString();
+                                        double pakanperhari = Double.parseDouble(spakanperhari.getText().toString());
+                                        double fr = Double.parseDouble(sfr.getText().toString());
+                                        double mbw = Double.parseDouble(smbw.getText().toString());
+                                        double jmltebar = Double.parseDouble(sjumlahtebarratarata.getText().toString());
+                                        double totalpakan = Double.parseDouble(stotalpakan.getText().toString());
+                                        double biomass = pakanperhari/(fr/100);
+                                        double hasilpopulasi = (1000/mbw)*biomass;
+                                        double hasilsp = (hasilpopulasi/jmltebar)*100;
+                                        double hasilfeed = (mbw*fr*jmltebar)/100000;
+                                        double hasilfcr = totalpakan/biomass;
+                                        String hasilbiomass = String.format("%.3f", biomass);
+                                        String populasis= String.format("%.3f", hasilpopulasi);
+                                        String sp = String.format("%.3f", hasilsp);
+                                        String konsumsifeed = String.format("%.3f", hasilfeed);
+                                        String fcr = String.format("%.3f", hasilfcr);
+                                        Map<String, Object> map = new HashMap<>();
+                                        map.put("biomass", hasilbiomass);
+                                        map.put("populasi", populasis);
+                                        map.put("sp", sp);
+                                        map.put("konsumsifeed", konsumsifeed);
+                                        map.put("fcr", fcr);
+                                        FirebaseDatabase.getInstance().getReference().child(nama)
+                                                .child(kolam).child("Sampling").child(getRef(i).getKey())
+                                                .updateChildren(map)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                     dialogPlus.dismiss();
+                                                    }
+                                                });
+                                        FirebaseDatabase.getInstance().getReference()
+                                                .child(nama).child(kolam).child("Samplingupdate")
+                                                .updateChildren(map)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+
+                                                    }
+                                                });
+                                        Intent i = new Intent(context.getApplicationContext(), MainActivity.class);
+                                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        context.startActivity(i);
+
+                                    }
+                                });
+                        AlertDialog alertDialog=alertDialogBuilder.create();
+                        alertDialog.show();
                     }
                 });
                 dialogPlus.show();

@@ -180,6 +180,13 @@ public class ListTambak extends AppCompatActivity {
         String hah = String.valueOf(nis+"-"+nama);//nama =namatambak
         sessions = new SharePreference(ListTambak.this.getApplicationContext());
         sessions.setDatas(hah);
+        String date_n = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        mDatabase.child(hah).setValue(date_n).addOnSuccessListener(this, new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+
+            }
+        });
     }
 
     @Override
@@ -242,23 +249,16 @@ public class ListTambak extends AppCompatActivity {
                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                    @Override
                                                    public void onSuccess(Void aVoid) {
-                                                       mDatabase.child(datass).child("Status").setValue("Delete").addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                           @Override
-                                                           public void onSuccess(Void aVoid) {
-                                                               Toast.makeText(getApplicationContext(), "Hapus Data Berhasil",Toast.LENGTH_LONG).show();
-                                                           }
-                                                       });
 
                                                    }
                                                });
-
+                                       mDatabase.child(datass).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                           @Override
+                                           public void onSuccess(Void aVoid) {
+                                           }
+                                       });
                                    }
                                   // String tambak = sessions.getDatas();
-                                  // mDatabase.child(tambak).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                  //     @Override
-                                  //     public void onSuccess(Void aVoid) {
-                                  //     }
-                                 //  });
 
                                }
 

@@ -125,7 +125,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ar
 	android:allowBackup
 		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme
-		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:17:9-41
+		ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:17:9-40
 activity#com.example.analysisreport.Activity.UpdateIsiAir
 ADDED from D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:9-68
 	android:name

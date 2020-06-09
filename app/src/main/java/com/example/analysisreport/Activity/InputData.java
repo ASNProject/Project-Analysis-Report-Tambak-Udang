@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.analysisreport.Model.RequestDataAir;
 import com.example.analysisreport.Model.RequestDataKolam;
@@ -44,7 +46,7 @@ public class InputData extends AppCompatActivity {
 
 
     private Button btnSimpan;
-    private TextView jmltebarrata2, kepedatan , pjumlahharian, pjumlahtotal,
+    private TextView jmltebarrata2, kepedatan , pjumlahharian, pjumlahtotal,pakanfeed,
                         ppopulasi, padgmingguan, pbiomass, psp, pkonsumsifeed, pfcr;
     private DatabaseReference database, mdatabase;
     SharePreference sessions;
@@ -72,6 +74,7 @@ public class InputData extends AppCompatActivity {
         jmltebarrata2 = (TextView) findViewById(R.id.jumlahtebarrata2ekor);
         kepedatan = (TextView)findViewById(R.id.kepadatanperm2);
         keterangankolam = (EditText)findViewById(R.id.keterangankolam);
+        pakanfeed = (TextView)findViewById(R.id.pakanfeed);
 
         //Data air
         tanggalair = findViewById(R.id.tanggalair);
@@ -115,7 +118,7 @@ public class InputData extends AppCompatActivity {
         pmbwsampling = findViewById(R.id.nmbwsampling);
         ppakanseharisampling = findViewById(R.id.npakanperharisampling);
         ptotalpakansampling = findViewById(R.id.ntotalpakansampling);
-        pfr =findViewById(R.id.nfr);
+        pfr = findViewById(R.id.nfr);
         ppopulasi = findViewById(R.id.npopulasi);
         padgmingguan = findViewById(R.id.nadgmingguan);
         pbiomass = findViewById(R.id.nbiomass);
@@ -175,6 +178,13 @@ public class InputData extends AppCompatActivity {
                     keterangankolam.requestFocus();
                     return;
                 }
+
+                hitung1(Double.parseDouble(jumlah), Double.parseDouble(jumlahtebarsampling));
+                String jumlahtebarratarata = jmltebarrata2.getText().toString();
+                hitung2(Double.parseDouble(jumlahtebarratarata), Double.parseDouble(area));
+                String kepadatankolam = kepedatan.getText().toString();
+                String feedpakan = pakanfeed.getText().toString();
+
                 //Dataair
                 String tanggalairs = tanggalair.getText().toString();
                 String tinggiairs = tinggiair.getText().toString();
@@ -191,10 +201,7 @@ public class InputData extends AppCompatActivity {
                 String no3s = no3.getText().toString();
                 String nh3s = nh3.getText().toString();
                 //Perhitungan data air
-                hitung1(Integer.parseInt(jumlah), Integer.parseInt(jumlahtebarsampling));
-                String jumlahtebarratarata = jmltebarrata2.getText().toString();
-                hitung2(Integer.parseInt(jumlah), Integer.parseInt(area));
-                String kepadatankolam = kepedatan.getText().toString();
+
 
                 //Data pakan
                 String tanggalpakan = ptanggalpakan.getText().toString();
@@ -205,10 +212,10 @@ public class InputData extends AppCompatActivity {
                 String jam18 = pjam18.getText().toString();
                 String jam22 = pjam22.getText().toString();
                 String keteranganpakan = pketerangan.getText().toString();
-                String jumlahtotal = pjumlahtotal.getText().toString();
-
-                hitung3(Integer.parseInt(jam6), Integer.parseInt(jam10), Integer.parseInt(jam14), Integer.parseInt(jam18), Integer.parseInt(jam22));
+                hitung3(Double.parseDouble(jam6), Double.parseDouble(jam10), Double.parseDouble(jam14), Double.parseDouble(jam18), Double.parseDouble(jam22));
                 String jumlahharian = pjumlahharian.getText().toString();
+                hitung4(Double.parseDouble(jumlahharian), Double.parseDouble(feedpakan));
+                String jumlahtotal = pjumlahtotal.getText().toString();
 
                 //Data panen
                 String berat = pberat.getText().toString();
@@ -223,11 +230,16 @@ public class InputData extends AppCompatActivity {
                 String pakanseharisampling = ppakanseharisampling.getText().toString();
                 String totalpakansampling = ptotalpakansampling.getText().toString();
                 String fr = pfr.getText().toString();
-                String populasi = ppopulasi.getText().toString();
                 String adgmingguan = padgmingguan.getText().toString();
+                hitungbiomass(Double.parseDouble(pakanseharisampling), Double.parseDouble(fr));
                 String biomass = pbiomass.getText().toString();
+                hitungpopulasi(Double.parseDouble(mbw), Double.parseDouble(biomass));
+                String populasi = ppopulasi.getText().toString();
+                hitungsp(Double.parseDouble(populasi), Double.parseDouble(jumlahtebarsamplings));
                 String sp = psp.getText().toString();
+                hitungkonsumsifeed(Double.parseDouble(mbw), Double.parseDouble(fr), Double.parseDouble(jumlahtebarsamplings));
                 String konsumsifeed = pkonsumsifeed.getText().toString();
+                hitungfcr(Double.parseDouble(totalpakansampling), Double.parseDouble(biomass));
                 String fcr = pfcr.getText().toString();
 
                 //Data Perlakuan
@@ -236,7 +248,7 @@ public class InputData extends AppCompatActivity {
 
                 //Program upload
                 datakolam(new RequestDataKolam(kolam.toLowerCase(),namapetani.toLowerCase(),jumlah.toLowerCase(),area.toLowerCase(),tanggaltebar.toLowerCase(),jumlahtebarsampling.toLowerCase(),jumlahtebarratarata,
-                        kepadatankolam.toLowerCase(),keterangankolams.toLowerCase()));
+                        kepadatankolam.toLowerCase(),keterangankolams.toLowerCase(),jumlahtotal.toLowerCase()));
                 dataair(new RequestDataAir(tanggalairs.toLowerCase(),tinggiairs.toLowerCase(),dopagi.toLowerCase(),domalam.toLowerCase(),phpagis.toLowerCase(),
                             phmalams.toLowerCase(),kecerahans.toLowerCase(),alkalinitass.toLowerCase(),suhus.toLowerCase(),cas.toLowerCase(),mgs.toLowerCase(),no2s.toLowerCase(),no3s.toLowerCase(),nh3s.toLowerCase()));
                 datapakan(new RequestDataPakan(tanggalpakan.toLowerCase(),kodepakan.toLowerCase(),jam6.toLowerCase(),jam10.toLowerCase(),jam14.toLowerCase(),jam18.toLowerCase(),jam22.toLowerCase(),
@@ -289,21 +301,42 @@ public class InputData extends AppCompatActivity {
         alertDialog.show();
     }
 
-    private void hitung1(int jumlah, int jumlahtebarsampling){
-        int jmltebarratarata = ((jumlah-jumlahtebarsampling)/2);
+    private void hitung1(double jumlah, double jumlahtebarsampling){
+        final double jmltebarratarata = ((jumlah+jumlahtebarsampling)/2);
         jmltebarrata2.setText(String.valueOf(jmltebarratarata));
     }
-    private void hitung2(int jumlah, int area){
-        int hasilkepadatan = jumlah/area;
+    private void hitung2(double jumlahtebarratarata, double area){
+        double hasilkepadatan = jumlahtebarratarata/area;
         kepedatan.setText(String.valueOf(hasilkepadatan));
     }
-    private void hitung3(int jam6, int jam10, int jam14, int jam18, int jam22){
-        int jumlahpakanharian = jam6+jam10+jam14+jam18+jam22;
+    private void hitung3(double jam6, double jam10, double jam14, double jam18, double jam22){
+        double jumlahpakanharian = jam6+jam10+jam14+jam18+jam22;
         pjumlahharian.setText(String.valueOf(jumlahpakanharian));
     }
-    private void hitungpopulasi(int mbw, int biomass){
-        int hasilpopulasi = mbw*biomass;
-        ppopulasi.setText(String.valueOf(hasilpopulasi));
+    private void hitung4(double jumlahharian, double feedpakan){
+        double totalkonsumsipakan = jumlahharian+feedpakan;
+        pjumlahtotal.setText(String.valueOf(totalkonsumsipakan));
+        pakanfeed.setText(String.valueOf(totalkonsumsipakan));
+    }
+    private void hitungpopulasi(double mbw, double biomass){
+        double hasilpopulasi = (1000/mbw)*biomass;
+        ppopulasi.setText(String.format("%.3f", hasilpopulasi));
+    }
+    private void hitungbiomass(double pakanperharisampling, double fr){
+        double jumlahbiomas= pakanperharisampling/(fr/100);
+        pbiomass.setText(String.format("%.3f", jumlahbiomas));
+    }
+    private void hitungsp(double hasilpopulasi, double jumlahtebarsampling){
+        double jumlahsp = (hasilpopulasi/jumlahtebarsampling)*100;
+        psp.setText(String.format("%.3f", jumlahsp));
+    }
+    private void hitungkonsumsifeed(double mbw, double fr, double jumlahtebarsamplings){
+        double jumlahkonsumsifeed = (mbw * fr * jumlahtebarsamplings)/100000;
+        pkonsumsifeed.setText(String.format("%.3f", jumlahkonsumsifeed));
+    }
+    private void hitungfcr(double totalpakansampling, double biomass){
+        double hitungfcr = totalpakansampling/biomass;
+        pfcr.setText(String.format("%.3f", hitungfcr));
     }
 
 

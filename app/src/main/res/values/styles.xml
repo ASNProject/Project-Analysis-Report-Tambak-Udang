@@ -5,10 +5,10 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorBackgroung</item>
+        <item name="colorAccent">@color/colorDarkBlue</item>
         <item name="android:windowBackground">@color/colorBackgroung</item>
         <item name="android:itemBackground">@color/colorBackgroung</item>
-        <item name="android:textColorPrimary">@color/colorBackgroung</item>
+        <item name="android:textColorPrimary">@color/colorGray</item>
 
     </style>
 
@@ -22,7 +22,7 @@
 
     </style>
 
-    <style name="AppThemes" parent="AppBaseTheme">
+    <style name="AppThemes" parent="AppTheme">
 
     </style>
 

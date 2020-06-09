@@ -110,6 +110,7 @@
                     android:id="@+id/ijam6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:text="0"
                     android:textColor="@color/colorGray"
                     ></EditText>
             </LinearLayout>
@@ -137,6 +138,7 @@
                     ></TextView>
                 <EditText
                     android:id="@+id/ijam10"
+                    android:text="0"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@color/colorGray"
@@ -166,6 +168,7 @@
                     ></TextView>
                 <EditText
                     android:id="@+id/ijam14"
+                    android:text="0"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@color/colorGray"
@@ -196,6 +199,7 @@
                 <EditText
                     android:id="@+id/ijam18"
                     android:layout_width="match_parent"
+                    android:text="0"
                     android:layout_height="match_parent"
                     android:textColor="@color/colorGray"
                     ></EditText>
@@ -225,6 +229,7 @@
                 <EditText
                     android:id="@+id/ijam22"
                     android:layout_width="match_parent"
+                    android:text="0"
                     android:layout_height="match_parent"
                     android:textColor="@color/colorGray"
                     ></EditText>

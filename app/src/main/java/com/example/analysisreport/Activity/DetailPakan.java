@@ -62,79 +62,7 @@ public class DetailPakan extends AppCompatActivity {
         mManager.setStackFromEnd(true);
         mRecycler.setLayoutManager(mManager);
         datas();
-/*        Query query = getQuery(mDatebase);
-        FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<ModelDataPakan>()
-                .setQuery(query, ModelDataPakan.class)
-                .build();
-        mAdapter = new FirebaseRecyclerAdapter<ModelDataPakan, DetailPakanHolder>(options) {
-            @Override
-            protected void onBindViewHolder(@NonNull DetailPakanHolder detailPakanHolder, int i, @NonNull ModelDataPakan modelDataPakan) {
-                detailPakanHolder.bindoToDetailPakan(modelDataPakan, new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
 
-                    }
-                });
-            }
-
-            @NonNull
-            @Override
-            public DetailPakanHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-                return new DetailPakanHolder(inflater.inflate(R.layout.item_detail_pakan, parent,false));
-            }
-        };
-        data();
-        mAdapter.notifyDataSetChanged();
-        mRecycler.setAdapter(mAdapter);
-    }
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (mAdapter != null){
-            mAdapter.startListening();
-        }
-    }
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (mAdapter !=null){
-            mAdapter.stopListening();
-        }
-    }
-
-    private Query getQuery(DatabaseReference mDatebase) {
-        sessions = new SharePreference(DetailPakan.this.getApplicationContext());
-        String nama = sessions.getDatas();
-        String kolam = sessions.getDetailkolam();
-        Query query = mDatebase.child(nama).child(kolam).child("Pakan");
-        return query;
-    }
-    private void data(){
-        sessions = new SharePreference(DetailPakan.this.getApplicationContext());
-        String nama = sessions.getDatas();
-        final String kolam = sessions.getDetailkolam();
-        Petani = findViewById(R.id.dpetani1);
-        Kolam = findViewById(R.id.dkolam1);
-        Jumlah = findViewById(R.id.djumlah1);
-        Tebar = findViewById(R.id.dtebar1);
-        mDatebase.child(nama).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                RequestDataKolam requestDataKolam= dataSnapshot.child(kolam).getValue(RequestDataKolam.class);
-                Petani.setText(requestDataKolam.getNamapetani());
-                Kolam.setText(requestDataKolam.getKolam());
-                Jumlah.setText(requestDataKolam.getJumlah());
-                Tebar.setText(requestDataKolam.getTanggaltebar());
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }*/
     }
 
     @Override

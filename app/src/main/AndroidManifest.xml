@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppThemes">
+        android:theme="@style/AppTheme">
         <activity android:name=".Activity.UpdateIsiAir"></activity>
         <activity android:name=".Activity.InputDataSampling" />
         <activity android:name=".Activity.InputDataPakan" />

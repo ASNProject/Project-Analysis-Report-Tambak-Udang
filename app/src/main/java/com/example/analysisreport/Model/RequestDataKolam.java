@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 public class RequestDataKolam implements Serializable {
     private String kolam, namapetani, jumlah, area, tanggaltebar, jumlahtebarsampling, jumlahtebarratarata,
-                    kepadatankolam, keterangankolams;
+                    kepadatankolam, keterangankolams, feedpakan;
 
     public RequestDataKolam() {
     }
 
-    public RequestDataKolam(String kolam, String namapetani, String jumlah, String area, String tanggaltebar, String jumlahtebarsampling, String jumlahtebarratarata, String kepadatankolam, String keterangankolams) {
+    public RequestDataKolam(String kolam, String namapetani, String jumlah, String area, String tanggaltebar, String jumlahtebarsampling, String jumlahtebarratarata, String kepadatankolam, String keterangankolams, String feedpakan) {
         this.kolam = kolam;
         this.namapetani = namapetani;
         this.jumlah = jumlah;
@@ -19,6 +19,7 @@ public class RequestDataKolam implements Serializable {
         this.jumlahtebarratarata = jumlahtebarratarata;
         this.kepadatankolam = kepadatankolam;
         this.keterangankolams = keterangankolams;
+        this.feedpakan = feedpakan;
     }
 
     public String getKolam() {
@@ -93,6 +94,14 @@ public class RequestDataKolam implements Serializable {
         this.keterangankolams = keterangankolams;
     }
 
+    public String getFeedpakan() {
+        return feedpakan;
+    }
+
+    public void setFeedpakan(String feedpakan) {
+        this.feedpakan = feedpakan;
+    }
+
     @Override
     public String toString() {
         return "RequestDataKolam{" +
@@ -105,6 +114,7 @@ public class RequestDataKolam implements Serializable {
                 ", jumlahtebarratarata='" + jumlahtebarratarata + '\'' +
                 ", kepadatankolam='" + kepadatankolam + '\'' +
                 ", keterangankolams='" + keterangankolams + '\'' +
+                ", feedpakan='" + feedpakan + '\'' +
                 '}';
     }
 }

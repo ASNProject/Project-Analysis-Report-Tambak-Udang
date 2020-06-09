@@ -24,7 +24,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/AppThemes" >
+        android:theme="@style/AppTheme" >
         <activity android:name="com.example.analysisreport.Activity.UpdateIsiAir" />
         <activity android:name="com.example.analysisreport.Activity.InputDataSampling" />
         <activity android:name="com.example.analysisreport.Activity.InputDataPakan" />

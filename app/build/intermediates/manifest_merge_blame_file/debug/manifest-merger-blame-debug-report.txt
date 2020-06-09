@@ -40,8 +40,8 @@
 24        android:supportsRtl="true"
 24-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:16:9-35
 25        android:testOnly="true"
-26        android:theme="@style/AppThemes" >
-26-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:17:9-41
+26        android:theme="@style/AppTheme" >
+26-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:17:9-40
 27        <activity android:name="com.example.analysisreport.Activity.UpdateIsiAir" />
 27-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:9-68
 27-->D:\ANDROID STUDIO PROJECT\app\src\main\AndroidManifest.xml:18:19-56
