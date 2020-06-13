@@ -23,7 +23,9 @@
                 ></TextView>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
                 <LinearLayout
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
@@ -34,7 +36,7 @@
                     android:orientation="vertical">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="40dp">
+                        android:layout_height="20dp">
                         <TextView
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
@@ -60,7 +62,7 @@
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="40dp">
+                        android:layout_height="20dp">
                         <TextView
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
@@ -84,18 +86,9 @@
                             android:gravity="center_vertical"
                             ></TextView>
                     </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="vertical">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="40dp">
+                        android:layout_height="20dp">
                         <TextView
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
@@ -121,7 +114,7 @@
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="40dp">
+                        android:layout_height="20dp">
                         <TextView
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
@@ -145,6 +138,29 @@
                             android:gravity="center_vertical"
                             ></TextView>
                     </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lihat Grafik"
+                        android:gravity="center_horizontal"
+                        ></TextView>
+                    <ImageView
+                        android:id="@+id/lihatchart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_insert_chart_black_24dp"
+
+                        ></ImageView>
+
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

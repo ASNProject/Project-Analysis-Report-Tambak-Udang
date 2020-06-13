@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 public class RequestDataPakan implements Serializable {
 
-    private String tanggalpakan, kodepakan, jam6, jam10, jam14, jam18, jam22, keteranganpakan, jumlahharian, jumlahtotal;
+    private String tanggalpakan, kodepakan, jam6, jam10, jam14, jam18, jam22, keteranganpakan, jumlahharian, jumlahtotal, usia;
 
     public RequestDataPakan() {
     }
 
-    public RequestDataPakan(String tanggalpakan, String kodepakan, String jam6, String jam10, String jam14, String jam18, String jam22, String keteranganpakan, String jumlahharian, String jumlahtotal) {
+    public RequestDataPakan(String tanggalpakan, String kodepakan, String jam6, String jam10, String jam14, String jam18, String jam22, String keteranganpakan, String jumlahharian, String jumlahtotal, String usia) {
         this.tanggalpakan = tanggalpakan;
         this.kodepakan = kodepakan;
         this.jam6 = jam6;
@@ -20,6 +20,7 @@ public class RequestDataPakan implements Serializable {
         this.keteranganpakan = keteranganpakan;
         this.jumlahharian = jumlahharian;
         this.jumlahtotal = jumlahtotal;
+        this.usia = usia;
     }
 
     public String getTanggalpakan() {
@@ -102,6 +103,14 @@ public class RequestDataPakan implements Serializable {
         this.jumlahtotal = jumlahtotal;
     }
 
+    public String getUsia() {
+        return usia;
+    }
+
+    public void setUsia(String usia) {
+        this.usia = usia;
+    }
+
     @Override
     public String toString() {
         return "RequestDataPakan{" +
@@ -115,6 +124,7 @@ public class RequestDataPakan implements Serializable {
                 ", keteranganpakan='" + keteranganpakan + '\'' +
                 ", jumlahharian='" + jumlahharian + '\'' +
                 ", jumlahtotal='" + jumlahtotal + '\'' +
+                ", usia='" + usia + '\'' +
                 '}';
     }
 }

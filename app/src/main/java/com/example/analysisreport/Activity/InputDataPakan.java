@@ -7,10 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.analysisreport.Model.RequestDataKolam;
 import com.example.analysisreport.Model.RequestDataPakan;
@@ -24,6 +26,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -33,7 +37,7 @@ import java.util.Map;
 public class InputDataPakan extends AppCompatActivity {
 
     private EditText ptanggalpakan, pkodepakan, pjam6, pjam10, pjam14, pjam18, pjam22, pketerangan;
-    private TextView pjumlahharian, pjumlahtotal;
+    private TextView pjumlahharian, pjumlahtotal, pusia, ptanggaltebar;
     private Button Simpan;
     private DatabaseReference mDatabase;
     private SharePreference sessions;
@@ -43,7 +47,8 @@ public class InputDataPakan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_data_pakan);
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        String date_n = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        final  String date_n = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        sessions = new SharePreference(InputDataPakan.this.getApplicationContext());
 
         ptanggalpakan = findViewById(R.id.itanggalpakan);
         ptanggalpakan.setText(date_n);
@@ -56,12 +61,32 @@ public class InputDataPakan extends AppCompatActivity {
         pketerangan = findViewById(R.id.iisicatatan);
         pjumlahharian = findViewById(R.id.ijumlahharian);
         pjumlahtotal = findViewById(R.id.itotal);
+        pusia = findViewById(R.id.iusia);
+        ptanggaltebar = findViewById(R.id.tangggaaal);
         Simpan = findViewById(R.id.ibutoonsimpanpakan);
+
+
+        mDatabase.child(sessions.getDatas()).child(sessions.getDetailkolam()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                RequestDataKolam requestDataKolam = dataSnapshot.getValue(RequestDataKolam.class);
+                String tanggaltebars = requestDataKolam.getTanggaltebar();
+                ptanggaltebar.setText(tanggaltebars);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
         Simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sessions = new SharePreference(InputDataPakan.this.getApplicationContext());
+
                 final String data = sessions.getDatas();
                 final String tnamakolam = sessions.getDetailkolam();
                 final String tanggalpakan = ptanggalpakan.getText().toString();
@@ -72,21 +97,53 @@ public class InputDataPakan extends AppCompatActivity {
                 final String jam18 = pjam18.getText().toString();
                 final String jam22 = pjam22.getText().toString();
                 final String keteranganpakan = pketerangan.getText().toString();
-                String feedpakan = sessions.getPakanfeed();
+                final String feedpakan = sessions.getPakanfeed();
 
-                        hitung3(Integer.parseInt(jam6), Integer.parseInt(jam10), Integer.parseInt(jam14), Integer.parseInt(jam18), Integer.parseInt(jam22));
-                        String jumlahharian = pjumlahharian.getText().toString();
-                        hitung4(Double.parseDouble(jumlahharian), Double.parseDouble(feedpakan));
-                        String jumlahtotal = pjumlahtotal.getText().toString();
 
-                        datapakan(new RequestDataPakan(tanggalpakan.toLowerCase(),kodepakan.toLowerCase(),jam6.toLowerCase(),jam10.toLowerCase(),jam14.toLowerCase(),jam18.toLowerCase(),jam22.toLowerCase(),
-                                keteranganpakan.toLowerCase(),jumlahharian.toLowerCase(),jumlahtotal.toLowerCase()));
-                        updatedatapakan(new RequestUpdatePakan(tanggalpakan.toLowerCase(),kodepakan.toLowerCase(),jam6.toLowerCase(),jam10.toLowerCase(),jam14.toLowerCase(),jam18.toLowerCase(),jam22.toLowerCase(),
-                                keteranganpakan.toLowerCase(),jumlahharian.toLowerCase(),jumlahtotal.toLowerCase()));
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(InputDataPakan.this);
+                alertDialogBuilder.setTitle("Notice!");
+                alertDialogBuilder.setMessage("Yakin untuk menyimpan data?")
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String tanggaltebar = ptanggaltebar.getText().toString();
+                                DateFormat date = new SimpleDateFormat("dd-MM-yyyy");
+                                try {
+                                    Date tglawal = (Date) date.parse(date_n);
+                                    Date tglakhir = (Date) date.parse(tanggaltebar);
 
-                Intent i = new Intent(InputDataPakan.this, MainActivity.class);
-                startActivity(i);
-                finish();
+                                    long bedaHari = Math.abs((tglawal.getTime() - tglakhir.getTime())/86400000);
+                                    String i = String.valueOf(bedaHari);
+                                    pusia.setText(String.valueOf(i));
+
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+
+                                String usia = pusia.getText().toString();
+
+                                hitung3(Integer.parseInt(jam6), Integer.parseInt(jam10), Integer.parseInt(jam14), Integer.parseInt(jam18), Integer.parseInt(jam22));
+                                String jumlahharian = pjumlahharian.getText().toString();
+                                hitung4(Double.parseDouble(jumlahharian), Double.parseDouble(feedpakan));
+                                String jumlahtotal = pjumlahtotal.getText().toString();
+
+                                datapakan(new RequestDataPakan(tanggalpakan.toLowerCase(),kodepakan.toLowerCase(),jam6.toLowerCase(),jam10.toLowerCase(),jam14.toLowerCase(),jam18.toLowerCase(),jam22.toLowerCase(),
+                                        keteranganpakan.toLowerCase(),jumlahharian.toLowerCase(),jumlahtotal.toLowerCase(), usia.toLowerCase()));
+                                updatedatapakan(new RequestUpdatePakan(tanggalpakan.toLowerCase(),kodepakan.toLowerCase(),jam6.toLowerCase(),jam10.toLowerCase(),jam14.toLowerCase(),jam18.toLowerCase(),jam22.toLowerCase(),
+                                        keteranganpakan.toLowerCase(),jumlahharian.toLowerCase(),jumlahtotal.toLowerCase()));
+
+                                Intent i = new Intent(InputDataPakan.this, MainActivity.class);
+                                   startActivity(i);
+                                   finish();
+                            }
+                        });
+                AlertDialog alertDialog=alertDialogBuilder.create();
+                alertDialog.show();
+
+              //  Intent i = new Intent(InputDataPakan.this, MainActivity.class);
+             //   startActivity(i);
+             //   finish();
             }
         });
     }
@@ -98,6 +155,7 @@ public class InputDataPakan extends AppCompatActivity {
         final double totalkonsumsipakan = jumlahharian+feedpakan;
         pjumlahtotal.setText(String.valueOf(totalkonsumsipakan));
     }
+
     private void datapakan(RequestDataPakan requestDataPakan){
         sessions = new SharePreference(InputDataPakan.this.getApplicationContext());
         String data = sessions.getDatas();

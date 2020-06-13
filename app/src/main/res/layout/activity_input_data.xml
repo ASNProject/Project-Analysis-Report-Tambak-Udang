@@ -6,22 +6,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorBackgroung"
     android:orientation="vertical">
+
     <RelativeLayout
         android:id="@+id/r1"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/colorDarkBlue">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MASUKKAN DATA KOLAM"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:textColor="@color/colorBackgroung"
-            android:layout_marginTop="40dp"
             android:layout_centerHorizontal="true"
-            ></TextView>
+            android:layout_marginTop="40dp"
+            android:text="MASUKKAN DATA KOLAM"
+            android:textColor="@color/colorBackgroung"
+            android:textSize="30dp"
+            android:textStyle="bold"></TextView>
     </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -67,18 +69,66 @@
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/colorDarkBlue"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/q"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Kolam"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/datakolam"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/w"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/datakolam"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/q"
+                        android:layout_toRightOf="@id/q"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
+
                     <EditText
                         android:id="@+id/kolamnama"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/datakolam"
                         android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Nama Kolam"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_marginRight="10dp"
+                        android:layout_toEndOf="@id/w"
+                        android:layout_toRightOf="@id/w"
+                        android:textColor="@color/colorGray"></EditText>
+                    <TextView
+                        android:id="@+id/e"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Petani"
                         android:textColor="@color/colorGray"
-                        ></EditText>
+                        android:layout_below="@id/kolamnama"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/r"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/kolamnama"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/e"
+                        android:layout_toRightOf="@id/e"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/namapetani"
                         android:layout_width="match_parent"
@@ -87,11 +137,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Nama Petani"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/r"
+                        android:layout_toRightOf="@+id/r"
                         android:textColor="@color/colorGray"
                         ></EditText>
-
+                    <TextView
+                        android:id="@+id/t"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Luas Area"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/namapetani"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/namapetani"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/t"
+                        android:layout_toRightOf="@id/t"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/area"
                         android:layout_width="match_parent"
@@ -100,22 +173,37 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Luas Area"
+                        android:hint="m2"
                         android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
+                        android:layout_toEndOf="@id/y"
+                        android:layout_toRightOf="@id/y"
                         ></EditText>
                     <TextView
-                        android:id="@+id/aa"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/u"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:text="Tanggal Tebar :"
+                        android:text="Tanggal Tebar"
                         android:textColor="@color/colorGray"
                         android:layout_below="@id/area"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:textSize="18dp"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/i"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/area"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/u"
+                        android:layout_toRightOf="@id/u"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/ntangaltebar"
                         android:layout_width="match_parent"
@@ -124,11 +212,35 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_toEndOf="@id/aa"
-                        android:layout_toRightOf="@id/aa"
+                        android:layout_toEndOf="@id/i"
+                        android:layout_toRightOf="@id/i"
                         android:textColor="@color/colorGray"
                         android:textStyle="bold"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/o"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Jumlah Tebar"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/ntangaltebar"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ntangaltebar"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/o"
+                        android:layout_toRightOf="@id/o"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/jumlah"
                         android:layout_width="match_parent"
@@ -137,11 +249,37 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Jumlah Tebar Bruto (Ekor)"
+                        android:hint="Ekor"
                         android:inputType="number"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
+                        android:layout_toEndOf="@id/p"
+                        android:layout_toRightOf="@id/p"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/a"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Jumlah Tebar"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/jumlah"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/jumlah"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/a"
+                        android:layout_toRightOf="@id/a"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/jumlahtebarsamplinglapangan"
                         android:layout_width="match_parent"
@@ -151,9 +289,11 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:inputType="number"
-                        android:hint="Jumlah Tebar Sampling Lapangan"
+                        android:hint="Sampling Lapangan"
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
+                        android:layout_toEndOf="@id/b"
+                        android:layout_toRightOf="@id/b"
                         ></EditText>
                     <TextView
                         android:id="@+id/jumlahtebarrata2ekor"
@@ -246,16 +386,29 @@
                         android:textColor="@color/colorDarkBlue"
                         ></TextView>
                     <TextView
-                        android:id="@+id/ab"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/s"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:text="Tanggal :"
+                        android:text="Tanggal"
                         android:textColor="@color/colorGray"
                         android:layout_below="@id/dataair"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:textSize="18dp"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/d"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dataair"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/s"
+                        android:layout_toRightOf="@id/s"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/tanggalair"
                         android:layout_width="match_parent"
@@ -264,11 +417,35 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_toEndOf="@+id/ab"
-                        android:layout_toRightOf="@id/ab"
+                        android:layout_toEndOf="@+id/d"
+                        android:layout_toRightOf="@id/d"
                         android:textColor="@color/colorGray"
                         android:textStyle="bold"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/f"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Tinggi Air (cm)"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/tanggalair"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/g"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tanggalair"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/f"
+                        android:layout_toRightOf="@id/f"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/ntinggiair"
                         android:layout_width="match_parent"
@@ -277,10 +454,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Tinggi air"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/g"
+                        android:layout_toRightOf="@id/g"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/h"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="DO (Pagi)"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/ntinggiair"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/j"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ntinggiair"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/h"
+                        android:layout_toRightOf="@id/h"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/DOpagi"
                         android:layout_width="match_parent"
@@ -289,10 +490,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="do pagi"
-                        android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
+                        android:layout_toEndOf="@id/j"
+                        android:layout_toRightOf="@id/j"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/k"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="DO (Malam)"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/DOpagi"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/l"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/DOpagi"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/k"
+                        android:layout_toRightOf="@id/k"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/DOmalam"
                         android:layout_width="match_parent"
@@ -301,10 +526,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="do malam"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/l"
+                        android:layout_toRightOf="@id/l"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/qw"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="PH (Pagi)"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/DOmalam"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/qe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/DOmalam"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/qw"
+                        android:layout_toRightOf="@id/qw"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/phpagi"
                         android:layout_width="match_parent"
@@ -313,10 +562,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="PH Pagi"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/qe"
+                        android:layout_toRightOf="@id/qe"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/qr"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="PH (Malam)"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/phpagi"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/qt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/phpagi"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/qr"
+                        android:layout_toRightOf="@id/qr"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/phmalam"
                         android:layout_width="match_parent"
@@ -325,10 +598,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="PH Malam"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/qt"
+                        android:layout_toRightOf="@id/qt"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/qy"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Kecerahan"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/phmalam"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/qu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/phmalam"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/qy"
+                        android:layout_toRightOf="@id/qy"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/kecerahan"
                         android:layout_width="match_parent"
@@ -337,10 +634,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Kecerahan"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/qu"
+                        android:layout_toRightOf="@id/qu"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/qi"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Alkalinitas"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/kecerahan"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/qo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/kecerahan"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/qi"
+                        android:layout_toRightOf="@id/qi"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/salinitas"
                         android:layout_width="match_parent"
@@ -349,10 +670,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Alkalinitas"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@+id/qo"
+                        android:layout_toRightOf="@+id/qo"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/qp"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Suhu (Celcius)"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/salinitas"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/wq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/salinitas"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/qp"
+                        android:layout_toRightOf="@id/qp"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/suhu"
                         android:layout_width="match_parent"
@@ -361,10 +706,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Suhu"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@+id/wq"
+                        android:layout_toRightOf="@+id/wq"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/ww"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Ca"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/suhu"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/we"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/suhu"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/ww"
+                        android:layout_toRightOf="@id/ww"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/nca"
                         android:layout_width="match_parent"
@@ -373,10 +742,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Ca"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/we"
+                        android:layout_toRightOf="@id/we"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/wr"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Mg"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/nca"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/wt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nca"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/wr"
+                        android:layout_toRightOf="@id/wr"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/nmg"
                         android:layout_width="match_parent"
@@ -385,10 +778,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Mg"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/wt"
+                        android:layout_toRightOf="@id/wt"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/wy"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="NO2"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/nmg"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/wu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nmg"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/wy"
+                        android:layout_toRightOf="@id/wy"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/nno2"
                         android:layout_width="match_parent"
@@ -397,10 +814,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="NO2"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/wu"
+                        android:layout_toRightOf="@id/wu"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/wi"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="NO3"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/nno2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/wo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nno2"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/wi"
+                        android:layout_toRightOf="@id/wi"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/nno3"
                         android:layout_width="match_parent"
@@ -409,10 +850,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="NO3"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/wo"
+                        android:layout_toRightOf="@id/wo"
                         android:textColor="@color/colorGray"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/wp"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="NH3"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/nno3"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/eq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nno3"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/wp"
+                        android:layout_toRightOf="@id/wp"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/nnh3"
                         android:layout_width="match_parent"
@@ -421,8 +886,8 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="NH3"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@+id/eq"
+                        android:layout_toRightOf="@id/eq"
                         android:textColor="@color/colorGray"
                         ></EditText>
                 </RelativeLayout>
@@ -459,16 +924,29 @@
                         android:textColor="@color/colorDarkBlue"
                         ></TextView>
                     <TextView
-                        android:id="@+id/ac"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/as"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:text="Tanggal :"
+                        android:text="Tanggal"
                         android:textColor="@color/colorGray"
                         android:layout_below="@id/datapakan"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:textSize="18dp"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/ad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/datapakan"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/as"
+                        android:layout_toRightOf="@id/as"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/tanggalpakan"
                         android:layout_width="match_parent"
@@ -477,11 +955,35 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_toEndOf="@id/ac"
-                        android:layout_toRightOf="@id/ac"
+                        android:layout_toEndOf="@id/ad"
+                        android:layout_toRightOf="@id/ad"
                         android:textColor="@color/colorGray"
                         android:textStyle="bold"
                         ></EditText>
+                    <TextView
+                        android:id="@+id/af"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Kodepakan"
+                        android:textColor="@color/colorGray"
+                        android:layout_below="@id/tanggalpakan"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/ags"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tanggalpakan"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/af"
+                        android:layout_toRightOf="@id/af"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/nkodepakan"
                         android:layout_width="match_parent"
@@ -490,21 +992,34 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:hint="Kode Pakan"
-                        android:textColorHint="@color/colorGray"
+                        android:layout_toEndOf="@id/ags"
+                        android:layout_toRightOf="@id/ags"
                         android:textColor="@color/colorGray"
                         ></EditText>
                     <TextView
                         android:id="@+id/asa"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:text="Jam 06.00 :"
+                        android:text="Jam 06.00"
                         android:textColor="@color/colorGray"
                         android:layout_below="@id/nkodepakan"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:textSize="18dp"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/qa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nkodepakan"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/asa"
+                        android:layout_toRightOf="@id/asa"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/njam6"
                         android:layout_width="match_parent"
@@ -513,22 +1028,35 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_toEndOf="@+id/asa"
-                        android:layout_toRightOf="@id/asa"
+                        android:layout_toEndOf="@+id/qa"
+                        android:layout_toRightOf="@id/qa"
                         android:text="0"
                         android:textColor="@color/colorGray"
                         ></EditText>
                     <TextView
                         android:id="@+id/asb"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:text="Jam 10.00 :"
+                        android:text="Jam 10.00"
                         android:textColor="@color/colorGray"
                         android:layout_below="@id/njam6"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:textSize="18dp"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/ws"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/njam6"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/af"
+                        android:layout_toRightOf="@id/af"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/njam10"
                         android:layout_width="match_parent"
@@ -537,22 +1065,35 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_toEndOf="@+id/asb"
-                        android:layout_toRightOf="@id/asb"
+                        android:layout_toEndOf="@+id/ws"
+                        android:layout_toRightOf="@id/ws"
                         android:text="0"
                         android:textColor="@color/colorGray"
                         ></EditText>
                     <TextView
                         android:id="@+id/asc"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:text="Jam 14.00 :"
+                        android:text="Jam 14.00"
                         android:textColor="@color/colorGray"
                         android:layout_below="@id/njam10"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:textSize="18dp"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/ed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/njam10"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/asc"
+                        android:layout_toRightOf="@id/asc"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/njam14"
                         android:layout_width="match_parent"
@@ -561,14 +1102,14 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_toEndOf="@+id/asc"
-                        android:layout_toRightOf="@id/asc"
+                        android:layout_toEndOf="@+id/ed"
+                        android:layout_toRightOf="@id/ed"
                         android:text="0"
                         android:textColor="@color/colorGray"
                         ></EditText>
                     <TextView
                         android:id="@+id/asd"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:text="Jam 18.00 :"
                         android:textColor="@color/colorGray"
@@ -577,6 +1118,19 @@
                         android:layout_marginTop="20dp"
                         android:textSize="18dp"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/rf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/njam14"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/asd"
+                        android:layout_toRightOf="@id/asd"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/njam18"
                         android:layout_width="match_parent"
@@ -586,14 +1140,14 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:inputType="number"
-                        android:layout_toEndOf="@+id/asd"
-                        android:layout_toRightOf="@id/asd"
+                        android:layout_toEndOf="@+id/rf"
+                        android:layout_toRightOf="@id/rf"
                         android:text="0"
                         android:textColor="@color/colorGray"
                         ></EditText>
                     <TextView
                         android:id="@+id/ase"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:text="Jam 22.00 :"
                         android:textColor="@color/colorGray"
@@ -602,6 +1156,19 @@
                         android:layout_marginTop="20dp"
                         android:textSize="18dp"
                         ></TextView>
+                    <TextView
+                        android:id="@+id/tg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/njam18"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/ase"
+                        android:layout_toRightOf="@id/ase"
+                        android:text=":"
+                        android:textColor="@color/colorGray"
+                        android:textSize="18dp"></TextView>
                     <EditText
                         android:id="@+id/njam22"
                         android:layout_width="match_parent"
@@ -610,8 +1177,8 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_toEndOf="@+id/ase"
-                        android:layout_toRightOf="@id/ase"
+                        android:layout_toEndOf="@+id/tg"
+                        android:layout_toRightOf="@id/tg"
                         android:text="0"
                         android:textColor="@color/colorGray"
                         ></EditText>
@@ -654,83 +1221,18 @@
                         android:textColorHint="@color/colorGray"
                         android:textColor="@color/colorGray"
                         ></TextView>
-
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardview4"
-                android:layout_below="@+id/cardview3"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="@color/colorBackgroung"
-                >
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
                     <TextView
-                        android:id="@+id/datapanen"
+                        android:id="@+id/usiaa"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Data Panen"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:textColor="@color/colorDarkBlue"
-                        ></TextView>
-                    <EditText
-                        android:id="@+id/isiberat"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/datapanen"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:hint="Berat"
-                        android:textColorHint="@color/colorGray"
-                        android:textColor="@color/colorGray"
-                        ></EditText>
-                    <EditText
-                        android:id="@+id/isisize"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/isiberat"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:hint="Size"
-                        android:textColorHint="@color/colorGray"
-                        android:textColor="@color/colorGray"
-                        ></EditText>
-                    <EditText
-                        android:id="@+id/tanggalpanen"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/isisize"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:hint="Tanggal Panen"
-                        android:textColorHint="@color/colorGray"
-                        android:textColor="@color/colorGray"
-                        ></EditText>
+                        android:layout_below="@id/isijumlahtotal"
+                        android:layout_height="wrap_content"></TextView>
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview5"
-                android:layout_below="@+id/cardview4"
+                android:layout_below="@+id/cardview3"
                 android:layout_width="match_parent"
                 android:layout_height="430dp"
                 android:layout_alignParentStart="true"
@@ -866,7 +1368,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                       android:text="0"
+                        android:text="0"
                         android:textColor="@color/colorGray"
                         android:layout_toEndOf="@id/aqu"
                         android:layout_toRightOf="@id/aqu"

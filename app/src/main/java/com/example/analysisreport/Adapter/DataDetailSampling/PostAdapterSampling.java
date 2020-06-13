@@ -89,7 +89,7 @@ public class PostAdapterSampling extends FirebaseRecyclerAdapter<RequestDataSamp
                 sbiomass.setText(requestDataSampling.getBiomass());
                 skonsumsifeed.setText(requestDataSampling.getKonsumsifeed());
                 sfcr.setText(requestDataSampling.getFcr());
-//              ssp.setText(requestDataSampling.getSp());
+                ssp.setText(requestDataSampling.getSp());
                 Simpan.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -135,6 +135,7 @@ public class PostAdapterSampling extends FirebaseRecyclerAdapter<RequestDataSamp
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(final DialogInterface dialog, int which) {
+                                        String lamambw = sessions.getMbw();
                                         spakanperhari.getText().toString();
                                         sfr.getText().toString();
                                         double pakanperhari = Double.parseDouble(spakanperhari.getText().toString());
@@ -142,22 +143,45 @@ public class PostAdapterSampling extends FirebaseRecyclerAdapter<RequestDataSamp
                                         double mbw = Double.parseDouble(smbw.getText().toString());
                                         double jmltebar = Double.parseDouble(sjumlahtebarratarata.getText().toString());
                                         double totalpakan = Double.parseDouble(stotalpakan.getText().toString());
+                                        double mbwlama = Double.parseDouble(lamambw);
+                                        double adgs = Double.parseDouble(sadgmingguan.getText().toString());
                                         double biomass = pakanperhari/(fr/100);
+                                        if (Double.isNaN(biomass)){
+                                            biomass = 0.0;
+                                        }
                                         double hasilpopulasi = (1000/mbw)*biomass;
+                                        if (Double.isNaN(hasilpopulasi)){
+                                            hasilpopulasi = 0.0;
+                                        }
                                         double hasilsp = (hasilpopulasi/jmltebar)*100;
+                                        if (Double.isNaN(hasilsp)){
+                                            hasilsp = 0.0;
+                                        }
                                         double hasilfeed = (mbw*fr*jmltebar)/100000;
+                                        if (Double.isNaN(hasilfeed)){
+                                            hasilfeed = 0.0;
+                                        }
                                         double hasilfcr = totalpakan/biomass;
+                                        if (Double.isNaN(hasilfcr)){
+                                            hasilfcr = 0.0;
+                                        }
+                                        double hasiladg = ((mbw-mbwlama)/6)+adgs;
+                                        if (Double.isNaN(hasiladg)){
+                                            hasiladg = 0.0;
+                                        }
                                         String hasilbiomass = String.format("%.3f", biomass);
                                         String populasis= String.format("%.3f", hasilpopulasi);
                                         String sp = String.format("%.3f", hasilsp);
                                         String konsumsifeed = String.format("%.3f", hasilfeed);
                                         String fcr = String.format("%.3f", hasilfcr);
+                                        String adg = String.format("%.1f",hasiladg);
                                         Map<String, Object> map = new HashMap<>();
                                         map.put("biomass", hasilbiomass);
                                         map.put("populasi", populasis);
                                         map.put("sp", sp);
                                         map.put("konsumsifeed", konsumsifeed);
                                         map.put("fcr", fcr);
+                                        map.put("adgmingguan", adg);
                                         FirebaseDatabase.getInstance().getReference().child(nama)
                                                 .child(kolam).child("Sampling").child(getRef(i).getKey())
                                                 .updateChildren(map)
@@ -179,6 +203,7 @@ public class PostAdapterSampling extends FirebaseRecyclerAdapter<RequestDataSamp
                                         Intent i = new Intent(context.getApplicationContext(), MainActivity.class);
                                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         context.startActivity(i);
+                                        sessions.setMbw(String.valueOf(mbw));
 
                                     }
                                 });

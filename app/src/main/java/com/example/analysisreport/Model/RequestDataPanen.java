@@ -3,23 +3,50 @@ import com.google.firebase.database.IgnoreExtraProperties;
 import java.io.Serializable;
 
 public class RequestDataPanen implements Serializable {
-    private String berat, size, tanggalpenen;
+    private String tanggalpanen, doc, tonase, abw, size, populasipanen ;
 
     public RequestDataPanen() {
     }
 
-    public RequestDataPanen(String berat, String size, String tanggalpenen) {
-        this.berat = berat;
+    public RequestDataPanen(String tanggalpanen, String doc, String tonase, String abw, String size, String populasipanen) {
+        this.tanggalpanen = tanggalpanen;
+        this.doc = doc;
+        this.tonase = tonase;
+        this.abw = abw;
         this.size = size;
-        this.tanggalpenen = tanggalpenen;
+        this.populasipanen = populasipanen;
     }
 
-    public String getBerat() {
-        return berat;
+    public String getTanggalpanen() {
+        return tanggalpanen;
     }
 
-    public void setBerat(String berat) {
-        this.berat = berat;
+    public void setTanggalpanen(String tanggalpanen) {
+        this.tanggalpanen = tanggalpanen;
+    }
+
+    public String getDoc() {
+        return doc;
+    }
+
+    public void setDoc(String doc) {
+        this.doc = doc;
+    }
+
+    public String getTonase() {
+        return tonase;
+    }
+
+    public void setTonase(String tonase) {
+        this.tonase = tonase;
+    }
+
+    public String getAbw() {
+        return abw;
+    }
+
+    public void setAbw(String abw) {
+        this.abw = abw;
     }
 
     public String getSize() {
@@ -30,20 +57,23 @@ public class RequestDataPanen implements Serializable {
         this.size = size;
     }
 
-    public String getTanggalpenen() {
-        return tanggalpenen;
+    public String getPopulasipanen() {
+        return populasipanen;
     }
 
-    public void setTanggalpenen(String tanggalpenen) {
-        this.tanggalpenen = tanggalpenen;
+    public void setPopulasipanen(String populasipanen) {
+        this.populasipanen = populasipanen;
     }
 
     @Override
     public String toString() {
         return "RequestDataPanen{" +
-                "berat='" + berat + '\'' +
+                "tanggalpanen='" + tanggalpanen + '\'' +
+                ", doc='" + doc + '\'' +
+                ", tonase='" + tonase + '\'' +
+                ", abw='" + abw + '\'' +
                 ", size='" + size + '\'' +
-                ", tanggalpenen='" + tanggalpenen + '\'' +
+                ", populasipanen='" + populasipanen + '\'' +
                 '}';
     }
 }

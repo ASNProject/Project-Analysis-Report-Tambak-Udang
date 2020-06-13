@@ -3,12 +3,12 @@ import com.google.firebase.database.IgnoreExtraProperties;
 import java.io.Serializable;
 
 public class RequestDataSampling implements Serializable {
-    private String tanggaltebarsampling, tanggalsampling, jumlahtebarsamplings, mbw, pakanseharisampling, totalpakansampling, fr, populasi, adgmingguan, biomass, sp, konsumsifeed, fcr;
+    private String tanggaltebarsampling, tanggalsampling, jumlahtebarsamplings, mbw, pakanseharisampling, totalpakansampling, fr, populasi, adgmingguan, biomass, sp, konsumsifeed, fcr, usia;
 
     public RequestDataSampling() {
     }
 
-    public RequestDataSampling(String tanggaltebarsampling, String tanggalsampling, String jumlahtebarsamplings, String mbw, String pakanseharisampling, String totalpakansampling, String fr, String populasi, String adgmingguan, String biomass, String sp, String konsumsifeed, String fcr) {
+    public RequestDataSampling(String tanggaltebarsampling, String tanggalsampling, String jumlahtebarsamplings, String mbw, String pakanseharisampling, String totalpakansampling, String fr, String populasi, String adgmingguan, String biomass, String sp, String konsumsifeed, String fcr, String usia) {
         this.tanggaltebarsampling = tanggaltebarsampling;
         this.tanggalsampling = tanggalsampling;
         this.jumlahtebarsamplings = jumlahtebarsamplings;
@@ -22,6 +22,7 @@ public class RequestDataSampling implements Serializable {
         this.sp = sp;
         this.konsumsifeed = konsumsifeed;
         this.fcr = fcr;
+        this.usia = usia;
     }
 
     public String getTanggaltebarsampling() {
@@ -128,6 +129,14 @@ public class RequestDataSampling implements Serializable {
         this.fcr = fcr;
     }
 
+    public String getUsia() {
+        return usia;
+    }
+
+    public void setUsia(String usia) {
+        this.usia = usia;
+    }
+
     @Override
     public String toString() {
         return "RequestDataSampling{" +
@@ -144,6 +153,7 @@ public class RequestDataSampling implements Serializable {
                 ", sp='" + sp + '\'' +
                 ", konsumsifeed='" + konsumsifeed + '\'' +
                 ", fcr='" + fcr + '\'' +
+                ", usia='" + usia + '\'' +
                 '}';
     }
 }

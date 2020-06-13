@@ -6,14 +6,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.analysisreport.Adapter.DataDetailSampling.PostAdapterSampling;
 import com.example.analysisreport.Adapter.DetailSamplingHolder;
+import com.example.analysisreport.Chart.ChartSampling;
 import com.example.analysisreport.Model.ModelDetailSampling;
 import com.example.analysisreport.Model.RequestDataKolam;
 import com.example.analysisreport.Model.RequestDataSampling;
@@ -40,6 +43,7 @@ public class DetailSampling extends AppCompatActivity {
     private PostAdapterSampling adapterSampling;
 
     private TextView Petani, Kolam, Jumlah, Tebar;
+    private ImageView lihatgrafik;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,7 @@ public class DetailSampling extends AppCompatActivity {
         sessions = new SharePreference(DetailSampling.this.getApplicationContext());
         String data = sessions.getDatas();
         String tnamakolam = sessions.getDetailkolam();
+        lihatgrafik = findViewById(R.id.lihatchartsampling);
         mRecycler = findViewById(R.id.list_detai_sampling);
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
 
@@ -65,79 +70,14 @@ public class DetailSampling extends AppCompatActivity {
         mManager.setStackFromEnd(true);
         mRecycler.setLayoutManager(mManager);
         datas();
-      /*  Query query = getQuery(mDatabase);
-        FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<ModelDetailSampling>()
-                .setQuery(query, ModelDetailSampling.class)
-                .build();
-        mAdapter = new FirebaseRecyclerAdapter<ModelDetailSampling, DetailSamplingHolder>(options) {
+        lihatgrafik.setOnClickListener(new View.OnClickListener() {
             @Override
-            protected void onBindViewHolder(@NonNull DetailSamplingHolder detailSamplingHolder, int i, @NonNull ModelDetailSampling modelDetailSampling) {
-                detailSamplingHolder.bindoToDetailSampling(modelDetailSampling, new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                });
+            public void onClick(View v) {
+                Intent i = new Intent(DetailSampling.this, ChartSampling.class);
+                startActivity(i);
+                finish();
             }
-
-            @NonNull
-            @Override
-            public DetailSamplingHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-                return new DetailSamplingHolder(inflater.inflate(R.layout.item_detail_sampling, parent,false));
-
-            }
-        };
-        data();
-        mAdapter.notifyDataSetChanged();
-        mRecycler.setAdapter(mAdapter);
-
-    }
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (mAdapter != null){
-            mAdapter.startListening();
-        }
-    }
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (mAdapter !=null){
-            mAdapter.stopListening();
-        }
-    }
-
-    private Query getQuery(DatabaseReference mDatabase) {
-        sessions = new SharePreference(DetailSampling.this.getApplicationContext());
-        String nama = sessions.getDatas();
-        String kolam = sessions.getDetailkolam();
-        Query query = mDatabase.child(nama).child(kolam).child("Sampling");
-        return query;
-    }
-    private void data(){
-        sessions = new SharePreference(DetailSampling.this.getApplicationContext());
-        String nama = sessions.getDatas();
-        final String kolam = sessions.getDetailkolam();
-        Petani = findViewById(R.id.dpetani2);
-        Kolam = findViewById(R.id.dkolam2);
-        Jumlah = findViewById(R.id.djumlah2);
-        Tebar = findViewById(R.id.dtebar2);
-        mDatabase.child(nama).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                RequestDataKolam requestDataKolam = dataSnapshot.child(kolam).getValue(RequestDataKolam.class);
-                Petani.setText(requestDataKolam.getNamapetani());
-                Kolam.setText(requestDataKolam.getKolam());
-                Jumlah.setText(requestDataKolam.getJumlah());
-                Tebar.setText(requestDataKolam.getTanggaltebar());
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });*/
+        });
 
     }
     @Override

@@ -19,6 +19,7 @@ import com.example.analysisreport.Model.RequestDataPakan;
 import com.example.analysisreport.Model.RequestDataPanen;
 import com.example.analysisreport.Model.RequestDataPerlakuan;
 import com.example.analysisreport.Model.RequestDataSampling;
+import com.example.analysisreport.Model.RequestHasilPanen;
 import com.example.analysisreport.Model.RequestUpdateAir;
 import com.example.analysisreport.Model.RequestUpdatePakan;
 import com.example.analysisreport.Model.RequestUpdatePanen;
@@ -32,9 +33,13 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Month;
 import java.util.Date;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class InputData extends AppCompatActivity {
     private EditText kolamnama, tnamapetani, tjumlah, tarea, tgltebar, jmltebarsampling, keterangankolam, //Kolam
@@ -46,7 +51,7 @@ public class InputData extends AppCompatActivity {
 
 
     private Button btnSimpan;
-    private TextView jmltebarrata2, kepedatan , pjumlahharian, pjumlahtotal,pakanfeed,
+    private TextView jmltebarrata2, kepedatan , pjumlahharian, pjumlahtotal,pakanfeed,pusia,
                         ppopulasi, padgmingguan, pbiomass, psp, pkonsumsifeed, pfcr;
     private DatabaseReference database, mdatabase;
     SharePreference sessions;
@@ -62,6 +67,7 @@ public class InputData extends AppCompatActivity {
         mdatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         String date_n = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        sessions = new SharePreference(InputData.this.getApplicationContext());
 
         //Data Kolam
         kolamnama = (EditText) findViewById(R.id.kolamnama);
@@ -105,15 +111,12 @@ public class InputData extends AppCompatActivity {
         pketerangan = findViewById(R.id.isicatatan);
         pjumlahharian = findViewById(R.id.jumlahharian);
         pjumlahtotal = findViewById(R.id.isijumlahtotal);
-
-        //Data panen
-        pberat = findViewById(R.id.isiberat);
-        psize = findViewById(R.id.isisize);
-        ptanggalpanen = findViewById(R.id.tanggalpanen);
+        pusia = findViewById(R.id.usiaa);
 
         //Data Sampling
         ptanggaltebarsampling = findViewById(R.id.ntanggaltebarsampling);
         ptanggalsampling = findViewById(R.id.ntangalsampling);
+        ptanggalsampling.setText(date_n);
         pjumlahtebarrataratasampling = findViewById(R.id.njumlahtebarrataratasampling);
         pmbwsampling = findViewById(R.id.nmbwsampling);
         ppakanseharisampling = findViewById(R.id.npakanperharisampling);
@@ -130,7 +133,6 @@ public class InputData extends AppCompatActivity {
         pperlakuan = findViewById(R.id.nperlakuan);
         ptanggalperlakuan = findViewById(R.id.tanggalperlakuan);
         ptanggalperlakuan.setText(date_n);
-
 
         btnSimpan = findViewById(R.id.simpan);
         btnSimpan.setOnClickListener(new View.OnClickListener() {
@@ -217,10 +219,19 @@ public class InputData extends AppCompatActivity {
                 hitung4(Double.parseDouble(jumlahharian), Double.parseDouble(feedpakan));
                 String jumlahtotal = pjumlahtotal.getText().toString();
 
-                //Data panen
-                String berat = pberat.getText().toString();
-                String size = psize.getText().toString();
-                String tangalpanen = ptanggalpanen.getText().toString();
+                String date_n = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+                DateFormat date = new SimpleDateFormat("dd-MM-yyyy");
+                try {
+                    Date tglawal = (Date) date.parse(date_n);
+                    Date tglakhir = (Date) date.parse(tanggaltebar);
+
+                    long bedaHari = Math.abs(tglawal.getTime() - tglakhir.getTime());
+                    String i = String.valueOf(bedaHari);
+                    pusia.setText(String.valueOf(i));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                String usia = pusia.getText().toString();
 
                 //Data Sampling
                 String tanggaltebarsampling = ptanggaltebarsampling.getText().toString();
@@ -230,7 +241,6 @@ public class InputData extends AppCompatActivity {
                 String pakanseharisampling = ppakanseharisampling.getText().toString();
                 String totalpakansampling = ptotalpakansampling.getText().toString();
                 String fr = pfr.getText().toString();
-                String adgmingguan = padgmingguan.getText().toString();
                 hitungbiomass(Double.parseDouble(pakanseharisampling), Double.parseDouble(fr));
                 String biomass = pbiomass.getText().toString();
                 hitungpopulasi(Double.parseDouble(mbw), Double.parseDouble(biomass));
@@ -241,10 +251,27 @@ public class InputData extends AppCompatActivity {
                 String konsumsifeed = pkonsumsifeed.getText().toString();
                 hitungfcr(Double.parseDouble(totalpakansampling), Double.parseDouble(biomass));
                 String fcr = pfcr.getText().toString();
+                hitungadg(Double.parseDouble(mbw));
+                String adgmingguan = padgmingguan.getText().toString();
+
 
                 //Data Perlakuan
                 String perlakuan = pperlakuan.getText().toString();
                 String tanggaperlakuan = ptanggalperlakuan.getText().toString();
+
+                String utanggalpanen = "";
+                String udoc = "0";
+                String utonase = "0";
+                String uabw = "0";
+                String usize = "0";
+                String upopulasipanen= "0";
+
+                String tonha ="0";
+                String totalpopulasi = "0";
+                String panentotal = "0";
+                String totalsr = "0";
+                String totalpakan = "0";
+                String fcrtotal = "0";
 
                 //Program upload
                 datakolam(new RequestDataKolam(kolam.toLowerCase(),namapetani.toLowerCase(),jumlah.toLowerCase(),area.toLowerCase(),tanggaltebar.toLowerCase(),jumlahtebarsampling.toLowerCase(),jumlahtebarratarata,
@@ -252,22 +279,23 @@ public class InputData extends AppCompatActivity {
                 dataair(new RequestDataAir(tanggalairs.toLowerCase(),tinggiairs.toLowerCase(),dopagi.toLowerCase(),domalam.toLowerCase(),phpagis.toLowerCase(),
                             phmalams.toLowerCase(),kecerahans.toLowerCase(),alkalinitass.toLowerCase(),suhus.toLowerCase(),cas.toLowerCase(),mgs.toLowerCase(),no2s.toLowerCase(),no3s.toLowerCase(),nh3s.toLowerCase()));
                 datapakan(new RequestDataPakan(tanggalpakan.toLowerCase(),kodepakan.toLowerCase(),jam6.toLowerCase(),jam10.toLowerCase(),jam14.toLowerCase(),jam18.toLowerCase(),jam22.toLowerCase(),
-                            keteranganpakan.toLowerCase(),jumlahharian.toLowerCase(),jumlahtotal.toLowerCase()));
-                datapanen(new RequestDataPanen(berat.toLowerCase(),size.toLowerCase(),tangalpanen.toLowerCase()));
+                            keteranganpakan.toLowerCase(),jumlahharian.toLowerCase(),jumlahtotal.toLowerCase(),usia.toLowerCase()));
                 datasampling(new RequestDataSampling(tanggaltebarsampling.toLowerCase(), tanggalsampling.toLowerCase(), jumlahtebarsamplings.toLowerCase(),
                                 mbw.toLowerCase(), pakanseharisampling.toLowerCase(), totalpakansampling.toLowerCase(), fr.toLowerCase(), populasi.toLowerCase(),
-                                adgmingguan.toLowerCase(), biomass.toLowerCase(), sp.toLowerCase(), konsumsifeed.toLowerCase(), fcr.toLowerCase()));
+                                adgmingguan.toLowerCase(), biomass.toLowerCase(), sp.toLowerCase(), konsumsifeed.toLowerCase(), fcr.toLowerCase(), usia.toLowerCase()));
                 dataperlakuan(new RequestDataPerlakuan(perlakuan.toLowerCase(), tanggaperlakuan.toLowerCase()));
+                datapanen(new RequestHasilPanen(tonha.toLowerCase(), totalpopulasi.toLowerCase(), panentotal.toLowerCase(), totalsr.toLowerCase(), totalpakan.toLowerCase(), fcrtotal.toLowerCase()));
+
 
                 updatedataair(new RequestUpdateAir(tanggalairs.toLowerCase(),tinggiairs.toLowerCase(),dopagi.toLowerCase(),domalam.toLowerCase(),phpagis.toLowerCase(),
                         phmalams.toLowerCase(),kecerahans.toLowerCase(),alkalinitass.toLowerCase(),suhus.toLowerCase(),cas.toLowerCase(),mgs.toLowerCase(),no2s.toLowerCase(),no3s.toLowerCase(),nh3s.toLowerCase()));
                 updatedatapakan(new RequestUpdatePakan(tanggalpakan.toLowerCase(),kodepakan.toLowerCase(),jam6.toLowerCase(),jam10.toLowerCase(),jam14.toLowerCase(),jam18.toLowerCase(),jam22.toLowerCase(),
                         keteranganpakan.toLowerCase(),jumlahharian.toLowerCase(),jumlahtotal.toLowerCase()));
-                updatedatapenen(new RequestUpdatePanen(berat.toLowerCase(),size.toLowerCase(),tangalpanen.toLowerCase()));
                 updatedatasampling(new RequestUpdateSampling(tanggaltebarsampling.toLowerCase(), tanggalsampling.toLowerCase(), jumlahtebarsamplings.toLowerCase(),
                         mbw.toLowerCase(), pakanseharisampling.toLowerCase(), totalpakansampling.toLowerCase(), fr.toLowerCase(), populasi.toLowerCase(),
                         adgmingguan.toLowerCase(), biomass.toLowerCase(), sp.toLowerCase(), konsumsifeed.toLowerCase(), fcr.toLowerCase()));
                 dataperlakuan(new RequestDataPerlakuan(perlakuan.toLowerCase(), tanggaperlakuan.toLowerCase()));
+                updatedatapenen(new RequestUpdatePanen(utanggalpanen.toLowerCase(), udoc.toLowerCase(), utonase.toLowerCase(), uabw.toLowerCase(),usize.toLowerCase(), upopulasipanen.toLowerCase()));
 
                 Intent i = new Intent(InputData.this, MainActivity.class);
                 startActivity(i);
@@ -303,11 +331,11 @@ public class InputData extends AppCompatActivity {
 
     private void hitung1(double jumlah, double jumlahtebarsampling){
         final double jmltebarratarata = ((jumlah+jumlahtebarsampling)/2);
-        jmltebarrata2.setText(String.valueOf(jmltebarratarata));
+        jmltebarrata2.setText(String.format("%.1f", jmltebarratarata));
     }
     private void hitung2(double jumlahtebarratarata, double area){
         double hasilkepadatan = jumlahtebarratarata/area;
-        kepedatan.setText(String.valueOf(hasilkepadatan));
+        kepedatan.setText(String.format("%.1f", hasilkepadatan));
     }
     private void hitung3(double jam6, double jam10, double jam14, double jam18, double jam22){
         double jumlahpakanharian = jam6+jam10+jam14+jam18+jam22;
@@ -320,23 +348,46 @@ public class InputData extends AppCompatActivity {
     }
     private void hitungpopulasi(double mbw, double biomass){
         double hasilpopulasi = (1000/mbw)*biomass;
+        if (Double.isNaN(hasilpopulasi)){
+            hasilpopulasi = 0.0;
+        }
         ppopulasi.setText(String.format("%.3f", hasilpopulasi));
+
     }
     private void hitungbiomass(double pakanperharisampling, double fr){
         double jumlahbiomas= pakanperharisampling/(fr/100);
-        pbiomass.setText(String.format("%.3f", jumlahbiomas));
+        if (Double.isNaN(jumlahbiomas)){
+            jumlahbiomas = 0.0;
+        }
+        pbiomass.setText(String.format("%.1f", jumlahbiomas));
     }
     private void hitungsp(double hasilpopulasi, double jumlahtebarsampling){
         double jumlahsp = (hasilpopulasi/jumlahtebarsampling)*100;
-        psp.setText(String.format("%.3f", jumlahsp));
+        if (Double.isNaN(jumlahsp)){
+            jumlahsp = 0.0;
+        }
+        psp.setText(String.format("%.1f", jumlahsp));
     }
     private void hitungkonsumsifeed(double mbw, double fr, double jumlahtebarsamplings){
         double jumlahkonsumsifeed = (mbw * fr * jumlahtebarsamplings)/100000;
-        pkonsumsifeed.setText(String.format("%.3f", jumlahkonsumsifeed));
+        if (Double.isNaN(jumlahkonsumsifeed)){
+            jumlahkonsumsifeed = 0.0;
+        }
+        pkonsumsifeed.setText(String.format("%.1f", jumlahkonsumsifeed));
     }
     private void hitungfcr(double totalpakansampling, double biomass){
         double hitungfcr = totalpakansampling/biomass;
+        if (Double.isNaN(hitungfcr)){
+            hitungfcr = 0.0;
+        }
         pfcr.setText(String.format("%.3f", hitungfcr));
+    }
+    private void hitungadg(double mbw){
+        double hasilagd = (mbw-0)/6;
+        if (Double.isNaN(hasilagd)){
+            hasilagd = 0.0;
+        }
+        padgmingguan.setText(String.format("%.3f", hasilagd));
     }
 
 
@@ -426,15 +477,14 @@ public class InputData extends AppCompatActivity {
                 });
 
     }
-    private void datapanen(RequestDataPanen requestDataPanen){
+    private void datapanen(RequestHasilPanen requestHasilPanen){
         sessions = new SharePreference(InputData.this.getApplicationContext());
         String data = sessions.getDatas();
         String tnamakolam = kolamnama.getText().toString().toLowerCase();
         database.child(data)
                 .child(tnamakolam)
-                .child("Panen")
-                .push()
-                .setValue(requestDataPanen)
+                .child("Hasilpanen")
+                .setValue(requestHasilPanen)
                 .addOnSuccessListener(this, new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

@@ -1136,7 +1136,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="SP (%)"
+                                    android:text="SR (%)"
                                     android:textColor="@color/colorGray"
                                     android:gravity="center"
                                     ></TextView>
@@ -1228,7 +1228,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview4"
                 android:layout_width="match_parent"
-                android:layout_height="210dp"
+                android:layout_height="330dp"
                 android:layout_below="@id/cardview3"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
@@ -1263,27 +1263,59 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="10dp">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="120dp"
                             android:layout_height="wrap_content"
-                            android:text="Tanggal"
+                            android:text="Ton/Ha"
                             android:textSize="20dp"
-                            android:layout_marginRight="7dp"
                             android:textColor="@color/colorGray"
                             ></TextView>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="50dp"
                             android:text=":"
                             android:textSize="20dp"
                             android:textColor="@color/colorGray"
                             ></TextView>
                         <TextView
-                            android:id="@+id/tglpanen"
+                            android:id="@+id/tonha"
                             android:layout_height="match_parent"
                             android:layout_width="match_parent"
                             android:layout_gravity="bottom"
-                            android:text="-"
+                            android:layout_marginLeft="10dp"
+                            android:text="0"
+                            android:textSize="20dp"
+                            android:textColor="@color/colorGray"
+                            ></TextView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/doc"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@id/tanggal3"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp">
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="Populasi"
+                            android:textSize="20dp"
+                            android:textColor="@color/colorGray"
+                            ></TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textSize="20dp"
+                            android:textColor="@color/colorGray"
+                            ></TextView>
+                        <TextView
+                            android:id="@+id/populasipanen"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="10dp"
+                            android:text="0"
                             android:textSize="20dp"
                             android:textColor="@color/colorGray"
                             ></TextView>
@@ -1293,38 +1325,37 @@
                         android:id="@+id/berat"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:layout_below="@id/tanggal3"
+                        android:layout_below="@id/doc"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="10dp">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="120dp"
                             android:layout_height="wrap_content"
-                            android:text="Berat (kg)"
+                            android:text="Total (kg)"
                             android:textSize="20dp"
-                            android:layout_marginRight="7dp"
                             android:textColor="@color/colorGray"
                             ></TextView>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="35dp"
                             android:text=":"
                             android:textColor="@color/colorGray"
                             android:textSize="20dp"
                             ></TextView>
                         <TextView
-                            android:id="@+id/beratpanen"
+                            android:id="@+id/totalpanen"
                             android:layout_height="match_parent"
                             android:layout_width="match_parent"
                             android:layout_gravity="bottom"
-                            android:text="-"
+                            android:layout_marginLeft="10dp"
+                            android:text="0"
                             android:textColor="@color/colorGray"
                             android:textSize="20dp"
                             ></TextView>
                     </LinearLayout>
                     <LinearLayout
-                        android:id="@+id/size"
+                        android:id="@+id/abws"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:layout_below="@id/berat"
@@ -1332,27 +1363,92 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="10dp">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="120dp"
                             android:layout_height="wrap_content"
-                            android:text="Size"
+                            android:text="SR (%)"
                             android:textSize="20dp"
                             android:textColor="@color/colorGray"
-                            android:layout_marginRight="7dp"
                             ></TextView>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="85dp"
                             android:text=":"
                             android:textSize="20dp"
                             android:textColor="@color/colorGray"
                             ></TextView>
                         <TextView
-                            android:id="@+id/sizepanen"
+                            android:id="@+id/srpanen"
                             android:layout_height="match_parent"
                             android:layout_width="match_parent"
                             android:layout_gravity="bottom"
-                            android:text="-"
+                            android:layout_marginLeft="10dp"
+                            android:text="0"
+                            android:textSize="20dp"
+                            android:textColor="@color/colorGray"
+                            ></TextView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/qwert"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@id/abws"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp">
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="Pakan (Kg)"
+                            android:textSize="20dp"
+                            android:textColor="@color/colorGray"
+                            ></TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textSize="20dp"
+                            android:textColor="@color/colorGray"
+                            ></TextView>
+                        <TextView
+                            android:id="@+id/pakanpanen"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="10dp"
+                            android:text="0"
+                            android:textSize="20dp"
+                            android:textColor="@color/colorGray"
+                            ></TextView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/size"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@id/qwert"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp">
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="FCR"
+                            android:textSize="20dp"
+                            android:textColor="@color/colorGray"
+                            ></TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textSize="20dp"
+                            android:textColor="@color/colorGray"
+                            ></TextView>
+                        <TextView
+                            android:id="@+id/fcrpanen"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="10dp"
+                            android:text="0"
                             android:textSize="20dp"
                             android:textColor="@color/colorGray"
                             ></TextView>
@@ -1391,7 +1487,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview5"
                 android:layout_width="match_parent"
-                android:layout_height="210dp"
+                android:layout_height="180dp"
                 android:layout_below="@id/cardview4"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
@@ -1412,7 +1508,7 @@
                         android:id="@+id/Perlakuan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Panen/Parsial"
+                        android:text="Perlakuan"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/colorDarkBlue"
@@ -1446,6 +1542,7 @@
                             android:layout_height="match_parent"
                             android:layout_width="match_parent"
                             android:layout_gravity="bottom"
+                            android:layout_marginLeft="10dp"
                             android:text="-"
                             android:textSize="20dp"
                             android:textColor="@color/colorGray"
@@ -1482,6 +1579,7 @@
                             android:layout_width="match_parent"
                             android:layout_gravity="bottom"
                             android:text="-"
+                            android:layout_marginLeft="10dp"
                             android:textColor="@color/colorGray"
                             android:textSize="20dp"
                             ></TextView>

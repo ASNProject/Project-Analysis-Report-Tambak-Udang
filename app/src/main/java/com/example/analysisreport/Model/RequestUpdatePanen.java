@@ -5,47 +5,77 @@ import java.io.Serializable;
 
 
 public class RequestUpdatePanen implements Serializable {
-    private String nberat, nsize, ntanggalpenen;
+    private String utanggalpanen, udoc, utonase, uabw, usize, upopulasipanen ;
 
     public RequestUpdatePanen() {
     }
 
-    public RequestUpdatePanen(String nberat, String nsize, String ntanggalpenen) {
-        this.nberat = nberat;
-        this.nsize = nsize;
-        this.ntanggalpenen = ntanggalpenen;
+    public RequestUpdatePanen(String utanggalpanen, String udoc, String utonase, String uabw, String usize, String upopulasipanen) {
+        this.utanggalpanen = utanggalpanen;
+        this.udoc = udoc;
+        this.utonase = utonase;
+        this.uabw = uabw;
+        this.usize = usize;
+        this.upopulasipanen = upopulasipanen;
     }
 
-    public String getNberat() {
-        return nberat;
+    public String getUtanggalpanen() {
+        return utanggalpanen;
     }
 
-    public void setNberat(String nberat) {
-        this.nberat = nberat;
+    public void setUtanggalpanen(String utanggalpanen) {
+        this.utanggalpanen = utanggalpanen;
     }
 
-    public String getNsize() {
-        return nsize;
+    public String getUdoc() {
+        return udoc;
     }
 
-    public void setNsize(String nsize) {
-        this.nsize = nsize;
+    public void setUdoc(String udoc) {
+        this.udoc = udoc;
     }
 
-    public String getNtanggalpenen() {
-        return ntanggalpenen;
+    public String getUtonase() {
+        return utonase;
     }
 
-    public void setNtanggalpenen(String ntanggalpenen) {
-        this.ntanggalpenen = ntanggalpenen;
+    public void setUtonase(String utonase) {
+        this.utonase = utonase;
+    }
+
+    public String getUabw() {
+        return uabw;
+    }
+
+    public void setUabw(String uabw) {
+        this.uabw = uabw;
+    }
+
+    public String getUsize() {
+        return usize;
+    }
+
+    public void setUsize(String usize) {
+        this.usize = usize;
+    }
+
+    public String getUpopulasipanen() {
+        return upopulasipanen;
+    }
+
+    public void setUpopulasipanen(String upopulasipanen) {
+        this.upopulasipanen = upopulasipanen;
     }
 
     @Override
     public String toString() {
         return "RequestUpdatePanen{" +
-                "nberat='" + nberat + '\'' +
-                ", nsize='" + nsize + '\'' +
-                ", ntanggalpenen='" + ntanggalpenen + '\'' +
+                "utanggalpanen='" + utanggalpanen + '\'' +
+                ", udoc='" + udoc + '\'' +
+                ", utonase='" + utonase + '\'' +
+                ", uabw='" + uabw + '\'' +
+                ", usize='" + usize + '\'' +
+                ", upopulasipanen='" + upopulasipanen + '\'' +
                 '}';
     }
 }

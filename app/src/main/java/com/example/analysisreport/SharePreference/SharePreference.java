@@ -72,4 +72,12 @@ public class SharePreference {
     public String getPakanharian (){
         return pref.getString("pakanharian", null);
     }
+
+    public void setMbw (String mbw){
+        editor.putString("mbw", mbw);
+        editor.commit();
+    }
+    public String getMbw (){
+        return pref.getString("mbw", null);
+    }
 }

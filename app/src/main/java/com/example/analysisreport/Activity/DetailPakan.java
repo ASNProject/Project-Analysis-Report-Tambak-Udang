@@ -6,11 +6,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.analysisreport.Adapter.DataDetailPakan.PostAdapterPakan;
 import com.example.analysisreport.Adapter.DetailPakanHolder;
+import com.example.analysisreport.Chart.ChartPakan;
 import com.example.analysisreport.Model.ModelDataPakan;
 import com.example.analysisreport.Model.RequestDataKolam;
 import com.example.analysisreport.Model.RequestDataPakan;
@@ -37,6 +41,7 @@ public class DetailPakan extends AppCompatActivity {
     private PostAdapterPakan adapterPakan;
 
     private TextView Petani, Kolam, Jumlah, Tebar;
+    private ImageView lihatgrafik;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +50,7 @@ public class DetailPakan extends AppCompatActivity {
         sessions = new SharePreference(DetailPakan.this.getApplicationContext());
         String data = sessions.getDatas();
         String tnamakolam = sessions.getDetailkolam();
+        lihatgrafik = findViewById(R.id.lihatchart);
         mDatebase = FirebaseDatabase.getInstance().getReference();
         mRecycler = findViewById(R.id.list_detai_pakan);
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
@@ -62,6 +68,15 @@ public class DetailPakan extends AppCompatActivity {
         mManager.setStackFromEnd(true);
         mRecycler.setLayoutManager(mManager);
         datas();
+        lihatgrafik.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DetailPakan.this, ChartPakan.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
 
     }
 

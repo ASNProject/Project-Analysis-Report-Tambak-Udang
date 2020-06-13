@@ -329,6 +329,39 @@
                     android:gravity="center_vertical"
                     ></TextView>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="Usia"
+                    android:textColor="@color/colorGray"
+                    android:textSize="20dp"
+                    android:gravity="center_vertical"
+                    ></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text=":"
+                    android:textColor="@color/colorGray"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    ></TextView>
+                <TextView
+                    android:id="@+id/iusia"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorGray"
+                    android:textSize="20dp"
+                    android:hint="Hitung Otomatis"
+                    android:textColorHint="@color/colorGray"
+                    android:gravity="center_vertical"
+                    ></TextView>
+            </LinearLayout>
 
             <Button
                 android:id="@+id/ibutoonsimpanpakan"
@@ -343,6 +376,12 @@
                 android:textColor="@color/colorBackgroung"
                 ></Button>
 
+            <TextView
+                android:id="@+id/tangggaaal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorGray"
+                ></TextView>
 
         </LinearLayout>
     </ScrollView>

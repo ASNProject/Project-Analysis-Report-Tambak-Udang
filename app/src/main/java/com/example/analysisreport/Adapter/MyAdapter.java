@@ -15,13 +15,17 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.analysisreport.Activity.DetailAir;
 import com.example.analysisreport.Activity.DetailPakan;
+import com.example.analysisreport.Activity.DetailPanen;
 import com.example.analysisreport.Activity.DetailSampling;
+import com.example.analysisreport.Activity.InpuDataPanen;
 import com.example.analysisreport.Activity.InputData;
 import com.example.analysisreport.Activity.InputDataAir;
 import com.example.analysisreport.Activity.InputDataPakan;
 import com.example.analysisreport.Activity.InputDataSampling;
 import com.example.analysisreport.Activity.ListTambak;
 import com.example.analysisreport.Model.RequestDataKolam;
+import com.example.analysisreport.Model.RequestDataPakan;
+import com.example.analysisreport.Model.RequestHasilPanen;
 import com.example.analysisreport.Model.RequestUpdateAir;
 import com.example.analysisreport.Model.RequestUpdatePakan;
 import com.example.analysisreport.Model.RequestUpdatePanen;
@@ -154,10 +158,14 @@ public class MyAdapter extends PagerAdapter {
         final TextView Konsumsifeed = (TextView)view.findViewById(R.id.tkonsumsifeed);
         final TextView Fcr = (TextView)view.findViewById(R.id.tfcr);
 
-        //Data Panen
-        final TextView Tanggalpanen = (TextView)view.findViewById(R.id.tanggalpanen);
-        final TextView Berat = (TextView)view.findViewById(R.id.beratpanen);
-        final TextView Size = (TextView)view.findViewById(R.id.sizepanen);
+        //Panen
+        final TextView ton = (TextView)view.findViewById(R.id.tonha);
+        final TextView populasis = (TextView)view.findViewById(R.id.populasipanen);
+        final TextView panentotal = (TextView)view.findViewById(R.id.totalpanen);
+        final TextView panensr = (TextView)view.findViewById(R.id.srpanen);
+        final TextView panenpakan = (TextView)view.findViewById(R.id.pakanpanen);
+        final TextView panenfcr = (TextView)view.findViewById(R.id.fcrpanen);
+
 
         //Perlakuan
         final TextView Tanggalperlakuan = (TextView)view.findViewById(R.id.tglperlakuan);
@@ -172,6 +180,8 @@ public class MyAdapter extends PagerAdapter {
         final Button btnInputDataAir = (Button)view.findViewById(R.id.tinputdataair);
         final Button btnInputDataPakan = (Button)view.findViewById(R.id.tinputdatapakan);
         final Button btnInputDataSampling = (Button)view.findViewById(R.id.tinputdatasampling);
+        final Button btnInputDataPanen = (Button)view.findViewById(R.id.inputdata3);
+        final Button btnDetailPanen = (Button)view.findViewById(R.id.detail3);
 
 
         tambahkolam.setOnClickListener(new View.OnClickListener() {
@@ -222,9 +232,19 @@ public class MyAdapter extends PagerAdapter {
             @Override
             public void onClick(View v) {
                 String kolamnama = namakolam.getText().toString();
+                String mbw = Mbw.getText().toString();
                 sessions = new SharePreference(context.getApplicationContext());
                 sessions.setDetailkolam(kolamnama);
+                sessions.setMbw(mbw);
                 Intent d = new Intent(context.getApplicationContext(), DetailSampling.class);
+                d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(d);
+            }
+        });
+        btnDetailPanen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent d = new Intent(context.getApplicationContext(), DetailPanen.class);
                 d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(d);
             }
@@ -260,9 +280,20 @@ public class MyAdapter extends PagerAdapter {
             @Override
             public void onClick(View v) {
                 String kolamnama = namakolam.getText().toString();
+                String mbw = Mbw.getText().toString();
                 sessions = new SharePreference(context.getApplicationContext());
                 sessions.setDetailkolam(kolamnama);
+                sessions.setMbw(mbw);
                 Intent d = new Intent(context.getApplicationContext(), InputDataSampling.class);
+                d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(d);
+            }
+        });
+
+        btnInputDataPanen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent d = new Intent(context.getApplicationContext(), InpuDataPanen.class);
                 d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(d);
             }
@@ -307,10 +338,14 @@ public class MyAdapter extends PagerAdapter {
                 Jumlahtotal.setText(requestUpdatePakan.getJumlahtotal());
                 Keterangan.setText(requestUpdatePakan.getKeteranganpakan());
 
-                RequestUpdatePanen requestUpdatePanen = dataSnapshot.child("Panenupdate").getValue(RequestUpdatePanen.class);
-                Berat.setText(requestUpdatePanen.getNberat());
-                Size.setText(requestUpdatePanen.getNsize());
-//                Tanggalpanen.setText(requestUpdatePanen.getNtanggalpenen());
+//                RequestUpdatePanen requestUpdatePanen = dataSnapshot.child("Panenupdate").getValue(RequestUpdatePanen.class);
+                RequestHasilPanen requestHasilPanen = dataSnapshot.child("Hasilpanen").getValue(RequestHasilPanen.class);
+                ton.setText(requestHasilPanen.getTonha());
+                populasis.setText(requestHasilPanen.getTotalpopulasi());
+                panentotal.setText(requestHasilPanen.getPanentotal());
+                panensr.setText(requestHasilPanen.getTotalsr());
+                panenpakan.setText(requestHasilPanen.getTotalpakan());
+                panenfcr.setText(requestHasilPanen.getFcrtotal());
 
                 RequestUpdateSampling requestUpdateSampling = dataSnapshot.child("Samplingupdate").getValue(RequestUpdateSampling.class);
                 TanggalSampling.setText(requestUpdateSampling.getTanggalsampling());

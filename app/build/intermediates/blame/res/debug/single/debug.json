@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
-        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_salinitas.png.flat",
@@ -44,12 +44,12 @@
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-xxxhdpi\\udang.png"
     },
     {
-        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_person_black_24dp.png.flat",
-        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_person_black_24dp.png"
-    },
-    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background2.xml.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable\\background2.xml"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_person_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_person_black_24dp.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_location_on_black_24dp.png.flat",
@@ -60,12 +60,16 @@
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_add_circle_black_24dp.xml"
     },
     {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_delete_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_delete_black_24dp.png"
+    },
+    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_kecerahan.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-hdpi\\kecerahan.png"
     },
     {
-        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_delete_black_24dp.png.flat",
-        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_delete_black_24dp.png"
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_show_chart_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_show_chart_black_24dp.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_salinitas.png.flat",
@@ -80,36 +84,36 @@
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_brightness_1_black_24dp.png"
     },
     {
-        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_fd.png.flat",
-        "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-xxhdpi\\fd.png"
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_suhu.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-ldpi\\suhu.png"
     },
     {
-        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
-        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
-    },
-    {
-        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_tanggal.png.flat",
-        "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-xxxhdpi\\tanggal.png"
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_fd.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-xxhdpi\\fd.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_search.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-xhdpi\\search.png"
     },
     {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_tanggal.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-xxxhdpi\\tanggal.png"
+    },
+    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_beenhere_black_24dp.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_beenhere_black_24dp.png"
     },
     {
-        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_location_on_black_24dp.png.flat",
-        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_location_on_black_24dp.png"
-    },
-    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_delete_black_24dp.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_delete_black_24dp.png"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_location_on_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_location_on_black_24dp.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_phone_black_24dp.png.flat",
@@ -124,12 +128,12 @@
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_edit_black_24dp.png"
     },
     {
-        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
-        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_cancel_black_24dp.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_cancel_black_24dp.png"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_suhu.png.flat",
@@ -156,12 +160,20 @@
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\layout\\detailpakan.xml"
     },
     {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\layout_detail_panen.xml.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\layout\\detail_panen.xml"
+    },
+    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_email_black_24dp.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_email_black_24dp.png"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chart_sampling.xml.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\layout\\activity_chart_sampling.xml"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_sort_black_24dp.xml.flat",
@@ -196,8 +208,16 @@
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_brightness_1_black_24dp.png"
     },
     {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_show_chart_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_show_chart_black_24dp.png"
+    },
+    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_salinitas.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-xxhdpi\\salinitas.png"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_show_chart_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_show_chart_black_24dp.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_beenhere_black_24dp.png.flat",
@@ -276,6 +296,10 @@
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-xxhdpi\\kecerahan.png"
     },
     {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_insert_chart_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_insert_chart_black_24dp.png"
+    },
+    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_email_black_24dp.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_email_black_24dp.png"
     },
@@ -290,6 +314,10 @@
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_tanggal.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-xhdpi\\tanggal.png"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_show_chart_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_show_chart_black_24dp.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_tambah.png.flat",
@@ -376,8 +404,16 @@
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_email_black_24dp.png"
     },
     {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_insert_chart_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_insert_chart_black_24dp.png"
+    },
+    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main2.xml.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\layout\\activity_main2.xml"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_insert_chart_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_insert_chart_black_24dp.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_edit_black_24dp.png.flat",
@@ -408,6 +444,10 @@
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\layout\\activity_input_data.xml"
     },
     {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_insert_chart_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_insert_chart_black_24dp.png"
+    },
+    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_register.xml.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\layout\\activity_register.xml"
     },
@@ -430,6 +470,10 @@
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_suhu.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-xxhdpi\\suhu.png"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_show_chart_black_24dp.xml.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_show_chart_black_24dp.xml"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_beenhere_black_24dp.xml.flat",
@@ -524,6 +568,10 @@
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-xhdpi\\fd.png"
     },
     {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_inpu_data_panen.xml.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\layout\\activity_inpu_data_panen.xml"
+    },
+    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_settings_black_24dp.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_settings_black_24dp.png"
     },
@@ -572,6 +620,10 @@
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_location_on_black_24dp.png"
     },
     {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_show_chart_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_show_chart_black_24dp.png"
+    },
+    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_add_circle_black_24dp.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_add_circle_black_24dp.png"
     },
@@ -590,6 +642,10 @@
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_add_circle_black_24dp.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_add_circle_black_24dp.png"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_show_chart_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_show_chart_black_24dp.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_info_black_24dp.png.flat",
@@ -646,6 +702,10 @@
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_daftar.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-ldpi\\daftar.png"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_insert_chart_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_insert_chart_black_24dp.png"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_search.png.flat",
@@ -712,6 +772,10 @@
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_add_circle_outline_black_24dp.png"
     },
     {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_insert_chart_black_24dp.png.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_insert_chart_black_24dp.png"
+    },
+    {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
@@ -742,6 +806,10 @@
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_add_box_black_24dp.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_add_box_black_24dp.png"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chart_pakan.xml.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\layout\\activity_chart_pakan.xml"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_udang.png.flat",
@@ -786,6 +854,10 @@
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_kecerahan.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\drawable-mdpi\\kecerahan.png"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_detail_panen.xml.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\layout\\activity_detail_panen.xml"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_date_range_black_24dp.png.flat",
@@ -918,6 +990,10 @@
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "D:\\ANDROID STUDIO PROJECT\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_insert_chart_black_24dp.xml.flat",
+        "source": "D:\\ANDROID STUDIO PROJECT\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_insert_chart_black_24dp.xml"
     },
     {
         "merged": "D:\\ANDROID STUDIO PROJECT\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_tanggal.png.flat",
