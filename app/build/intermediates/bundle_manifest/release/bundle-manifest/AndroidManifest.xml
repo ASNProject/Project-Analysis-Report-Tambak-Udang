@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.analysisreport"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="29" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.example.analysisreport.Activity.DetailPanen" />
+        <activity android:name="com.example.analysisreport.Activity.InpuDataPanen" />
+        <activity android:name="com.example.analysisreport.Chart.ChartSampling" />
+        <activity android:name="com.example.analysisreport.Chart.ChartPakan" />
+        <activity android:name="com.example.analysisreport.Activity.UpdateIsiAir" />
+        <activity android:name="com.example.analysisreport.Activity.InputDataSampling" />
+        <activity android:name="com.example.analysisreport.Activity.InputDataPakan" />
+        <activity android:name="com.example.analysisreport.Activity.InputDataAir" />
+        <activity android:name="com.example.analysisreport.Activity.DetailSampling" />
+        <activity android:name="com.example.analysisreport.Activity.DetailPakan" />
+        <activity android:name="com.example.analysisreport.Activity.DetailAir" />
+        <activity android:name="com.example.analysisreport.Activity.InputData" />
+        <activity android:name="com.example.analysisreport.Activity.Main3Activity" />
+        <activity android:name="com.example.analysisreport.Activity.ListTambak" />
+        <activity android:name="com.example.analysisreport.Activity.MainActivity" />
+        <activity android:name="com.example.analysisreport.Activity.Register" />
+        <activity android:name="com.example.analysisreport.Activity.Main2Activity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:directBootAware="true"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+
+        <activity
+            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="com.example.analysisreport.firebaseinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

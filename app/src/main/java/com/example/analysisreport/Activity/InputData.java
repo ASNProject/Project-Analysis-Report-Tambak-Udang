@@ -214,7 +214,7 @@ public class InputData extends AppCompatActivity {
                 String jam18 = pjam18.getText().toString();
                 String jam22 = pjam22.getText().toString();
                 String keteranganpakan = pketerangan.getText().toString();
-                hitung3(Double.parseDouble(jam6), Double.parseDouble(jam10), Double.parseDouble(jam14), Double.parseDouble(jam18), Double.parseDouble(jam22));
+                hitung3(Integer.parseInt(jam6), Integer.parseInt(jam10), Integer.parseInt(jam14), Integer.parseInt(jam18), Integer.parseInt(jam22));
                 String jumlahharian = pjumlahharian.getText().toString();
                 hitung4(Double.parseDouble(jumlahharian), Double.parseDouble(feedpakan));
                 String jumlahtotal = pjumlahtotal.getText().toString();
@@ -330,15 +330,21 @@ public class InputData extends AppCompatActivity {
     }
 
     private void hitung1(double jumlah, double jumlahtebarsampling){
-        final double jmltebarratarata = ((jumlah+jumlahtebarsampling)/2);
-        jmltebarrata2.setText(String.format("%.1f", jmltebarratarata));
+        double jmltebarratarata = ((jumlah+jumlahtebarsampling)/2);
+        if (Double.isNaN(jmltebarratarata)){
+            jmltebarratarata = 0;
+        }
+        jmltebarrata2.setText(String.valueOf( jmltebarratarata));
     }
     private void hitung2(double jumlahtebarratarata, double area){
         double hasilkepadatan = jumlahtebarratarata/area;
-        kepedatan.setText(String.format("%.1f", hasilkepadatan));
+        if (Double.isNaN(hasilkepadatan)){
+            hasilkepadatan = 0;
+        }
+        kepedatan.setText(String.valueOf(hasilkepadatan));
     }
-    private void hitung3(double jam6, double jam10, double jam14, double jam18, double jam22){
-        double jumlahpakanharian = jam6+jam10+jam14+jam18+jam22;
+    private void hitung3(int jam6, int jam10, int jam14, int jam18, int jam22){
+        int jumlahpakanharian = jam6+jam10+jam14+jam18+jam22;
         pjumlahharian.setText(String.valueOf(jumlahpakanharian));
     }
     private void hitung4(double jumlahharian, double feedpakan){
@@ -351,7 +357,7 @@ public class InputData extends AppCompatActivity {
         if (Double.isNaN(hasilpopulasi)){
             hasilpopulasi = 0.0;
         }
-        ppopulasi.setText(String.format("%.3f", hasilpopulasi));
+        ppopulasi.setText(String.valueOf(hasilpopulasi));
 
     }
     private void hitungbiomass(double pakanperharisampling, double fr){
@@ -359,35 +365,35 @@ public class InputData extends AppCompatActivity {
         if (Double.isNaN(jumlahbiomas)){
             jumlahbiomas = 0.0;
         }
-        pbiomass.setText(String.format("%.1f", jumlahbiomas));
+        pbiomass.setText(String.valueOf(jumlahbiomas));
     }
     private void hitungsp(double hasilpopulasi, double jumlahtebarsampling){
         double jumlahsp = (hasilpopulasi/jumlahtebarsampling)*100;
         if (Double.isNaN(jumlahsp)){
             jumlahsp = 0.0;
         }
-        psp.setText(String.format("%.1f", jumlahsp));
+        psp.setText(String.valueOf(jumlahsp));
     }
     private void hitungkonsumsifeed(double mbw, double fr, double jumlahtebarsamplings){
         double jumlahkonsumsifeed = (mbw * fr * jumlahtebarsamplings)/100000;
         if (Double.isNaN(jumlahkonsumsifeed)){
             jumlahkonsumsifeed = 0.0;
         }
-        pkonsumsifeed.setText(String.format("%.1f", jumlahkonsumsifeed));
+        pkonsumsifeed.setText(String.valueOf(jumlahkonsumsifeed));
     }
     private void hitungfcr(double totalpakansampling, double biomass){
         double hitungfcr = totalpakansampling/biomass;
         if (Double.isNaN(hitungfcr)){
             hitungfcr = 0.0;
         }
-        pfcr.setText(String.format("%.3f", hitungfcr));
+        pfcr.setText(String.valueOf(hitungfcr));
     }
     private void hitungadg(double mbw){
         double hasilagd = (mbw-0)/6;
         if (Double.isNaN(hasilagd)){
             hasilagd = 0.0;
         }
-        padgmingguan.setText(String.format("%.3f", hasilagd));
+        padgmingguan.setText(String.valueOf(hasilagd));
     }
 
 

@@ -149,42 +149,42 @@ public class InputDataSampling extends AppCompatActivity {
         if (Double.isNaN(jumlahbiomas)){
             jumlahbiomas = 0.0;
         }
-        pbiomass.setText(String.format("%.3f", jumlahbiomas));
+        pbiomass.setText(String.valueOf( jumlahbiomas));
     }
     private void hitungpopulasi(double mbw, double biomass){
         double hasilpopulasi = (1000/mbw)*biomass;
         if (Double.isNaN(hasilpopulasi)){
             hasilpopulasi = 0.0;
         }
-        ppopulasi.setText(String.format("%.3f", hasilpopulasi));
+        ppopulasi.setText(String.valueOf( hasilpopulasi));
     }
     private void hitungsp(double hasilpopulasi, double jumlahtebarsampling){
         double jumlahsp = (hasilpopulasi/jumlahtebarsampling)*100;
         if (Double.isNaN(jumlahsp)){
             jumlahsp = 0.0;
         }
-        psp.setText(String.format("%.3f", jumlahsp));
+        psp.setText(String.valueOf( jumlahsp));
     }
     private void hitungkonsumsifeed(double mbw, double fr, double jumlahtebarsamplings){
         double jumlahkonsumsifeed = (mbw * fr * jumlahtebarsamplings)/100000;
         if (Double.isNaN(jumlahkonsumsifeed)){
             jumlahkonsumsifeed = 0.0;
         }
-        pkonsumsifeed.setText(String.format("%.3f", jumlahkonsumsifeed));
+        pkonsumsifeed.setText(String.valueOf( jumlahkonsumsifeed));
     }
     private void hitungfcr(double totalpakansampling, double biomass){
         double hitungfcr = totalpakansampling/biomass;
         if (Double.isNaN(hitungfcr)){
             hitungfcr = 0.0;
         }
-        pfcr.setText(String.format("%.3f", hitungfcr));
+        pfcr.setText(String.valueOf(hitungfcr));
     }
     private void hitungadg(double mbw, double lamambw){
         double hasilagd = (mbw-lamambw)/6;
         if (Double.isNaN(hasilagd)){
             hasilagd = 0.0;
         }
-        padgmingguan.setText(String.format("%.1f", hasilagd));
+        padgmingguan.setText(String.valueOf(hasilagd));
     }
 
 

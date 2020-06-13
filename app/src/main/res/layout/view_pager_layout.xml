@@ -95,8 +95,9 @@
                     android:layout_marginRight="20dp"
                     android:drawableRight="@drawable/ic_add_box_black_24dp"
                     android:text="TAMBAH KOLAM"
+                    android:gravity="center"
                     android:textColor="@color/colorBackgroung"
-                    android:textSize="18dp"></TextView>
+                    ></TextView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -108,7 +109,7 @@
                     >
 
                     <LinearLayout
-                        android:layout_width="150dp"
+                        android:layout_width="130dp"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <LinearLayout
@@ -197,7 +198,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Udang (Ekor)"
-                            android:textSize="15dp"
                             android:drawableLeft="@drawable/ic_beenhere_black_24dp"
                             android:gravity="center"
                             ></TextView>
@@ -207,8 +207,8 @@
                             android:layout_height="wrap_content"
                             android:text="1000000"
                             android:layout_marginTop="5dp"
-                            android:textColor="@color/colorBackgroung"
                             android:textSize="20dp"
+                            android:textColor="@color/colorBackgroung"
                             android:layout_gravity="center"
                             android:textStyle="bold"></TextView>
                     </LinearLayout>
@@ -220,8 +220,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Usia (Hari)"
-                            android:textSize="15dp"
+                            android:text="Usia"
                             android:drawableLeft="@drawable/ic_beenhere_black_24dp"
                             android:gravity="center"
                             ></TextView>
@@ -233,6 +232,7 @@
                             android:textColor="@color/colorBackgroung"
                             android:layout_marginTop="5dp"
                             android:textSize="20dp"
+
                             android:layout_gravity="center"
                             android:textStyle="bold"></TextView>
                     </LinearLayout>
