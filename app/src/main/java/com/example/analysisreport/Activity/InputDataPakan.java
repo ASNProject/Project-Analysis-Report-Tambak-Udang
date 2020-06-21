@@ -123,7 +123,7 @@ public class InputDataPakan extends AppCompatActivity {
 
                                 String usia = pusia.getText().toString();
 
-                                hitung3(Integer.parseInt(jam6), Integer.parseInt(jam10), Integer.parseInt(jam14), Integer.parseInt(jam18), Integer.parseInt(jam22));
+                                hitung3(Double.parseDouble(jam6), Double.parseDouble(jam10), Double.parseDouble(jam14), Double.parseDouble(jam18), Double.parseDouble(jam22));
                                 String jumlahharian = pjumlahharian.getText().toString();
                                 hitung4(Double.parseDouble(jumlahharian), Double.parseDouble(feedpakan));
                                 String jumlahtotal = pjumlahtotal.getText().toString();
@@ -147,8 +147,8 @@ public class InputDataPakan extends AppCompatActivity {
             }
         });
     }
-    private void hitung3(int jam6, int jam10, int jam14, int jam18, int jam22){
-        int jumlahpakanharian = jam6+jam10+jam14+jam18+jam22;
+    private void hitung3(double jam6, double jam10, double jam14, double jam18, double jam22){
+        double jumlahpakanharian = jam6+jam10+jam14+jam18+jam22;
         pjumlahharian.setText(String.valueOf(jumlahpakanharian));
     }
     private void hitung4(double jumlahharian, double feedpakan){

@@ -343,8 +343,8 @@ public class InputData extends AppCompatActivity {
         }
         kepedatan.setText(String.valueOf(hasilkepadatan));
     }
-    private void hitung3(int jam6, int jam10, int jam14, int jam18, int jam22){
-        int jumlahpakanharian = jam6+jam10+jam14+jam18+jam22;
+    private void hitung3(double jam6, double jam10, double jam14, double jam18, double jam22){
+        double jumlahpakanharian = jam6+jam10+jam14+jam18+jam22;
         pjumlahharian.setText(String.valueOf(jumlahpakanharian));
     }
     private void hitung4(double jumlahharian, double feedpakan){

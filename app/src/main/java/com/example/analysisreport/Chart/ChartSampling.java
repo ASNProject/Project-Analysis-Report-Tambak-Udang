@@ -62,7 +62,7 @@ public class ChartSampling extends AppCompatActivity {
                 if(dataSnapshot.hasChildren()){
                     for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
                         RequestDataSampling requestDataSampling = dataSnapshot1.getValue(RequestDataSampling.class);
-                        int xValue1 = Integer.parseInt(String.valueOf(requestDataSampling.getUsia()));
+                        float xValue1 = Float.parseFloat(String.valueOf(requestDataSampling.getUsia()));
                         float yValue1 = Float.parseFloat(String.valueOf(requestDataSampling.getBiomass()));
                         data1.add(new Entry(xValue1, yValue1));
                     }
@@ -90,7 +90,7 @@ public class ChartSampling extends AppCompatActivity {
                 if(dataSnapshot.hasChildren()){
                     for(DataSnapshot dataSnapshot2 : dataSnapshot.getChildren()){
                         RequestDataSampling requestDataSampling = dataSnapshot2.getValue(RequestDataSampling.class);
-                        int xValue2 = Integer.parseInt(String.valueOf(requestDataSampling.getUsia()));
+                        float xValue2 = Float.parseFloat(String.valueOf(requestDataSampling.getUsia()));
                         float yValue2 = Float.parseFloat(String.valueOf(requestDataSampling.getSp()));
                         data2.add(new Entry(xValue2, yValue2));
                     }
@@ -117,7 +117,7 @@ public class ChartSampling extends AppCompatActivity {
                 if(dataSnapshot.hasChildren()){
                     for(DataSnapshot dataSnapshot3 : dataSnapshot.getChildren()){
                         RequestDataSampling requestDataSampling = dataSnapshot3.getValue(RequestDataSampling.class);
-                        int xValue3 = Integer.parseInt(String.valueOf(requestDataSampling.getUsia()));
+                        float xValue3 = Float.parseFloat(String.valueOf(requestDataSampling.getUsia()));
                         float yValue3 = Float.parseFloat(String.valueOf(requestDataSampling.getFcr()));
                         data3.add(new Entry(xValue3, yValue3));
                     }

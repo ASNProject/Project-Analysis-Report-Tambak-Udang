@@ -1,22 +1,34 @@
 package com.example.analysisreport.Adapter.DataDetailPanen;
 
+import android.app.AlertDialog;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.analysisreport.Model.RequestDataPanen;
 import com.example.analysisreport.R;
+import com.example.analysisreport.SharePreference.SharePreference;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 public class PostAdapterPanen extends FirebaseRecyclerAdapter<RequestDataPanen, PostAdapterPanen.PostViewHolder> {
 
-    public PostAdapterPanen(@NonNull FirebaseRecyclerOptions<RequestDataPanen> options) {
+    private Context context;
+    SharePreference sessions;
+    Toolbar toolbar;
+    AlertDialog.Builder dialog;
+    LayoutInflater inflater;
+
+    public PostAdapterPanen(@NonNull FirebaseRecyclerOptions<RequestDataPanen> options, Context context) {
         super(options);
+        this.context = context;
+
     }
 
     @Override

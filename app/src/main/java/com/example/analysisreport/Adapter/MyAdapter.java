@@ -245,6 +245,9 @@ public class MyAdapter extends PagerAdapter {
             @Override
             public void onClick(View v) {
                 Intent d = new Intent(context.getApplicationContext(), DetailPanen.class);
+                sessions = new SharePreference(context.getApplicationContext());
+                String kolamnama = namakolam.getText().toString();
+                sessions.setDetailkolam(kolamnama);
                 d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(d);
             }
@@ -294,6 +297,9 @@ public class MyAdapter extends PagerAdapter {
             @Override
             public void onClick(View v) {
                 Intent d = new Intent(context.getApplicationContext(), InpuDataPanen.class);
+                String kolamnama = namakolam.getText().toString();
+                sessions = new SharePreference(context.getApplicationContext());
+                sessions.setDetailkolam(kolamnama);
                 d.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(d);
             }

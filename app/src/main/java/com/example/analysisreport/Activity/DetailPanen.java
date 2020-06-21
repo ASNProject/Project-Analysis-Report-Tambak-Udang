@@ -49,7 +49,7 @@ public class DetailPanen extends AppCompatActivity {
                 new FirebaseRecyclerOptions.Builder<RequestDataPanen>()
                 .setQuery(FirebaseDatabase.getInstance().getReference().child(data).child(kolam)
                 .child("Panen"), RequestDataPanen.class).build();
-    adapterPanen = new PostAdapterPanen(options);
+    adapterPanen = new PostAdapterPanen(options, this);
     mRecycler.setAdapter(adapterPanen);
 
     mManager = new LinearLayoutManager(this);

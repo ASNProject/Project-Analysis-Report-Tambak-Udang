@@ -51,8 +51,8 @@ public class ChartPakan extends AppCompatActivity {
                     for(DataSnapshot myDataSnapshot : dataSnapshot.getChildren()){
                         //DataPointPakan dataPointPakan = myDataSnapshot.getValue(DataPointPakan.class);
                         RequestDataPakan requestDataPakan =myDataSnapshot.getValue(RequestDataPakan.class);
-                        int xValue = Integer.parseInt(String.valueOf(requestDataPakan.getUsia()));
-                        int yValue = Integer.parseInt(String.valueOf(requestDataPakan.getJumlahharian()));
+                        float xValue = Float.parseFloat(String.valueOf(requestDataPakan.getUsia()));
+                        float yValue = Float.parseFloat(String.valueOf(requestDataPakan.getJumlahharian()));
                         dataValas.add(new Entry(xValue, yValue));
                     }
                     showChart(dataValas);
